@@ -88,7 +88,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/07/h5-FileReader/" data-id="cjlrlv2dv0000q0cmb6411cly" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/07/h5-FileReader/" data-id="cjlrn28390000focmep3p0rq0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -127,21 +127,23 @@
 <h4 id="生成静态页面至-public-目录"><a href="#生成静态页面至-public-目录" class="headerlink" title="生成静态页面至 public 目录"></a>生成静态页面至 public 目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
 <h4 id="开启预览访问端口-默认端口4000"><a href="#开启预览访问端口-默认端口4000" class="headerlink" title="开启预览访问端口 (默认端口4000)"></a>开启预览访问端口 (默认端口4000)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <h4 id="hexo-发布-deploy-github"><a href="#hexo-发布-deploy-github" class="headerlink" title="hexo 发布(deploy) github"></a>hexo 发布(deploy) github</h4><h5 id="1-在-config-yml-中配置-git-信息"><a href="#1-在-config-yml-中配置-git-信息" class="headerlink" title="1. 在 _config.yml 中配置 git 信息"></a>1. 在 _config.yml 中配置 git 信息</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@github.com:YolandaXQY/xuqy.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h5 id="2-hexo-deployer-git"><a href="#2-hexo-deployer-git" class="headerlink" title="2. hexo-deployer-git"></a>2. hexo-deployer-git</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <h5 id="2-通过-ssh-代理与-git-联系起来"><a href="#2-通过-ssh-代理与-git-联系起来" class="headerlink" title="2. 通过 ssh 代理与 git 联系起来"></a>2. 通过 ssh 代理与 git 联系起来</h5><h6 id="1-列出已存在的SSH-Key"><a href="#1-列出已存在的SSH-Key" class="headerlink" title="1) 列出已存在的SSH Key"></a>1) 列出已存在的SSH Key</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -al ~/.ssh</span><br></pre></td></tr></table></figure>
 <h6 id="2-生成密钥"><a href="#2-生成密钥" class="headerlink" title="2) 生成密钥"></a>2) 生成密钥</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure>
 <p>以上这个命令会生成以 “<a href="mailto:your_email@example.com" target="_blank" rel="noopener">your_email@example.com</a>“ 为标签的ssh key , 然后连续两个enter就可以。</p>
 <h6 id="3）加入SSH-Agent"><a href="#3）加入SSH-Agent" class="headerlink" title="3）加入SSH Agent"></a>3）加入SSH Agent</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br><span class="line">ssh-agent -s</span><br><span class="line"><span class="built_in">eval</span> `ssh-agent -s`</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
 <h6 id="4-将SSH添加到Github中"><a href="#4-将SSH添加到Github中" class="headerlink" title="4) 将SSH添加到Github中"></a>4) 将SSH添加到Github中</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> id_rsa.pub</span><br><span class="line">vi id_rsa.pub</span><br><span class="line">// 通过<span class="built_in">shift</span> + v 选中所有，再按下 p 复制</span><br><span class="line">// :q! 放弃修改退出 :wq保存退出</span><br></pre></td></tr></table></figure>
 <h6 id="5）-测试"><a href="#5）-测试" class="headerlink" title="5） 测试"></a>5） 测试</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<h4 id="hexo-deploy-发布"><a href="#hexo-deploy-发布" class="headerlink" title="hexo deploy 发布"></a>hexo deploy 发布</h4><h4 id="域名设置"><a href="#域名设置" class="headerlink" title="域名设置"></a>域名设置</h4><p>每个git账户只有一个域名可用，需要在你的仓库地址 setting 那边设置与git相同名字的域名</p>
 <h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><p>Git中vi操作: <a href="https://blog.csdn.net/zym18351887819/article/details/80468525" target="_blank" rel="noopener">https://blog.csdn.net/zym18351887819/article/details/80468525</a><br>关于SSH的绑定: <a href="https://xuanwo.org/2015/02/07/generate-a-ssh-key/" target="_blank" rel="noopener">https://xuanwo.org/2015/02/07/generate-a-ssh-key/</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/07/hexo搭建基本要点/" data-id="cjlrlv2e20002q0cmbjx52wue" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/07/hexo搭建基本要点/" data-id="cjlrn283h0002focmvru2i2ao" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-github-git/">hexo, github, git</a></li></ul>
 
     </footer>
   </div>
@@ -185,7 +187,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/07/hello-world/" data-id="cjlrlv2e00001q0cmb35pzz9e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/07/hello-world/" data-id="cjlrn283f0001focmts4blybz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -208,7 +210,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo-github-git/">hexo, github, git</a></li></ul>
     </div>
   </div>
 
@@ -218,7 +220,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+      <a href="/tags/hexo-github-git/" style="font-size: 10px;">hexo, github, git</a>
     </div>
   </div>
 
