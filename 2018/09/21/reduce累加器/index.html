@@ -108,21 +108,25 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="h5 FileReader">
-<meta property="og:url" content="http://yoursite.com/2018/09/07/h5-FileReader/index.html">
+  <meta name="description" content="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce 以下案例仿照MDN做的  reduce方法的好用之处就是有一个累加器  数值累加器12345var arr = [0,1,2,3];var sum = arr.reduce((acc, cur) =&amp;gt; &amp;#">
+<meta name="keywords" content="js reduce">
+<meta property="og:type" content="article">
+<meta property="og:title" content="reduce累加器">
+<meta property="og:url" content="http://yoursite.com/2018/09/21/reduce累加器/index.html">
 <meta property="og:site_name" content="青檬眼豆豆">
+<meta property="og:description" content="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce 以下案例仿照MDN做的  reduce方法的好用之处就是有一个累加器  数值累加器12345var arr = [0,1,2,3];var sum = arr.reduce((acc, cur) =&amp;gt; &amp;#">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-07T07:32:53.252Z">
+<meta property="og:updated_time" content="2018-09-21T09:18:15.479Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="h5 FileReader">
+<meta name="twitter:title" content="reduce累加器">
+<meta name="twitter:description" content="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce 以下案例仿照MDN做的  reduce方法的好用之处就是有一个累加器  数值累加器12345var arr = [0,1,2,3];var sum = arr.reduce((acc, cur) =&amp;gt; &amp;#">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/07/h5-FileReader/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/21/reduce累加器/"/>
 
 
 
@@ -132,7 +136,7 @@
   };
 </script>
 
-  <title>h5 FileReader | 青檬眼豆豆</title>
+  <title>reduce累加器 | 青檬眼豆豆</title>
   
 
 
@@ -277,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/07/h5-FileReader/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/reduce累加器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yolanda2">
@@ -294,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">h5 FileReader
+          <h1 class="post-title" itemprop="name headline">reduce累加器
               
             
           </h1>
@@ -319,7 +323,7 @@
                 
               
 
-              <time title="Created: 2018-09-07 14:12:33 / Modified: 15:32:53" itemprop="dateCreated datePublished" datetime="2018-09-07T14:12:33+08:00">2018-09-07</time>
+              <time title="Created: 2018-09-21 15:14:32 / Modified: 17:18:15" itemprop="dateCreated datePublished" datetime="2018-09-21T15:14:32+08:00">2018-09-21</time>
             
 
             
@@ -357,7 +361,19 @@
       
 
       
-        
+        <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce</a></p>
+<p>以下案例仿照MDN做的</p>
+<blockquote>
+<p>reduce方法的好用之处就是有一个累加器</p>
+</blockquote>
+<h4 id="数值累加器"><a href="#数值累加器" class="headerlink" title="数值累加器"></a>数值累加器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [0,1,2,3];</span><br><span class="line">var sum = arr.reduce((acc, cur) =&gt; &#123;</span><br><span class="line">	return acc + cur;</span><br><span class="line">&#125;, 0);</span><br><span class="line">console.log(sum);</span><br></pre></td></tr></table></figure>
+<h4 id="计算数组中每个元素出现的次数"><a href="#计算数组中每个元素出现的次数" class="headerlink" title="计算数组中每个元素出现的次数"></a>计算数组中每个元素出现的次数</h4><blockquote>
+<p>对于reduce来说,累加器不仅可能是数组,还可以是个对象</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;miko&quot;,&quot;yolanda&quot;,&quot;sorry&quot;,&quot;mike&quot;,&quot;sorry&quot;,&quot;miko&quot;,&quot;love&quot;,&quot;love&quot;,&quot;yolanda&quot;,&quot;flower&quot;];</span><br><span class="line">var obj = arr.reduce((accObj,cur) =&gt; &#123;</span><br><span class="line">	 if (cur in accObj) &#123;</span><br><span class="line">       accObj[cur]++</span><br><span class="line">     &#125; else &#123;</span><br><span class="line">      accObj[cur] = 1;</span><br><span class="line">	 &#125;</span><br><span class="line">	 return accObj;</span><br><span class="line">&#125;,&#123;&#125;);</span><br><span class="line">console.log(obj);</span><br></pre></td></tr></table></figure>
+<h4 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;miko&quot;,&quot;yolanda&quot;,&quot;sorry&quot;,&quot;mike&quot;,&quot;sorry&quot;,&quot;miko&quot;,&quot;love&quot;,&quot;love&quot;,&quot;yolanda&quot;,&quot;flower&quot;];</span><br><span class="line">var arr2 = arr.reduce((acc,cur) =&gt; &#123;</span><br><span class="line">	if (acc.indexOf(cur) === -1) &#123;</span><br><span class="line">       acc.push(cur);</span><br><span class="line">    &#125;</span><br><span class="line">    return acc;</span><br><span class="line">&#125;,[]);</span><br><span class="line">console.log(arr2);</span><br></pre></td></tr></table></figure>
+<h4 id="将二维数组转化成一维"><a href="#将二维数组转化成一维" class="headerlink" title="将二维数组转化成一维"></a>将二维数组转化成一维</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [[0,1],[3,4],[5,7]];</span><br><span class="line">var arr2 =  arr.reduce((newArr, cur) =&gt; &#123;</span><br><span class="line">	return newArr.concat(cur);</span><br><span class="line">&#125;,[]);</span><br><span class="line">arr2;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -375,6 +391,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/js-reduce/" rel="tag"># js reduce</a>
+          
+        </div>
+      
 
       
       
@@ -384,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/07/hexo搭建基本要点/" rel="next" title="hexo搭建基本要点">
-                <i class="fa fa-chevron-left"></i> hexo搭建基本要点
+              <a href="/2018/09/21/Object.assign() 操作对象/" rel="next" title="Object.assign()">
+                <i class="fa fa-chevron-left"></i> Object.assign()
               </a>
             
           </div>
@@ -393,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/07/ionic 长按事件/" rel="prev" title="ionic 长按事件">
-                ionic 长按事件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -441,8 +459,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -510,6 +537,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数值累加器"><span class="nav-number">1.</span> <span class="nav-text">数值累加器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#计算数组中每个元素出现的次数"><span class="nav-number">2.</span> <span class="nav-text">计算数组中每个元素出现的次数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组去重"><span class="nav-number">3.</span> <span class="nav-text">数组去重</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将二维数组转化成一维"><span class="nav-number">4.</span> <span class="nav-text">将二维数组转化成一维</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
