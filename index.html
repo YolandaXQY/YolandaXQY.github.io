@@ -469,7 +469,7 @@
                 
               
 
-              <time title="Post created: 2018-09-27 15:09:21 / Updated at: 15:28:56" itemprop="dateCreated datePublished" datetime="2018-09-27T15:09:21+08:00">2018-09-27</time>
+              <time title="Post created: 2018-09-27 15:09:21 / Updated at: 15:37:58" itemprop="dateCreated datePublished" datetime="2018-09-27T15:09:21+08:00">2018-09-27</time>
             
 
             
@@ -516,7 +516,7 @@
 <h4 id="1-contentType"><a href="#1-contentType" class="headerlink" title="1. contentType"></a>1. contentType</h4><p>正常情况下是 ： application/x-www-form-urlencoded， 这种格式的特点就是 name/value的格式。 例如： name=xuqh&amp;value=2222</p>
 <p>但是为了解决前后端复杂对象的传输，后端就定义了一个数据类型： application/json , 当指定这个格式的时候需要JSON.stringify()序列化后，后台接收的时候再用JSON.parse()转换一下就可以。</p>
 <h4 id="2-data"><a href="#2-data" class="headerlink" title="2. data"></a>2. data</h4><p>data的类型只能是 string , Object ，数组，但是在请求的时候依然是转换成String的。 就像简单的Object会转换成 name=xuqh&amp;value=2222 这种格式。</p>
-<h4 id="后台接口请求成功进error"><a href="#后台接口请求成功进error" class="headerlink" title="后台接口请求成功进error"></a>后台接口请求成功进error</h4><p>原因是: 前端设置了 dataType:”json”，但是后端返回的类型不是严格的json导致出错。</p>
+<h4 id="3-后台接口请求成功进error"><a href="#3-后台接口请求成功进error" class="headerlink" title="3. 后台接口请求成功进error"></a>3. 后台接口请求成功进error</h4><p>原因是: 前端设置了 dataType:”json”，但是后端返回的类型不是严格的json导致出错。</p>
 
           
         
