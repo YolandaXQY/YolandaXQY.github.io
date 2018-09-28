@@ -108,25 +108,24 @@
 
 
 
-  <meta name="description" content="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign 1. 用来更新对象中的某些属性 Object.assign(targetObj, sourceObj); sourceObj是用来更新targetObj的  1234567891011121314let obj">
-<meta name="keywords" content="js Object.assign()">
+  <meta name="description" content="1. 获取Url的参数   queryUrlString()123456function queryUrlString(val) &amp;#123;    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;amp;age=12    var reg = new RegExp(&amp;quot;[?&amp;amp;]&amp;quot;+val+&amp;q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Object.assign()">
-<meta property="og:url" content="http://yoursite.com/2018/09/21/Object.assign() 操作对象/index.html">
+<meta property="og:title" content="常用函数">
+<meta property="og:url" content="http://yoursite.com/2018/09/27/常用函数/index.html">
 <meta property="og:site_name" content="青檬眼豆豆">
-<meta property="og:description" content="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign 1. 用来更新对象中的某些属性 Object.assign(targetObj, sourceObj); sourceObj是用来更新targetObj的  1234567891011121314let obj">
+<meta property="og:description" content="1. 获取Url的参数   queryUrlString()123456function queryUrlString(val) &amp;#123;    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;amp;age=12    var reg = new RegExp(&amp;quot;[?&amp;amp;]&amp;quot;+val+&amp;q">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-21T06:21:31.920Z">
+<meta property="og:updated_time" content="2018-09-28T09:04:19.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Object.assign()">
-<meta name="twitter:description" content="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign 1. 用来更新对象中的某些属性 Object.assign(targetObj, sourceObj); sourceObj是用来更新targetObj的  1234567891011121314let obj">
+<meta name="twitter:title" content="常用函数">
+<meta name="twitter:description" content="1. 获取Url的参数   queryUrlString()123456function queryUrlString(val) &amp;#123;    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;amp;age=12    var reg = new RegExp(&amp;quot;[?&amp;amp;]&amp;quot;+val+&amp;q">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/21/Object.assign() 操作对象/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/27/常用函数/"/>
 
 
 
@@ -136,7 +135,7 @@
   };
 </script>
 
-  <title>Object.assign() | 青檬眼豆豆</title>
+  <title>常用函数 | 青檬眼豆豆</title>
   
 
 
@@ -281,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/Object.assign() 操作对象/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/常用函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yolanda2">
@@ -298,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Object.assign()
+          <h1 class="post-title" itemprop="name headline">常用函数
               
             
           </h1>
@@ -323,12 +322,24 @@
                 
               
 
-              <time title="Post created: 2018-09-21 13:41:53 / Updated at: 14:21:31" itemprop="dateCreated datePublished" datetime="2018-09-21T13:41:53+08:00">2018-09-21</time>
+              <time title="Post created: 2018-09-27 15:48:40" itemprop="dateCreated datePublished" datetime="2018-09-27T15:48:40+08:00">2018-09-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-09-28 17:04:19" itemprop="dateModified" datetime="2018-09-28T17:04:19+08:00">2018-09-28</time>
               
             
           </span>
@@ -361,15 +372,10 @@
       
 
       
-        <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign</a></p>
-<h4 id="1-用来更新对象中的某些属性"><a href="#1-用来更新对象中的某些属性" class="headerlink" title="1. 用来更新对象中的某些属性"></a>1. 用来更新对象中的某些属性</h4><blockquote>
-<p>Object.assign(targetObj, sourceObj); sourceObj是用来更新targetObj的</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: 2,</span><br><span class="line">    c: 5,</span><br><span class="line">    d: 6,</span><br><span class="line">&#125;;</span><br><span class="line">let obj3 = Object.assign(&#123;&#125;, obj);</span><br><span class="line">const obj2  = &#123;</span><br><span class="line">    a: 100,</span><br><span class="line">    c: 99</span><br><span class="line">&#125;</span><br><span class="line">// 合并</span><br><span class="line">Object.assign(obj3, obj2);</span><br><span class="line">console.log(obj,obj3);</span><br></pre></td></tr></table></figure>
-<h4 id="2-用来深拷贝"><a href="#2-用来深拷贝" class="headerlink" title="2. 用来深拷贝"></a>2. 用来深拷贝</h4><blockquote>
-<p>Object.assign({},obj) 的方法，第一个参数一定要为空</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;name: &apos;二月&apos;, age: &#123;c: 12&#125;&#125;</span><br><span class="line">let age = &#123;c: 88&#125;</span><br><span class="line">let o2 = Object.assign(&#123;&#125;, obj, &#123;age&#125;);</span><br><span class="line">let o3 = Object.assign(&#123;&#125;,obj);</span><br><span class="line">o3.name = &quot;四月&quot;;</span><br><span class="line">console.log(obj,o2,o3);</span><br></pre></td></tr></table></figure>
+        <h4 id="1-获取Url的参数-queryUrlString"><a href="#1-获取Url的参数-queryUrlString" class="headerlink" title="1. 获取Url的参数   queryUrlString()"></a>1. 获取Url的参数   queryUrlString()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function queryUrlString(val) &#123;</span><br><span class="line">    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;age=12</span><br><span class="line">    var reg = new RegExp(&quot;[?&amp;]&quot;+val+&quot;=([^&amp;?]*)&quot;,&quot;ig&quot;);</span><br><span class="line">    var matchArr = uri.match(reg);    // 如果没有匹配到，返回null </span><br><span class="line">    return (matchArr ? matchArr[0].substr(val.length+2) : null)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-判断是否是空对象-isEmptyObject"><a href="#2-判断是否是空对象-isEmptyObject" class="headerlink" title="2. 判断是否是空对象 isEmptyObject()"></a>2. 判断是否是空对象 isEmptyObject()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isEmptyObject(obj) &#123;</span><br><span class="line">    for (var p in obj) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125; </span><br><span class="line">    return true; // 空对象</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-判断值是否为空-isBlank"><a href="#3-判断值是否为空-isBlank" class="headerlink" title="3. 判断值是否为空 isBlank()"></a>3. 判断值是否为空 isBlank()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isBlank(val) &#123;</span><br><span class="line">    if (!val) &#123;         // 如果值是undefined,null, NaN 返回&quot;&quot;, 不过NaN有自己判断方法isNaN()</span><br><span class="line">        return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-校验数字-checkNum"><a href="#4-校验数字-checkNum" class="headerlink" title="4. 校验数字 checkNum()"></a>4. 校验数字 checkNum()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function checkNum(str) &#123;</span><br><span class="line">    var reg = /^[0-9]*$/;</span><br><span class="line">    if (reg.test(str)) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -387,12 +393,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/js-Object-assign/" rel="tag"># js Object.assign()</a>
-          
-        </div>
-      
 
       
       
@@ -402,8 +402,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/21/我遇见http请求/" rel="next" title="我遇见http请求">
-                <i class="fa fa-chevron-left"></i> 我遇见http请求
+              <a href="/2018/09/27/springBoot-写静态页面/" rel="next" title="springBoot 写静态页面">
+                <i class="fa fa-chevron-left"></i> springBoot 写静态页面
               </a>
             
           </div>
@@ -412,8 +412,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/21/reduce累加器/" rel="prev" title="reduce累加器">
-                reduce累加器 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/28/数组与字符串转换/" rel="prev" title="数组与字符串转换">
+                数组与字符串转换 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -557,7 +557,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-用来更新对象中的某些属性"><span class="nav-number">1.</span> <span class="nav-text">1. 用来更新对象中的某些属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-用来深拷贝"><span class="nav-number">2.</span> <span class="nav-text">2. 用来深拷贝</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-获取Url的参数-queryUrlString"><span class="nav-number">1.</span> <span class="nav-text">1. 获取Url的参数   queryUrlString()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-判断是否是空对象-isEmptyObject"><span class="nav-number">2.</span> <span class="nav-text">2. 判断是否是空对象 isEmptyObject()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-判断值是否为空-isBlank"><span class="nav-number">3.</span> <span class="nav-text">3. 判断值是否为空 isBlank()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-校验数字-checkNum"><span class="nav-number">4.</span> <span class="nav-text">4. 校验数字 checkNum()</span></a></li></ol></div>
             
 
           </div>

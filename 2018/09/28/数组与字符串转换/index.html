@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign 1. 用来更新对象中的某些属性 Object.assign(targetObj, sourceObj); sourceObj是用来更新targetObj的  1234567891011121314let obj">
-<meta name="keywords" content="js Object.assign()">
+  <meta name="description" content="1. split() 将字符串转换成数组，以一个标记分隔  1) 以空格分隔123var message = &amp;quot;Hello World Yolanda&amp;quot;;var arr = message.split(&amp;quot; &amp;quot;);console.log(arr);   // [&amp;quot;Hello&amp;quot;, &amp;quot;World&amp;quot;, &amp;quot;Yoland">
+<meta name="keywords" content="array string">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Object.assign()">
-<meta property="og:url" content="http://yoursite.com/2018/09/21/Object.assign() 操作对象/index.html">
+<meta property="og:title" content="数组与字符串转换">
+<meta property="og:url" content="http://yoursite.com/2018/09/28/数组与字符串转换/index.html">
 <meta property="og:site_name" content="青檬眼豆豆">
-<meta property="og:description" content="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign 1. 用来更新对象中的某些属性 Object.assign(targetObj, sourceObj); sourceObj是用来更新targetObj的  1234567891011121314let obj">
+<meta property="og:description" content="1. split() 将字符串转换成数组，以一个标记分隔  1) 以空格分隔123var message = &amp;quot;Hello World Yolanda&amp;quot;;var arr = message.split(&amp;quot; &amp;quot;);console.log(arr);   // [&amp;quot;Hello&amp;quot;, &amp;quot;World&amp;quot;, &amp;quot;Yoland">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-21T06:21:31.920Z">
+<meta property="og:updated_time" content="2018-09-28T09:08:46.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Object.assign()">
-<meta name="twitter:description" content="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign 1. 用来更新对象中的某些属性 Object.assign(targetObj, sourceObj); sourceObj是用来更新targetObj的  1234567891011121314let obj">
+<meta name="twitter:title" content="数组与字符串转换">
+<meta name="twitter:description" content="1. split() 将字符串转换成数组，以一个标记分隔  1) 以空格分隔123var message = &amp;quot;Hello World Yolanda&amp;quot;;var arr = message.split(&amp;quot; &amp;quot;);console.log(arr);   // [&amp;quot;Hello&amp;quot;, &amp;quot;World&amp;quot;, &amp;quot;Yoland">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/21/Object.assign() 操作对象/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/28/数组与字符串转换/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>Object.assign() | 青檬眼豆豆</title>
+  <title>数组与字符串转换 | 青檬眼豆豆</title>
   
 
 
@@ -281,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/Object.assign() 操作对象/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/28/数组与字符串转换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yolanda2">
@@ -298,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Object.assign()
+          <h1 class="post-title" itemprop="name headline">数组与字符串转换
               
             
           </h1>
@@ -323,7 +323,7 @@
                 
               
 
-              <time title="Post created: 2018-09-21 13:41:53 / Updated at: 14:21:31" itemprop="dateCreated datePublished" datetime="2018-09-21T13:41:53+08:00">2018-09-21</time>
+              <time title="Post created: 2018-09-28 16:06:50 / Updated at: 17:08:46" itemprop="dateCreated datePublished" datetime="2018-09-28T16:06:50+08:00">2018-09-28</time>
             
 
             
@@ -361,15 +361,17 @@
       
 
       
-        <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign</a></p>
-<h4 id="1-用来更新对象中的某些属性"><a href="#1-用来更新对象中的某些属性" class="headerlink" title="1. 用来更新对象中的某些属性"></a>1. 用来更新对象中的某些属性</h4><blockquote>
-<p>Object.assign(targetObj, sourceObj); sourceObj是用来更新targetObj的</p>
+        <h4 id="1-split"><a href="#1-split" class="headerlink" title="1. split()"></a>1. split()</h4><blockquote>
+<p>将字符串转换成数组，以一个标记分隔</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: 2,</span><br><span class="line">    c: 5,</span><br><span class="line">    d: 6,</span><br><span class="line">&#125;;</span><br><span class="line">let obj3 = Object.assign(&#123;&#125;, obj);</span><br><span class="line">const obj2  = &#123;</span><br><span class="line">    a: 100,</span><br><span class="line">    c: 99</span><br><span class="line">&#125;</span><br><span class="line">// 合并</span><br><span class="line">Object.assign(obj3, obj2);</span><br><span class="line">console.log(obj,obj3);</span><br></pre></td></tr></table></figure>
-<h4 id="2-用来深拷贝"><a href="#2-用来深拷贝" class="headerlink" title="2. 用来深拷贝"></a>2. 用来深拷贝</h4><blockquote>
-<p>Object.assign({},obj) 的方法，第一个参数一定要为空</p>
+<h6 id="1-以空格分隔"><a href="#1-以空格分隔" class="headerlink" title="1) 以空格分隔"></a>1) 以空格分隔</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var message = &quot;Hello World Yolanda&quot;;</span><br><span class="line">var arr = message.split(&quot; &quot;);</span><br><span class="line">console.log(arr);   // [&quot;Hello&quot;, &quot;World&quot;, &quot;Yolanda&quot;]</span><br></pre></td></tr></table></figure>
+<h5 id="2-以逗号-分隔"><a href="#2-以逗号-分隔" class="headerlink" title="2) 以逗号,分隔"></a>2) 以逗号,分隔</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var message = &quot;Hello,Wor,ld,Yol,landa&quot;;</span><br><span class="line">var arr = message.split(&quot;,&quot;);</span><br><span class="line">console.log(arr); //[&quot;Hello&quot;, &quot;Wor&quot;, &quot;ld&quot;, &quot;Yol&quot;, &quot;landa&quot;]</span><br></pre></td></tr></table></figure>
+<h4 id="2-join"><a href="#2-join" class="headerlink" title="2. join()"></a>2. join()</h4><blockquote>
+<p>将数组转换成字符串</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;name: &apos;二月&apos;, age: &#123;c: 12&#125;&#125;</span><br><span class="line">let age = &#123;c: 88&#125;</span><br><span class="line">let o2 = Object.assign(&#123;&#125;, obj, &#123;age&#125;);</span><br><span class="line">let o3 = Object.assign(&#123;&#125;,obj);</span><br><span class="line">o3.name = &quot;四月&quot;;</span><br><span class="line">console.log(obj,o2,o3);</span><br></pre></td></tr></table></figure>
+<h5 id="1-以-逗号-连接"><a href="#1-以-逗号-连接" class="headerlink" title="1) 以 逗号, 连接"></a>1) 以 逗号, 连接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;hi&quot;,&quot;my&quot;,&quot;name&quot;,&quot;is&quot;,&quot;landa&quot;];</span><br><span class="line">var str = arr.join(&quot;,&quot;);</span><br><span class="line">console.log(str);   // &quot;hi,my,name,is,landa&quot;</span><br></pre></td></tr></table></figure>
+<h5 id="2-以-横杠-连接"><a href="#2-以-横杠-连接" class="headerlink" title="2) 以 横杠- 连接"></a>2) 以 横杠- 连接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;hi&quot;,&quot;my&quot;,&quot;landa&quot;];</span><br><span class="line">var str = arr.join(&quot;-&quot;);</span><br><span class="line">console.log(str);   // &quot;hi-my-landa&quot;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -389,7 +391,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/js-Object-assign/" rel="tag"># js Object.assign()</a>
+            <a href="/tags/array-string/" rel="tag"># array string</a>
           
         </div>
       
@@ -402,8 +404,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/21/我遇见http请求/" rel="next" title="我遇见http请求">
-                <i class="fa fa-chevron-left"></i> 我遇见http请求
+              <a href="/2018/09/27/常用函数/" rel="next" title="常用函数">
+                <i class="fa fa-chevron-left"></i> 常用函数
               </a>
             
           </div>
@@ -411,10 +413,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/21/reduce累加器/" rel="prev" title="reduce累加器">
-                reduce累加器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -557,7 +555,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-用来更新对象中的某些属性"><span class="nav-number">1.</span> <span class="nav-text">1. 用来更新对象中的某些属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-用来深拷贝"><span class="nav-number">2.</span> <span class="nav-text">2. 用来深拷贝</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-split"><span class="nav-number">1.</span> <span class="nav-text">1. split()</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-以空格分隔"><span class="nav-number">1.0.1.</span> <span class="nav-text">1) 以空格分隔</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-以逗号-分隔"><span class="nav-number">1.1.</span> <span class="nav-text">2) 以逗号,分隔</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-join"><span class="nav-number">2.</span> <span class="nav-text">2. join()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-以-逗号-连接"><span class="nav-number">2.1.</span> <span class="nav-text">1) 以 逗号, 连接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-以-横杠-连接"><span class="nav-number">2.2.</span> <span class="nav-text">2) 以 横杠- 连接</span></a></li></ol></li></ol></div>
             
 
           </div>
