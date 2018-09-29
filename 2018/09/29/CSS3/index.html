@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="1. 获取Url的参数   queryUrlString()123456function queryUrlString(val) &amp;#123;    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;amp;age=12    var reg = new RegExp(&amp;quot;[?&amp;amp;]&amp;quot;+val+&amp;q">
+  <meta name="description" content="（一）CSS3 模块 CSS3按模块划分，分成 选择器 、 框模型 、 背景与边框 、 文本效果 、 2D/3D 转换 、动画 、多列布局 、 用户界面  （二）CSS3 边框1. border-radius 圆角https://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/https://blog.csdn.net/Ya">
 <meta property="og:type" content="article">
-<meta property="og:title" content="常用函数">
-<meta property="og:url" content="http://yoursite.com/2018/09/27/常用函数/index.html">
+<meta property="og:title" content="CSS3">
+<meta property="og:url" content="http://yoursite.com/2018/09/29/CSS3/index.html">
 <meta property="og:site_name" content="青檬眼豆豆">
-<meta property="og:description" content="1. 获取Url的参数   queryUrlString()123456function queryUrlString(val) &amp;#123;    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;amp;age=12    var reg = new RegExp(&amp;quot;[?&amp;amp;]&amp;quot;+val+&amp;q">
+<meta property="og:description" content="（一）CSS3 模块 CSS3按模块划分，分成 选择器 、 框模型 、 背景与边框 、 文本效果 、 2D/3D 转换 、动画 、多列布局 、 用户界面  （二）CSS3 边框1. border-radius 圆角https://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/https://blog.csdn.net/Ya">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-28T09:04:19.734Z">
+<meta property="og:updated_time" content="2018-09-29T07:10:47.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="常用函数">
-<meta name="twitter:description" content="1. 获取Url的参数   queryUrlString()123456function queryUrlString(val) &amp;#123;    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;amp;age=12    var reg = new RegExp(&amp;quot;[?&amp;amp;]&amp;quot;+val+&amp;q">
+<meta name="twitter:title" content="CSS3">
+<meta name="twitter:description" content="（一）CSS3 模块 CSS3按模块划分，分成 选择器 、 框模型 、 背景与边框 、 文本效果 、 2D/3D 转换 、动画 、多列布局 、 用户界面  （二）CSS3 边框1. border-radius 圆角https://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/https://blog.csdn.net/Ya">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/27/常用函数/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/29/CSS3/"/>
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>常用函数 | 青檬眼豆豆</title>
+  <title>CSS3 | 青檬眼豆豆</title>
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/常用函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/CSS3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yolanda2">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">常用函数
+          <h1 class="post-title" itemprop="name headline">CSS3
               
             
           </h1>
@@ -322,24 +322,12 @@
                 
               
 
-              <time title="Post created: 2018-09-27 15:48:40" itemprop="dateCreated datePublished" datetime="2018-09-27T15:48:40+08:00">2018-09-27</time>
+              <time title="Post created: 2018-09-29 09:16:03 / Updated at: 15:10:47" itemprop="dateCreated datePublished" datetime="2018-09-29T09:16:03+08:00">2018-09-29</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-09-28 17:04:19" itemprop="dateModified" datetime="2018-09-28T17:04:19+08:00">2018-09-28</time>
               
             
           </span>
@@ -372,10 +360,16 @@
       
 
       
-        <h4 id="1-获取Url的参数-queryUrlString"><a href="#1-获取Url的参数-queryUrlString" class="headerlink" title="1. 获取Url的参数   queryUrlString()"></a>1. 获取Url的参数   queryUrlString()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function queryUrlString(val) &#123;</span><br><span class="line">    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;age=12</span><br><span class="line">    var reg = new RegExp(&quot;[?&amp;]&quot;+val+&quot;=([^&amp;?]*)&quot;,&quot;ig&quot;);</span><br><span class="line">    var matchArr = uri.match(reg);    // 如果没有匹配到，返回null </span><br><span class="line">    return (matchArr ? matchArr[0].substr(val.length+2) : null)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-判断是否是空对象-isEmptyObject"><a href="#2-判断是否是空对象-isEmptyObject" class="headerlink" title="2. 判断是否是空对象 isEmptyObject()"></a>2. 判断是否是空对象 isEmptyObject()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isEmptyObject(obj) &#123;</span><br><span class="line">    for (var p in obj) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125; </span><br><span class="line">    return true; // 空对象</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-判断值是否为空-isBlank"><a href="#3-判断值是否为空-isBlank" class="headerlink" title="3. 判断值是否为空 isBlank()"></a>3. 判断值是否为空 isBlank()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isBlank(val) &#123;</span><br><span class="line">    if (!val) &#123;         // 如果值是undefined,null, NaN 返回&quot;&quot;, 不过NaN有自己判断方法isNaN()</span><br><span class="line">        return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="4-校验数字-checkNum"><a href="#4-校验数字-checkNum" class="headerlink" title="4. 校验数字 checkNum()"></a>4. 校验数字 checkNum()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function checkNum(str) &#123;</span><br><span class="line">    var reg = /^[0-9]*$/;</span><br><span class="line">    if (reg.test(str)) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h4 id="（一）CSS3-模块"><a href="#（一）CSS3-模块" class="headerlink" title="（一）CSS3 模块"></a>（一）CSS3 模块</h4><blockquote>
+<p>CSS3按模块划分，分成 选择器 、 框模型 、 背景与边框 、 文本效果 、 2D/3D 转换 、动画 、多列布局 、 用户界面</p>
+</blockquote>
+<h4 id="（二）CSS3-边框"><a href="#（二）CSS3-边框" class="headerlink" title="（二）CSS3 边框"></a>（二）CSS3 边框</h4><h5 id="1-border-radius-圆角"><a href="#1-border-radius-圆角" class="headerlink" title="1. border-radius 圆角"></a>1. border-radius 圆角</h5><p><a href="https://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/" target="_blank" rel="noopener">https://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/</a><br><a href="https://blog.csdn.net/YaoDeBiAn/article/details/78295725" target="_blank" rel="noopener">https://blog.csdn.net/YaoDeBiAn/article/details/78295725</a></p>
+<h6 id="border-radius的圆角计算原理：-首先遵从两个原理，一是大值特性，二是等比例特性。"><a href="#border-radius的圆角计算原理：-首先遵从两个原理，一是大值特性，二是等比例特性。" class="headerlink" title="border-radius的圆角计算原理： 首先遵从两个原理，一是大值特性，二是等比例特性。"></a>border-radius的圆角计算原理： 首先遵从两个原理，一是大值特性，二是等比例特性。</h6><p>1) 大值特性: 如果border-radius设置的值很大的适合，只会采用能够渲染圆角的大小渲染。<br>比如说，width:300px;height:200px;设置成border-radius:250px;只会按照&lt;200px去渲染，因为如果太大了就没法渲染了。<br>2) 等比例特性<br>border-radius: 300px/200px;需要遵从水平/垂直= 3:2进行渲染。</p>
+<p>####### border-radius的写法:<br>1) border-radius: 200px 10px 0 30px/200px 10px 0 30px; 这是原始的最复杂的写法，即： 水平方向/垂直方向，依次是左上，右上，右下，左下；<br>2) border-top-left-radius: 300px 100px;<br>   border-top-right-radius: 300px 100px;<br>   border-bottom-right-radius: 300px 100px;<br>   border-bottom-left-radius: 300px 100px;<br>3) border-radius: 300px;<br>4) border-radius: 50%; </p>
+<h5 id="2-box-shadow"><a href="#2-box-shadow" class="headerlink" title="2. box-shadow"></a>2. box-shadow</h5><p>1) box-shadow: h-shadow v-shadow blur spread inset/outset;  参数分别是: 水平距离/垂直距离/模糊距离/阴影尺寸/内部或者外部阴影</p>
+<p>2) 实现四周阴影: box-shadow: 0 0 15px 4px #999; 需要将h-shadow,v-shadow 设置为 0</p>
+<p>3) 只有底部阴影的: box-shadow: 0 7px 0 #999; 但是不能设模糊距离<br>   只有顶部阴影: box-shadow: 0 10px #999 inset;<br>   只有左部阴影:  box-shadow: 10px 0 #999 inset;<br>   只有右部阴影: box-shadow: 10px 0 0 #999;</p>
+<h5 id="3-border-image"><a href="#3-border-image" class="headerlink" title="3. border-image"></a>3. border-image</h5>
       
     </div>
 
@@ -402,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/27/springBoot-写静态页面/" rel="next" title="springBoot 写静态页面">
-                <i class="fa fa-chevron-left"></i> springBoot 写静态页面
+              <a href="/2018/09/28/数组与字符串转换/" rel="next" title="数组与字符串转换">
+                <i class="fa fa-chevron-left"></i> 数组与字符串转换
               </a>
             
           </div>
@@ -411,10 +405,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/28/数组与字符串转换/" rel="prev" title="数组与字符串转换">
-                数组与字符串转换 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -557,7 +547,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-获取Url的参数-queryUrlString"><span class="nav-number">1.</span> <span class="nav-text">1. 获取Url的参数   queryUrlString()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-判断是否是空对象-isEmptyObject"><span class="nav-number">2.</span> <span class="nav-text">2. 判断是否是空对象 isEmptyObject()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-判断值是否为空-isBlank"><span class="nav-number">3.</span> <span class="nav-text">3. 判断值是否为空 isBlank()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-校验数字-checkNum"><span class="nav-number">4.</span> <span class="nav-text">4. 校验数字 checkNum()</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#（一）CSS3-模块"><span class="nav-number">1.</span> <span class="nav-text">（一）CSS3 模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（二）CSS3-边框"><span class="nav-number">2.</span> <span class="nav-text">（二）CSS3 边框</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-border-radius-圆角"><span class="nav-number">2.1.</span> <span class="nav-text">1. border-radius 圆角</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#border-radius的圆角计算原理：-首先遵从两个原理，一是大值特性，二是等比例特性。"><span class="nav-number">2.1.1.</span> <span class="nav-text">border-radius的圆角计算原理： 首先遵从两个原理，一是大值特性，二是等比例特性。</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-box-shadow"><span class="nav-number">2.2.</span> <span class="nav-text">2. box-shadow</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-border-image"><span class="nav-number">2.3.</span> <span class="nav-text">3. border-image</span></a></li></ol></li></ol></div>
             
 
           </div>
