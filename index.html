@@ -277,6 +277,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/angular-electron开发桌面应用程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/30/angular-electron开发桌面应用程序/" itemprop="url">
+                  angular electron开发桌面应用程序
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-09-30 15:33:04 / Updated at: 17:23:15" itemprop="dateCreated datePublished" datetime="2018-09-30T15:33:04+08:00">2018-09-30</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="一-开发桌面应用程序框架选型"><a href="#一-开发桌面应用程序框架选型" class="headerlink" title="(一) 开发桌面应用程序框架选型"></a>(一) 开发桌面应用程序框架选型</h4><p>由于本人只会html,css,js,部门就我一个写web的，然后就想要寻找一种框架，能够使用html,css,javascript等技术快速搭建一个原生的应用。<br>经过搜寻，下面几种框架都是可以跨应用的。</p>
+<ol>
+<li>ioinc: 基于HTML5开发的移动端APP的原生应用开发框架。<a href="https://ionicframework.com/" target="_blank" rel="noopener">https://ionicframework.com/</a></li>
+<li>hex: 网易开发的一个桌面应用程序，其产品主要应用于有道词典。<a href="http://hex.youdao.com/zh-cn/tutorial/index.html" target="_blank" rel="noopener">http://hex.youdao.com/zh-cn/tutorial/index.html</a> (好像已经不再更新了)</li>
+<li>NW(node webkit): 与hex实现原理差不多，但是NW是在hex之前出现的，也就算鼻祖。都是利用HTML + javascript开发的桌面应用程序，主要是实现方式就是在应用的配置文件中配置入口。</li>
+<li>electron: <a href="https://electronjs.org/docs" target="_blank" rel="noopener">https://electronjs.org/docs</a> 这个应用的作者与NW是同一个人，electron是在NW之后，与NW明显不同的地方是，它的入口是一个脚本，通过手动创建窗口的方式，集成了node, 更符如今的开发方式。</li>
+</ol>
+<p>综上所述，我们采用了electron的框架。</p>
+<p>参考链接:<br><a href="https://electronjs.org/docs/development/atom-shell-vs-node-webkit" target="_blank" rel="noopener">https://electronjs.org/docs/development/atom-shell-vs-node-webkit</a><br><a href="https://segmentfault.com/a/1190000008427041" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008427041</a><br><a href="https://segmentfault.com/a/1190000008205112" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008205112</a></p>
+<h4 id="二-开发前提"><a href="#二-开发前提" class="headerlink" title="(二) 开发前提"></a>(二) 开发前提</h4><p>需要安装node, npm , angular-cli</p>
+<h4 id="三-创建一个angular框架"><a href="#三-创建一个angular框架" class="headerlink" title="(三) 创建一个angular框架"></a>(三) 创建一个angular框架</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ng new angular-electron-demo</span><br><span class="line">$ npm install</span><br><span class="line">$ ng serve</span><br></pre></td></tr></table></figure>
+<h4 id="四-更新index-html-为electron做准备"><a href="#四-更新index-html-为electron做准备" class="headerlink" title="(四) 更新index.html,为electron做准备"></a>(四) 更新index.html,为electron做准备</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;base href=&quot;./&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="五-加入electron模块"><a href="#五-加入electron模块" class="headerlink" title="(五) 加入electron模块"></a>(五) 加入electron模块</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install electron --save-dev</span><br></pre></td></tr></table></figure>
+<h4 id="六-根目录增加index-js"><a href="#六-根目录增加index-js" class="headerlink" title="(六) 根目录增加index.js"></a>(六) 根目录增加index.js</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">const &#123; app, BrowserWindow &#125; = require(&quot;electron&quot;);</span><br><span class="line">const path = require(&quot;path&quot;);</span><br><span class="line">const url = require(&quot;url&quot;);</span><br><span class="line"></span><br><span class="line">let win;</span><br><span class="line"></span><br><span class="line">function createWindow() &#123;</span><br><span class="line">  win = new BrowserWindow(&#123; width: 800, height: 600&#125;);</span><br><span class="line"></span><br><span class="line">  // load the dist folder from Angular</span><br><span class="line">  win.loadURL(</span><br><span class="line">    url.format(&#123;</span><br><span class="line">      pathname: path.join(__dirname, `/dist/index.html`),</span><br><span class="line">      protocol: &quot;file:&quot;,</span><br><span class="line">      slashes: true</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  win.webContents.openDevTools();</span><br><span class="line"></span><br><span class="line">  // The following is optional and will open the DevTools:</span><br><span class="line">  // win.webContents.openDevTools()</span><br><span class="line"></span><br><span class="line">  win.on(&quot;closed&quot;, () =&gt; &#123;</span><br><span class="line">    win = null;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">app.on(&quot;ready&quot;, createWindow);</span><br><span class="line"></span><br><span class="line">// on macOS, closing the window doesn&apos;t quit the app</span><br><span class="line">app.on(&quot;window-all-closed&quot;, () =&gt; &#123;</span><br><span class="line">  if (process.platform !== &quot;darwin&quot;) &#123;</span><br><span class="line">    app.quit();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// initialize the app&apos;s main window</span><br><span class="line">app.on(&quot;activate&quot;, () =&gt; &#123;</span><br><span class="line">  if (win === null) &#123;</span><br><span class="line">    createWindow();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="七-修改package-json"><a href="#七-修改package-json" class="headerlink" title="(七) 修改package.json"></a>(七) 修改package.json</h4><p>主要是添加 “main”: “index.js” , 还有一个就是增加脚本命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;angular-electron-demo&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;ng&quot;: &quot;ng&quot;,</span><br><span class="line">    &quot;start&quot;: &quot;ng serve&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;ng build&quot;,</span><br><span class="line">    &quot;test&quot;: &quot;ng test&quot;,</span><br><span class="line">    &quot;lint&quot;: &quot;ng lint&quot;,</span><br><span class="line">    &quot;e2e&quot;: &quot;ng e2e&quot;,</span><br><span class="line">    &quot;electron&quot;: &quot;electron .&quot;,</span><br><span class="line">    &quot;electron-build&quot;: &quot;ng build --prod &amp;&amp; electron .&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;@angular/animations&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/common&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/compiler&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/core&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/forms&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/http&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/platform-browser&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/platform-browser-dynamic&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/router&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;core-js&quot;: &quot;^2.5.4&quot;,</span><br><span class="line">    &quot;rxjs&quot;: &quot;^6.0.0&quot;,</span><br><span class="line">    &quot;zone.js&quot;: &quot;^0.8.26&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;@angular-devkit/build-angular&quot;: &quot;~0.6.8&quot;,</span><br><span class="line">    &quot;@angular/cli&quot;: &quot;~6.0.8&quot;,</span><br><span class="line">    &quot;@angular/compiler-cli&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/language-service&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@types/jasmine&quot;: &quot;~2.8.6&quot;,</span><br><span class="line">    &quot;@types/jasminewd2&quot;: &quot;~2.0.3&quot;,</span><br><span class="line">    &quot;@types/node&quot;: &quot;~8.9.4&quot;,</span><br><span class="line">    &quot;codelyzer&quot;: &quot;~4.2.1&quot;,</span><br><span class="line">    &quot;electron&quot;: &quot;^3.0.2&quot;,</span><br><span class="line">    &quot;jasmine-core&quot;: &quot;~2.99.1&quot;,</span><br><span class="line">    &quot;jasmine-spec-reporter&quot;: &quot;~4.2.1&quot;,</span><br><span class="line">    &quot;karma&quot;: &quot;~1.7.1&quot;,</span><br><span class="line">    &quot;karma-chrome-launcher&quot;: &quot;~2.2.0&quot;,</span><br><span class="line">    &quot;karma-coverage-istanbul-reporter&quot;: &quot;~2.0.0&quot;,</span><br><span class="line">    &quot;karma-jasmine&quot;: &quot;~1.1.1&quot;,</span><br><span class="line">    &quot;karma-jasmine-html-reporter&quot;: &quot;^0.2.2&quot;,</span><br><span class="line">    &quot;protractor&quot;: &quot;~5.3.0&quot;,</span><br><span class="line">    &quot;ts-node&quot;: &quot;~5.0.1&quot;,</span><br><span class="line">    &quot;tslint&quot;: &quot;~5.9.1&quot;,</span><br><span class="line">    &quot;typescript&quot;: &quot;~2.7.2&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="八-启动"><a href="#八-启动" class="headerlink" title="(八) 启动"></a>(八) 启动</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run electron-build</span><br></pre></td></tr></table></figure>
+<p>参考链接:<br><a href="https://alligator.io/angular/electron/" target="_blank" rel="noopener">https://alligator.io/angular/electron/</a><br><a href="https://angularfirebase.com/lessons/desktop-apps-with-electron-and-angular/" target="_blank" rel="noopener">https://angularfirebase.com/lessons/desktop-apps-with-electron-and-angular/</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/CSS3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1646,149 +1802,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/我遇见http请求/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/21/我遇见http请求/" itemprop="url">
-                  我遇见http请求
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-21 11:35:10 / Updated at: 14:09:56" itemprop="dateCreated datePublished" datetime="2018-09-21T11:35:10+08:00">2018-09-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-数据库long类型的，JS-解析精度损耗"><a href="#1-数据库long类型的，JS-解析精度损耗" class="headerlink" title="1. 数据库long类型的，JS 解析精度损耗"></a>1. 数据库long类型的，JS 解析精度损耗</h4><blockquote>
-<p>JS对number类型的只能精确到18位，解决方案只能是后端转成string给前端</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 1034990866281926656;</span><br><span class="line">console.log(a);     // 1034990866281926700</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1836,7 +1849,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
@@ -1873,7 +1886,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">Tags</span>
                   
                 </div>
