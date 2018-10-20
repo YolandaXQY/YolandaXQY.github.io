@@ -108,21 +108,25 @@
 
 
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="h5 FileReader">
-<meta property="og:url" content="http://yoursite.com/2018/09/07/h5-FileReader/index.html">
+  <meta name="description" content="// https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer12345678910111213141516171819// 将arrayBUffer 转换成Bufferpublic toBuffer(ab) &amp;#123;  const buffer =">
+<meta name="keywords" content="buffer arrayBuffer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Buffer ArrayBuffer 相互转换">
+<meta property="og:url" content="http://yoursite.com/2018/10/20/Buffer-ArrayBuffer/index.html">
 <meta property="og:site_name" content="青檬眼豆豆">
+<meta property="og:description" content="// https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer12345678910111213141516171819// 将arrayBUffer 转换成Bufferpublic toBuffer(ab) &amp;#123;  const buffer =">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-07T07:32:53.252Z">
+<meta property="og:updated_time" content="2018-10-20T04:32:19.132Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="h5 FileReader">
+<meta name="twitter:title" content="Buffer ArrayBuffer 相互转换">
+<meta name="twitter:description" content="// https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer12345678910111213141516171819// 将arrayBUffer 转换成Bufferpublic toBuffer(ab) &amp;#123;  const buffer =">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/07/h5-FileReader/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/20/Buffer-ArrayBuffer/"/>
 
 
 
@@ -132,7 +136,7 @@
   };
 </script>
 
-  <title>h5 FileReader | 青檬眼豆豆</title>
+  <title>Buffer ArrayBuffer 相互转换 | 青檬眼豆豆</title>
   
 
 
@@ -277,7 +281,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/07/h5-FileReader/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/Buffer-ArrayBuffer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yolanda2">
@@ -294,7 +298,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">h5 FileReader
+          <h1 class="post-title" itemprop="name headline">Buffer ArrayBuffer 相互转换
               
             
           </h1>
@@ -319,7 +323,7 @@
                 
               
 
-              <time title="Post created: 2018-09-07 14:12:33 / Updated at: 15:32:53" itemprop="dateCreated datePublished" datetime="2018-09-07T14:12:33+08:00">2018-09-07</time>
+              <time title="Post created: 2018-10-20 12:31:24 / Updated at: 12:32:19" itemprop="dateCreated datePublished" datetime="2018-10-20T12:31:24+08:00">2018-10-20</time>
             
 
             
@@ -357,7 +361,8 @@
       
 
       
-        
+        <p>// <a href="https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer" target="_blank" rel="noopener">https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 将arrayBUffer 转换成Buffer</span><br><span class="line">public toBuffer(ab) &#123;</span><br><span class="line">  const buffer = new Buffer(ab.byteLength);</span><br><span class="line">  const view = new Uint8Array(ab);</span><br><span class="line">  for (let i = 0; i &lt; buffer.length; ++i) &#123;</span><br><span class="line">      buffer[i] = view[i];</span><br><span class="line">  &#125;</span><br><span class="line">  return buffer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 将Buffer转换成ArrayBuffer</span><br><span class="line">public toArrayBuffer(buf) &#123;</span><br><span class="line">  const ab = new ArrayBuffer(buf.length);</span><br><span class="line">  const view = new Uint8Array(ab);</span><br><span class="line">  for (let i = 0; i &lt; buf.length; ++i) &#123;</span><br><span class="line">      view[i] = buf[i];</span><br><span class="line">  &#125;</span><br><span class="line">  return ab;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -375,6 +380,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/buffer-arrayBuffer/" rel="tag"># buffer arrayBuffer</a>
+          
+        </div>
+      
 
       
       
@@ -384,8 +395,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/07/hexo搭建基本要点/" rel="next" title="hexo搭建基本要点">
-                <i class="fa fa-chevron-left"></i> hexo搭建基本要点
+              <a href="/2018/10/20/node-下载文件/" rel="next" title="node 下载文件">
+                <i class="fa fa-chevron-left"></i> node 下载文件
               </a>
             
           </div>
@@ -393,10 +404,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/07/ionic 长按事件/" rel="prev" title="ionic 长按事件">
-                ionic 长按事件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
