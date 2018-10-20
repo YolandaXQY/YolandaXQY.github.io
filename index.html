@@ -277,6 +277,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/electron-打包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/20/electron-打包/" itemprop="url">
+                  electron-builder 打包
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-10-20 10:58:32 / Updated at: 12:12:07" itemprop="dateCreated datePublished" datetime="2018-10-20T10:58:32+08:00">2018-10-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>electron 官网提及了4种打包方式，electron-packager, electron-forge, electron-builder,以及官网介绍的asar。<br>其实在使用electron-builder之后，其实都是一个原理，都是使用asar生成档案文件。</p>
+</blockquote>
+<p>官网：<a href="https://electronjs.org/docs/tutorial/application-packaging" target="_blank" rel="noopener">https://electronjs.org/docs/tutorial/application-packaging</a><br>electron-packager: <a href="https://github.com/electron-userland/electron-packager" target="_blank" rel="noopener">https://github.com/electron-userland/electron-packager</a><br>electron-forge: <a href="https://github.com/electron-userland/electron-forge" target="_blank" rel="noopener">https://github.com/electron-userland/electron-forge</a><br>electron-builder: <a href="https://github.com/electron-userland/electron-builder" target="_blank" rel="noopener">https://github.com/electron-userland/electron-builder</a></p>
+<p>本文主要介绍electron-builder:</p>
+<h4 id="安装electron-builder"><a href="#安装electron-builder" class="headerlink" title="安装electron-builder"></a>安装electron-builder</h4><p>官网推荐使用yarn,而不是npm；<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add electron-builder --dev</span><br></pre></td></tr></table></figure></p>
+<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><p>官方配置文件字段说明: <a href="https://www.electron.build/configuration/configuration" target="_blank" rel="noopener">https://www.electron.build/configuration/configuration</a><br>有两种方式：</p>
+<ol>
+<li>在package.json 中添加 “build”字段，里面添加属性；</li>
+<li>使用配置文件的方式 ，electron-builder默认会读取electron-builder.json(与package.json同在一级目录)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;appId&quot;: &quot;com.electron.coa&quot;,</span><br><span class="line">  &quot;productName&quot;: &quot;COA&quot;,</span><br><span class="line">  &quot;directories&quot;: &#123;</span><br><span class="line">    &quot;output&quot;: &quot;release/&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;files&quot;: [</span><br><span class="line">        &quot;**/*&quot;,</span><br><span class="line">        &quot;!*.ts&quot;,</span><br><span class="line">        &quot;!*.code-workspace&quot;,</span><br><span class="line">        &quot;!LICENSE.md&quot;,</span><br><span class="line">        &quot;!package.json&quot;,</span><br><span class="line">        &quot;!package-lock.json&quot;,</span><br><span class="line">        &quot;!src/&quot;,</span><br><span class="line">        &quot;!e2e/&quot;,</span><br><span class="line">        &quot;!hooks/&quot;,</span><br><span class="line">        &quot;!.angular-cli.json&quot;,</span><br><span class="line">        &quot;!_config.yml&quot;,</span><br><span class="line">        &quot;!karma.conf.js&quot;,</span><br><span class="line">        &quot;!tsconfig.json&quot;,</span><br><span class="line">        &quot;!tslint.json&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;win&quot;: &#123;</span><br><span class="line">    &quot;icon&quot;: &quot;dist&quot;,</span><br><span class="line">    &quot;target&quot;: [</span><br><span class="line">      &quot;portable&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;mac&quot;: &#123;</span><br><span class="line">    &quot;icon&quot;: &quot;dist&quot;,</span><br><span class="line">    &quot;target&quot;: [</span><br><span class="line">      &quot;dmg&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;linux&quot;: &#123;</span><br><span class="line">    &quot;icon&quot;: &quot;dist&quot;,</span><br><span class="line">    &quot;target&quot;: [</span><br><span class="line">      &quot;AppImage&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>具体参数可参照:<br><a href="https://docs.npmjs.com/getting-started/using-a-package.json" target="_blank" rel="noopener">https://docs.npmjs.com/getting-started/using-a-package.json</a><br><a href="https://docs.npmjs.com/cli/build" target="_blank" rel="noopener">https://docs.npmjs.com/cli/build</a><br><a href="https://www.electron.build/configuration/configuration" target="_blank" rel="noopener">https://www.electron.build/configuration/configuration</a></p>
+<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;COA&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;electron angular and ng-zorro-antd&quot;,</span><br><span class="line">  &quot;author&quot;: &#123;</span><br><span class="line">    &quot;name&quot;: &quot;xuqy&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;keywords&quot;: [</span><br><span class="line">    &quot;angular&quot;,</span><br><span class="line">    &quot;angular 6&quot;,</span><br><span class="line">    &quot;electron&quot;,</span><br><span class="line">    &quot;typescript&quot;,</span><br><span class="line">    &quot;sass&quot;,</span><br><span class="line">    &quot;ng-zorro-antd&quot;,</span><br><span class="line">    &quot;node&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;main&quot;: &quot;main.js&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;postinstall&quot;: &quot;npm run postinstall:electron &amp;&amp; npx electron-builder install-app-deps&quot;,</span><br><span class="line">    &quot;postinstall:web&quot;: &quot;node postinstall-web&quot;,</span><br><span class="line">    &quot;postinstall:electron&quot;: &quot;node postinstall&quot;,</span><br><span class="line">    &quot;ng&quot;: &quot;ng&quot;,</span><br><span class="line">    &quot;start&quot;: &quot;npm run postinstall:electron &amp;&amp; npm-run-all -p ng:serve electron:serve&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;npm run postinstall:electron &amp;&amp; npm run electron:serve-tsc &amp;&amp; ng build&quot;,</span><br><span class="line">    &quot;build:dev&quot;: &quot;npm run build -- -c dev&quot;,</span><br><span class="line">    &quot;build:prod&quot;: &quot;npm run build -- -c production&quot;,</span><br><span class="line">    &quot;ng:serve&quot;: &quot;ng serve&quot;,</span><br><span class="line">    &quot;ng:serve:web&quot;: &quot;npm run postinstall:web &amp;&amp; ng serve -o&quot;,</span><br><span class="line">    &quot;electron:serve-tsc&quot;: &quot;tsc -p tsconfig-serve.json&quot;,</span><br><span class="line">    &quot;electron:serve&quot;: &quot;wait-on http-get://localhost:4200/ &amp;&amp; npm run electron:serve-tsc &amp;&amp; electron . --serve&quot;,</span><br><span class="line">    &quot;electron:local&quot;: &quot;npm run build:prod &amp;&amp; electron .&quot;,</span><br><span class="line">    &quot;electron:linux&quot;: &quot;npm run build:prod &amp;&amp; npx electron-builder build --linux&quot;,</span><br><span class="line">    &quot;electron:windows&quot;: &quot;npm run build:prod &amp;&amp; npx electron-builder build --windows&quot;,</span><br><span class="line">    &quot;electron:mac&quot;: &quot;npm run build:prod &amp;&amp; npx electron-builder build --mac&quot;,</span><br><span class="line">    &quot;test&quot;: &quot;npm run postinstall:web &amp;&amp; ng test&quot;,</span><br><span class="line">    &quot;e2e&quot;: &quot;npm run postinstall:web &amp;&amp; ng e2e&quot;,</span><br><span class="line">    &quot;pack&quot;: &quot;electron-builder --dir&quot;,</span><br><span class="line">    &quot;dist&quot;: &quot;electron-builder&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;@angular/animations&quot;: &quot;^6.1.10&quot;,</span><br><span class="line">    &quot;ng-zorro-antd&quot;: &quot;^1.6.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;@angular-devkit/build-angular&quot;: &quot;0.6.3&quot;,</span><br><span class="line">    &quot;@angular/cli&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/common&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/compiler&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/compiler-cli&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/core&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/forms&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/http&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/language-service&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/platform-browser&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/platform-browser-dynamic&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/router&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@ngx-translate/core&quot;: &quot;10.0.1&quot;,</span><br><span class="line">    &quot;@ngx-translate/http-loader&quot;: &quot;3.0.1&quot;,</span><br><span class="line">    &quot;@types/jasmine&quot;: &quot;2.8.7&quot;,</span><br><span class="line">    &quot;@types/jasminewd2&quot;: &quot;2.0.3&quot;,</span><br><span class="line">    &quot;@types/node&quot;: &quot;8.9.4&quot;,</span><br><span class="line">    &quot;codelyzer&quot;: &quot;4.2.1&quot;,</span><br><span class="line">    &quot;core-js&quot;: &quot;2.5.6&quot;,</span><br><span class="line">    &quot;electron&quot;: &quot;2.0.7&quot;,</span><br><span class="line">    &quot;electron-builder&quot;: &quot;^20.28.4&quot;,</span><br><span class="line">    &quot;electron-reload&quot;: &quot;1.2.2&quot;,</span><br><span class="line">    &quot;jasmine-core&quot;: &quot;3.1.0&quot;,</span><br><span class="line">    &quot;jasmine-spec-reporter&quot;: &quot;4.2.1&quot;,</span><br><span class="line">    &quot;karma&quot;: &quot;2.0.2&quot;,</span><br><span class="line">    &quot;karma-chrome-launcher&quot;: &quot;2.2.0&quot;,</span><br><span class="line">    &quot;karma-coverage-istanbul-reporter&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;karma-jasmine&quot;: &quot;1.1.2&quot;,</span><br><span class="line">    &quot;karma-jasmine-html-reporter&quot;: &quot;1.1.0&quot;,</span><br><span class="line">    &quot;npm-run-all&quot;: &quot;4.1.3&quot;,</span><br><span class="line">    &quot;npx&quot;: &quot;10.2.0&quot;,</span><br><span class="line">    &quot;protractor&quot;: &quot;5.3.2&quot;,</span><br><span class="line">    &quot;rxjs&quot;: &quot;6.2.2&quot;,</span><br><span class="line">    &quot;ts-node&quot;: &quot;6.0.3&quot;,</span><br><span class="line">    &quot;tslint&quot;: &quot;5.10.0&quot;,</span><br><span class="line">    &quot;typescript&quot;: &quot;2.7.2&quot;,</span><br><span class="line">    &quot;wait-on&quot;: &quot;2.1.0&quot;,</span><br><span class="line">    &quot;webdriver-manager&quot;: &quot;12.0.6&quot;,</span><br><span class="line">    &quot;zone.js&quot;: &quot;0.8.26&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn dist</span><br></pre></td></tr></table></figure>
+<p>在此过程会报一个错，如下图，下图其实在尝试下载<a href="https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.3.1/winCodeSign-2.3.1.7z这个包的时候出错了，它访问了亚马逊的服务器，之前我已经在windows的C:\Windows\System32\drivers\etc\host文件中加入`52.216.16.16" target="_blank" rel="noopener">https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.3.1/winCodeSign-2.3.1.7z这个包的时候出错了，它访问了亚马逊的服务器，之前我已经在windows的C:\Windows\System32\drivers\etc\host文件中加入`52.216.16.16</a> github-production-release-asset-2e65be.s3.amazonaws.com`,我也能ping通，但是还想超时，只能自己从服务器下载，放入path=C:\Users\WSX\AppData\Local\electron-builder\Cache\winCodeSign\winCodeSign-2.3.1 这个路径下面，之后遇到的问题都是类似的，同样的解决</p>
+<p>最后发现你需要手动下载 </p>
+<ol>
+<li>winCodeSign-2.3.1</li>
+<li>nsis-resources-3.3.0</li>
+<li>nsis-3.0.3.2<br>最后发现以上的包都在: <a href="https://github.com/electron-userland/electron-builder-binaries/releases" target="_blank" rel="noopener">https://github.com/electron-userland/electron-builder-binaries/releases</a> 这个里面。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">• downloading  path=C:\Users\WSX\AppData\Local\electron-builder\Cache\winCodeSign\winCodeSign-2.3.1 url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.3.1/winCodeSign-2.3.1.7z</span><br><span class="line">  ⨯ Get https://github-production-release-asset-2e65be.s3.amazonaws.com/65527128/f7f78e6a-9fa6-11e8-8337-2e3e9d988d46?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20181019%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20181019T120008Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=80c096c1a4b7a900c73df64f020eee830faacbfe558b9af02b4563a556466e49&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;response-content-disposition=attachment%3B%20filename%3DwinCodeSign-2.3.1.7z&amp;response-content-type=application%2Foctet-stream: dial tcp 52.216.16.16:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.</span><br><span class="line">github.com/develar/app-builder/pkg/download.(*Downloader).follow.func1</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/pkg/download/downloader.go:167</span><br><span class="line">github.com/develar/app-builder/pkg/download.(*Downloader).follow</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/pkg/download/downloader.go:200</span><br><span class="line">github.com/develar/app-builder/pkg/download.(*Downloader).Download</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/pkg/download/downloader.go:75</span><br><span class="line">github.com/develar/app-builder/pkg/download.DownloadArtifact</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/pkg/download/artifactDownloader.go:139</span><br><span class="line">github.com/develar/app-builder/pkg/download.ConfigureArtifactCommand.func1</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/pkg/download/artifactDownloader.go:50</span><br><span class="line">github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin.(*actionMixin).applyActions</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin/actions.go:28</span><br><span class="line">github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin.(*Application).applyActions</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin/app.go:557</span><br><span class="line">github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin.(*Application).execute</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin/app.go:390</span><br><span class="line">github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin.(*Application).Parse</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin/app.go:222</span><br><span class="line">main.main</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/main.go:74</span><br><span class="line">runtime.main</span><br><span class="line">        /usr/<span class="built_in">local</span>/Cellar/go/1.10.3/libexec/src/runtime/proc.go:198</span><br><span class="line">runtime.goexit</span><br><span class="line">        /usr/<span class="built_in">local</span>/Cellar/go/1.10.3/libexec/src/runtime/asm_amd64.s:2361</span><br><span class="line"></span><br><span class="line">Error: D:\MyWorkSpace\<span class="built_in">test</span>\COA\node_modules\app-builder-bin\win\x64\app-builder.exe exited with code 1</span><br><span class="line">    at ChildProcess.childProcess.once.code (D:\MyWorkSpace\<span class="built_in">test</span>\COA\node_modules\builder-util\src\util.ts:254:14)</span><br><span class="line">    at Object.onceWrapper (events.js:317:30)</span><br><span class="line">    at emitTwo (events.js:126:13)</span><br><span class="line">    at ChildProcess.emit (events.js:214:7)</span><br><span class="line">    at maybeClose (internal/child_process.js:925:16)</span><br><span class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="END"><a href="#END" class="headerlink" title="END"></a>END</h4><p>经过以上步骤正常情况下是可以打包成功，如果未能打包成功，可以尝试将node_modules全部移除，然后用 <code>yarn install</code>重新安装，再重新<code>yarn dist</code>.<br>最后，你用<code>yarn</code>命令之后依然可以使用npm。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/angular-electron开发桌面应用程序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -323,12 +486,24 @@
                 
               
 
-              <time title="Post created: 2018-09-30 15:33:04 / Updated at: 17:32:57" itemprop="dateCreated datePublished" datetime="2018-09-30T15:33:04+08:00">2018-09-30</time>
+              <time title="Post created: 2018-09-30 15:33:04" itemprop="dateCreated datePublished" datetime="2018-09-30T15:33:04+08:00">2018-09-30</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-10-20 10:57:27" itemprop="dateModified" datetime="2018-10-20T10:57:27+08:00">2018-10-20</time>
               
             
           </span>
@@ -1656,153 +1831,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/Object.assign() 操作对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/21/Object.assign() 操作对象/" itemprop="url">
-                  Object.assign()
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-21 13:41:53 / Updated at: 14:21:31" itemprop="dateCreated datePublished" datetime="2018-09-21T13:41:53+08:00">2018-09-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign</a></p>
-<h4 id="1-用来更新对象中的某些属性"><a href="#1-用来更新对象中的某些属性" class="headerlink" title="1. 用来更新对象中的某些属性"></a>1. 用来更新对象中的某些属性</h4><blockquote>
-<p>Object.assign(targetObj, sourceObj); sourceObj是用来更新targetObj的</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: 2,</span><br><span class="line">    c: 5,</span><br><span class="line">    d: 6,</span><br><span class="line">&#125;;</span><br><span class="line">let obj3 = Object.assign(&#123;&#125;, obj);</span><br><span class="line">const obj2  = &#123;</span><br><span class="line">    a: 100,</span><br><span class="line">    c: 99</span><br><span class="line">&#125;</span><br><span class="line">// 合并</span><br><span class="line">Object.assign(obj3, obj2);</span><br><span class="line">console.log(obj,obj3);</span><br></pre></td></tr></table></figure>
-<h4 id="2-用来深拷贝"><a href="#2-用来深拷贝" class="headerlink" title="2. 用来深拷贝"></a>2. 用来深拷贝</h4><blockquote>
-<p>Object.assign({},obj) 的方法，第一个参数一定要为空</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;name: &apos;二月&apos;, age: &#123;c: 12&#125;&#125;</span><br><span class="line">let age = &#123;c: 88&#125;</span><br><span class="line">let o2 = Object.assign(&#123;&#125;, obj, &#123;age&#125;);</span><br><span class="line">let o3 = Object.assign(&#123;&#125;,obj);</span><br><span class="line">o3.name = &quot;四月&quot;;</span><br><span class="line">console.log(obj,o2,o3);</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1850,7 +1878,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
@@ -1889,7 +1917,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">Tags</span>
                   
                 </div>
