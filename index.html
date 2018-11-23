@@ -277,6 +277,310 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/http请求/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/23/http请求/" itemprop="url">
+                  http请求
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-11-23 17:02:00 / Updated at: 17:04:32" itemprop="dateCreated datePublished" datetime="2018-11-23T17:02:00+08:00">2018-11-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-数据库long类型的，JS-解析精度损耗"><a href="#1-数据库long类型的，JS-解析精度损耗" class="headerlink" title="1. 数据库long类型的，JS 解析精度损耗"></a>1. 数据库long类型的，JS 解析精度损耗</h4><blockquote>
+<p>JS对number类型的只能精确到17位，解决方案只能是后端转成string给前端</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 1034990866281926656;</span><br><span class="line">console.log(a);     // 1034990866281926700</span><br></pre></td></tr></table></figure>
+<h4 id="2-http-请求成功，angular订阅之后进error"><a href="#2-http-请求成功，angular订阅之后进error" class="headerlink" title="2. http 请求成功，angular订阅之后进error"></a>2. http 请求成功，angular订阅之后进error</h4><blockquote>
+<p>场景: angular 在调用下载文件的接口, 接口返回的数据类型是·二进制流·, 一开始非常惆怅为什么接口调用成功但是却在success的回调函数中没有任何体现，我怕是请求问题，去看了请求，我打印出来,返回的值是Observable对象，是可订阅的，后来想肯定是进error了，果然打印出”失败”；网上去搜相关的，说是ajax请求成功，但是进error,是因为dataType没有设置；后来一想，因为angular中默认的返回类型就是json, 但是这次返回的是二进制流不匹配导致的，所以在请求参数中加了 {responseType: ‘blob’} 就成功了。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">console.log(this.fileService.DownLoadFile(id, bucketname));</span><br><span class="line">this.fileService.DownLoadFile(id, bucketname).subscribe(</span><br><span class="line">    res =&gt; &#123;</span><br><span class="line">        console.log(&quot;成功&quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">    error =&gt; &#123;</span><br><span class="line">        console.log(&quot;失败&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DownLoadFile(fileId: string, bucketName: string) &#123;</span><br><span class="line"></span><br><span class="line">    const url = this.APPURL + `/api/dmc/v1/buckets/$&#123;bucketName&#125;/files/$&#123;fileId&#125;`;</span><br><span class="line"></span><br><span class="line">    let header = new HttpHeaders(&#123;</span><br><span class="line">        &quot;Content-Type&quot;: &quot;application/octet-stream&quot;,</span><br><span class="line">        &quot;digi-middleware-auth-user&quot;: this.httpService.userToken</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return this.http.get(url, &#123; headers: header, responseType: &apos;blob&apos; &#125;).pipe(catchError(res =&gt; this.handleError(res)));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/11月整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/14/11月整理/" itemprop="url">
+                  11月整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-11-14 10:21:15" itemprop="dateCreated datePublished" datetime="2018-11-14T10:21:15+08:00">2018-11-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-11-23 16:59:52" itemprop="dateModified" datetime="2018-11-23T16:59:52+08:00">2018-11-23</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-Array-from"><a href="#1-Array-from" class="headerlink" title="1. Array.from()"></a>1. Array.from()</h4><h4 id="2-map-构造函数"><a href="#2-map-构造函数" class="headerlink" title="2. map 构造函数"></a>2. map 构造函数</h4><h4 id="3-数组的高级用法"><a href="#3-数组的高级用法" class="headerlink" title="3. 数组的高级用法"></a>3. 数组的高级用法</h4><h5 id="1-map"><a href="#1-map" class="headerlink" title="1. map()"></a>1. map()</h5><h5 id="2-filter"><a href="#2-filter" class="headerlink" title="2. filter()"></a>2. filter()</h5><h5 id="3-forEach"><a href="#3-forEach" class="headerlink" title="3. forEach()"></a>3. forEach()</h5><h5 id="4-reduce"><a href="#4-reduce" class="headerlink" title="4. reduce()"></a>4. reduce()</h5><h5 id="5-findIndex"><a href="#5-findIndex" class="headerlink" title="5. findIndex()"></a>5. findIndex()</h5><h5 id="6-find"><a href="#6-find" class="headerlink" title="6. find()"></a>6. find()</h5><h5 id="7-every"><a href="#7-every" class="headerlink" title="7. every()"></a>7. every()</h5><h5 id="8-eaach"><a href="#8-eaach" class="headerlink" title="8. eaach()"></a>8. eaach()</h5><h4 id="4-assign"><a href="#4-assign" class="headerlink" title="4. assign()"></a>4. assign()</h4><h4 id="5-形成树形结构"><a href="#5-形成树形结构" class="headerlink" title="5. 形成树形结构"></a>5. 形成树形结构</h4><h4 id="6-树形结构中的checkbox的选择原理"><a href="#6-树形结构中的checkbox的选择原理" class="headerlink" title="6. 树形结构中的checkbox的选择原理"></a>6. 树形结构中的checkbox的选择原理</h4><h4 id="7-原型链"><a href="#7-原型链" class="headerlink" title="7. 原型链"></a>7. 原型链</h4><h4 id="8-对象的操作"><a href="#8-对象的操作" class="headerlink" title="8. 对象的操作"></a>8. 对象的操作</h4><ol>
+<li>判断有无属性</li>
+<li>判断是否为空对象</li>
+<li>对象的复制与拷贝</li>
+</ol>
+<h4 id="9-hasOwnProperty"><a href="#9-hasOwnProperty" class="headerlink" title="9. hasOwnProperty()"></a>9. hasOwnProperty()</h4><h4 id="10-typeof"><a href="#10-typeof" class="headerlink" title="10. typeof"></a>10. typeof</h4>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/Buffer-ArrayBuffer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1469,317 +1773,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/springBoot-写静态页面/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/springBoot-写静态页面/" itemprop="url">
-                  springBoot 写静态页面
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-27 15:29:26 / Updated at: 15:35:06" itemprop="dateCreated datePublished" datetime="2018-09-27T15:29:26+08:00">2018-09-27</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>使用的是Idea开发</li>
-<li>在 src/resources/template中新建页面</li>
-<li>css/img/js 放入resources/static</li>
-<li>在Controller中添加访问页面的接口，要注意不要用RestController 了，需要改成Controller，否则没有办法访问页面<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* 访问参数设定的静态页面</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">@RequestMapping(&quot;/parameterSetting&quot;)</span><br><span class="line">public String parameterSetting() &#123;</span><br><span class="line">    return &quot;/parameterSetting&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/Ajax/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/Ajax/" itemprop="url">
-                  $.ajax() 前后端的交互
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-27 15:09:21" itemprop="dateCreated datePublished" datetime="2018-09-27T15:09:21+08:00">2018-09-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-09-29 09:11:20" itemprop="dateModified" datetime="2018-09-29T09:11:20+08:00">2018-09-29</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://www.cnblogs.com/htoooth/p/7242217.html" target="_blank" rel="noopener">https://www.cnblogs.com/htoooth/p/7242217.html</a></p>
-<blockquote>
-<p>通过ajax进行前后端交互，主要就是定义数据类传输类型，contentType是规定客户端发送给服务器的数据格式；dataType是规定服务器发送给客户端的数据格式。</p>
-</blockquote>
-<h4 id="1-contentType"><a href="#1-contentType" class="headerlink" title="1. contentType"></a>1. contentType</h4><p>正常情况下是 ： application/x-www-form-urlencoded， 这种格式的特点就是 name/value的格式。 例如： name=xuqh&amp;value=2222</p>
-<p>但是为了解决前后端复杂对象的传输，后端就定义了一个数据类型： application/json , 当指定这个格式的时候需要JSON.stringify()序列化后，后台接收的时候再用JSON.parse()转换一下就可以。</p>
-<h4 id="2-data"><a href="#2-data" class="headerlink" title="2. data"></a>2. data</h4><p>data的类型只能是 string , Object ，数组，但是在请求的时候依然是转换成String的。 就像简单的Object会转换成 name=xuqh&amp;value=2222 这种格式。</p>
-<h4 id="3-后台接口请求成功进error"><a href="#3-后台接口请求成功进error" class="headerlink" title="3. 后台接口请求成功进error"></a>3. 后台接口请求成功进error</h4><p>原因是: 前端设置了 dataType:”json”，但是后端返回的类型不是严格的json导致出错。</p>
-<h4 id="4-type"><a href="#4-type" class="headerlink" title="4. type"></a>4. type</h4><p>ajax支持的请求类型有，常用的是 ‘POST’ , ‘GET’，对于 ‘PUT’, ‘DELETE’ 方法只有部分浏览器支持;</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1822,7 +1820,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
@@ -1863,9 +1861,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">Tags</span>
                   
                 </div>
