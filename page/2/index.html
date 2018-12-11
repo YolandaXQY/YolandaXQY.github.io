@@ -218,7 +218,7 @@
           
           <li class="menu-item menu-item-home">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
   </li>
         
         
@@ -226,7 +226,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
   </li>
 
       
@@ -261,6 +261,309 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/28/数组与字符串转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/28/数组与字符串转换/" itemprop="url">
+                  数组与字符串转换
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-09-28 16:06:50 / Updated at: 17:09:45" itemprop="dateCreated datePublished" datetime="2018-09-28T16:06:50+08:00">2018-09-28</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-split"><a href="#1-split" class="headerlink" title="1. split()"></a>1. split()</h4><blockquote>
+<p>将字符串转换成数组，以一个标记分隔</p>
+</blockquote>
+<h6 id="1-以空格分隔"><a href="#1-以空格分隔" class="headerlink" title="1) 以空格分隔"></a>1) 以空格分隔</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var message = &quot;Hello World Yolanda&quot;;</span><br><span class="line">var arr = message.split(&quot; &quot;);</span><br><span class="line">console.log(arr);   // [&quot;Hello&quot;, &quot;World&quot;, &quot;Yolanda&quot;]</span><br></pre></td></tr></table></figure>
+<h5 id="2-以逗号-分隔"><a href="#2-以逗号-分隔" class="headerlink" title="2) 以逗号,分隔"></a>2) 以逗号,分隔</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var message = &quot;Hello,Wor,ld,Yol,landa&quot;;</span><br><span class="line">var arr = message.split(&quot;,&quot;);</span><br><span class="line">console.log(arr); //[&quot;Hello&quot;, &quot;Wor&quot;, &quot;ld&quot;, &quot;Yol&quot;, &quot;landa&quot;]</span><br></pre></td></tr></table></figure>
+<h4 id="2-join"><a href="#2-join" class="headerlink" title="2. join()"></a>2. join()</h4><blockquote>
+<p>将数组转换成字符串</p>
+</blockquote>
+<h5 id="1-以-逗号-连接"><a href="#1-以-逗号-连接" class="headerlink" title="1) 以 逗号, 连接"></a>1) 以 逗号, 连接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;hi&quot;,&quot;my&quot;,&quot;name&quot;,&quot;is&quot;,&quot;landa&quot;];</span><br><span class="line">var str = arr.join(&quot;,&quot;);</span><br><span class="line">console.log(str);   // &quot;hi,my,name,is,landa&quot;</span><br></pre></td></tr></table></figure>
+<h5 id="2-以-横杠-连接"><a href="#2-以-横杠-连接" class="headerlink" title="2) 以 横杠- 连接"></a>2) 以 横杠- 连接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;hi&quot;,&quot;my&quot;,&quot;landa&quot;];</span><br><span class="line">var str = arr.join(&quot;-&quot;);</span><br><span class="line">console.log(str);   // &quot;hi-my-landa&quot;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/常用函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/27/常用函数/" itemprop="url">
+                  常用函数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-09-27 15:48:40" itemprop="dateCreated datePublished" datetime="2018-09-27T15:48:40+08:00">2018-09-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-09-28 17:04:19" itemprop="dateModified" datetime="2018-09-28T17:04:19+08:00">2018-09-28</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-获取Url的参数-queryUrlString"><a href="#1-获取Url的参数-queryUrlString" class="headerlink" title="1. 获取Url的参数   queryUrlString()"></a>1. 获取Url的参数   queryUrlString()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function queryUrlString(val) &#123;</span><br><span class="line">    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;age=12</span><br><span class="line">    var reg = new RegExp(&quot;[?&amp;]&quot;+val+&quot;=([^&amp;?]*)&quot;,&quot;ig&quot;);</span><br><span class="line">    var matchArr = uri.match(reg);    // 如果没有匹配到，返回null </span><br><span class="line">    return (matchArr ? matchArr[0].substr(val.length+2) : null)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-判断是否是空对象-isEmptyObject"><a href="#2-判断是否是空对象-isEmptyObject" class="headerlink" title="2. 判断是否是空对象 isEmptyObject()"></a>2. 判断是否是空对象 isEmptyObject()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isEmptyObject(obj) &#123;</span><br><span class="line">    for (var p in obj) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125; </span><br><span class="line">    return true; // 空对象</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-判断值是否为空-isBlank"><a href="#3-判断值是否为空-isBlank" class="headerlink" title="3. 判断值是否为空 isBlank()"></a>3. 判断值是否为空 isBlank()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isBlank(val) &#123;</span><br><span class="line">    if (!val) &#123;         // 如果值是undefined,null, NaN 返回&quot;&quot;, 不过NaN有自己判断方法isNaN()</span><br><span class="line">        return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-校验数字-checkNum"><a href="#4-校验数字-checkNum" class="headerlink" title="4. 校验数字 checkNum()"></a>4. 校验数字 checkNum()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function checkNum(str) &#123;</span><br><span class="line">    var reg = /^[0-9]*$/;</span><br><span class="line">    if (reg.test(str)) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -316,14 +619,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-27 15:29:26 / Modified: 15:35:06" itemprop="dateCreated datePublished" datetime="2018-09-27T15:29:26+08:00">2018-09-27</time>
+              <time title="Post created: 2018-09-27 15:29:26 / Updated at: 15:35:06" itemprop="dateCreated datePublished" datetime="2018-09-27T15:29:26+08:00">2018-09-27</time>
             
 
             
@@ -462,14 +765,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-27 15:09:21" itemprop="dateCreated datePublished" datetime="2018-09-27T15:09:21+08:00">2018-09-27</time>
+              <time title="Post created: 2018-09-27 15:09:21" itemprop="dateCreated datePublished" datetime="2018-09-27T15:09:21+08:00">2018-09-27</time>
             
 
             
@@ -486,7 +789,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-29 09:11:20" itemprop="dateModified" datetime="2018-09-29T09:11:20+08:00">2018-09-29</time>
+                <time title="Updated at: 2018-09-29 09:11:20" itemprop="dateModified" datetime="2018-09-29T09:11:20+08:00">2018-09-29</time>
               
             
           </span>
@@ -622,14 +925,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-25 15:42:28" itemprop="dateCreated datePublished" datetime="2018-09-25T15:42:28+08:00">2018-09-25</time>
+              <time title="Post created: 2018-09-25 15:42:28" itemprop="dateCreated datePublished" datetime="2018-09-25T15:42:28+08:00">2018-09-25</time>
             
 
             
@@ -646,7 +949,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-27 14:43:19" itemprop="dateModified" datetime="2018-09-27T14:43:19+08:00">2018-09-27</time>
+                <time title="Updated at: 2018-09-27 14:43:19" itemprop="dateModified" datetime="2018-09-27T14:43:19+08:00">2018-09-27</time>
               
             
           </span>
@@ -785,14 +1088,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-25 09:07:00" itemprop="dateCreated datePublished" datetime="2018-09-25T09:07:00+08:00">2018-09-25</time>
+              <time title="Post created: 2018-09-25 09:07:00" itemprop="dateCreated datePublished" datetime="2018-09-25T09:07:00+08:00">2018-09-25</time>
             
 
             
@@ -809,7 +1112,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-29 09:11:18" itemprop="dateModified" datetime="2018-09-29T09:11:18+08:00">2018-09-29</time>
+                <time title="Updated at: 2018-09-29 09:11:18" itemprop="dateModified" datetime="2018-09-29T09:11:18+08:00">2018-09-29</time>
               
             
           </span>
@@ -939,14 +1242,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-21 15:14:32" itemprop="dateCreated datePublished" datetime="2018-09-21T15:14:32+08:00">2018-09-21</time>
+              <time title="Post created: 2018-09-21 15:14:32" itemprop="dateCreated datePublished" datetime="2018-09-21T15:14:32+08:00">2018-09-21</time>
             
 
             
@@ -963,7 +1266,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-25 09:05:55" itemprop="dateModified" datetime="2018-09-25T09:05:55+08:00">2018-09-25</time>
+                <time title="Updated at: 2018-09-25 09:05:55" itemprop="dateModified" datetime="2018-09-25T09:05:55+08:00">2018-09-25</time>
               
             
           </span>
@@ -1102,14 +1405,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-21 13:41:53 / Modified: 14:21:31" itemprop="dateCreated datePublished" datetime="2018-09-21T13:41:53+08:00">2018-09-21</time>
+              <time title="Post created: 2018-09-21 13:41:53 / Updated at: 14:21:31" itemprop="dateCreated datePublished" datetime="2018-09-21T13:41:53+08:00">2018-09-21</time>
             
 
             
@@ -1249,14 +1552,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-21 11:05:07 / Modified: 15:03:54" itemprop="dateCreated datePublished" datetime="2018-09-21T11:05:07+08:00">2018-09-21</time>
+              <time title="Post created: 2018-09-21 11:05:07 / Updated at: 15:03:54" itemprop="dateCreated datePublished" datetime="2018-09-21T11:05:07+08:00">2018-09-21</time>
             
 
             
@@ -1406,14 +1709,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-07 16:51:59" itemprop="dateCreated datePublished" datetime="2018-09-07T16:51:59+08:00">2018-09-07</time>
+              <time title="Post created: 2018-09-07 16:51:59" itemprop="dateCreated datePublished" datetime="2018-09-07T16:51:59+08:00">2018-09-07</time>
             
 
             
@@ -1430,7 +1733,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-21 10:58:09" itemprop="dateModified" datetime="2018-09-21T10:58:09+08:00">2018-09-21</time>
+                <time title="Updated at: 2018-09-21 10:58:09" itemprop="dateModified" datetime="2018-09-21T10:58:09+08:00">2018-09-21</time>
               
             
           </span>
@@ -1466,301 +1769,6 @@
         
           
             <p>ionic 长按事件: <a href="https://www.npmjs.com/package/ionic-long-press" target="_blank" rel="noopener">https://www.npmjs.com/package/ionic-long-press</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;ion-item *ngFor=&quot;let item of fileServiceProvider.fileList&quot; (click)=&quot;openFile(item)&quot; ion-long-press [interval]=&quot;1000&quot; (onPressStart)=&quot;selectStart(item)&quot;&gt;</span><br><span class="line">        &lt;ion-checkbox *ngIf=&quot;pageState&quot; [(ngModel)]=&quot;item.checked&quot; (ionChange)=&quot;clickCheckbox($event)&quot;&gt;&lt;/ion-checkbox&gt;</span><br><span class="line">        &lt;ion-thumbnail item-start [ngSwitch]=&quot;item.extension&quot;&gt;</span><br><span class="line">            &lt;img *ngSwitchCase=&quot;&apos;folder&apos;&quot; src=&quot;assets/imgs/folder.png&quot;&gt;</span><br><span class="line">            &lt;img *ngSwitchCase=&quot;&apos;doc&apos;&quot; src=&quot;assets/imgs/doc.png&quot;&gt;</span><br><span class="line">            &lt;img *ngSwitchCase=&quot;&apos;txt&apos;&quot; src=&quot;assets/imgs/doc.png&quot;&gt;</span><br><span class="line">            &lt;img *ngSwitchCase=&quot;&apos;mp4&apos;&quot; src=&quot;assets/imgs/video.png&quot;&gt;</span><br><span class="line">            &lt;img *ngSwitchCase=&quot;&apos;camera&apos;&quot; src=&quot;assets/imgs/camera.png&quot;&gt;</span><br><span class="line">            &lt;img *ngSwitchCase=&quot;&apos;ppt&apos;&quot; src=&quot;assets/imgs/ppt.png&quot;&gt;</span><br><span class="line">            &lt;img *ngSwitchCase=&quot;&apos;excel&apos;&quot; src=&quot;assets/imgs/excel.png&quot;&gt;</span><br><span class="line">            &lt;img *ngSwitchCase=&quot;&apos;zip&apos;&quot; src=&quot;assets/imgs/zip.png&quot;&gt;</span><br><span class="line">            &lt;img *ngSwitchCase=&quot;&apos;pdf&apos;&quot; src=&quot;assets/imgs/pdf.png&quot;&gt;</span><br><span class="line">            &lt;img *ngSwitchCase=&quot;&apos;mp3&apos;&quot; src=&quot;assets/imgs/music.png&quot;&gt;</span><br><span class="line">            &lt;img *ngSwitchDefault src=&quot;assets/imgs/other.png&quot;&gt;</span><br><span class="line">        &lt;/ion-thumbnail&gt;</span><br><span class="line">        &lt;ion-label&gt;</span><br><span class="line">            &lt;h3 style=&quot;margin-top:0;&quot;&gt;&#123;&#123; item.fileName &#125;&#125;&lt;/h3&gt;</span><br><span class="line">            &lt;!-- &lt;p&gt;mark&lt;/p&gt; --&gt;</span><br><span class="line">            &lt;p&gt;&#123;&#123; item.uploadDate | date: &apos;short&apos;&#125;&#125; &#123;&#123; item.sizeStr &#125;&#125;&lt;/p&gt;</span><br><span class="line">            &lt;p *ngIf=&quot;item.extension !== &apos;folder&apos; &amp;&amp; !item.completed&quot; style=&quot;color: red;&quot;&gt;文件上传不完整&lt;/p&gt;</span><br><span class="line">        &lt;/ion-label&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;ion-icon *ngIf=&quot;item.extension === &apos;folder&apos; || item.completed&quot; item-end name=&quot;more&quot; class=&quot;line-color&quot; (click)=&quot;operateItem(item)&quot;&gt;&lt;/ion-icon&gt;</span><br><span class="line">        &lt;ion-icon *ngIf=&quot;item.extension !== &apos;folder&apos; &amp;&amp; !item.completed&quot; item-end name=&quot;trash&quot; style=&quot;color:#FF4040;font-size: 24px;&quot; (click)=&quot;delete(item)&quot;&gt;&lt;/ion-icon&gt;</span><br><span class="line"></span><br><span class="line">&lt;/ion-item&gt;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/07/h5-FileReader/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/07/h5-FileReader/" itemprop="url">
-                  h5 FileReader
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-07 14:12:33 / Modified: 15:32:53" itemprop="dateCreated datePublished" datetime="2018-09-07T14:12:33+08:00">2018-09-07</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/07/hexo搭建基本要点/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/07/hexo搭建基本要点/" itemprop="url">
-                  hexo搭建基本要点
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-07 10:15:31 / Modified: 15:28:33" itemprop="dateCreated datePublished" datetime="2018-09-07T10:15:31+08:00">2018-09-07</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><p>需要提前安装好 node npm</p>
-<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g  // 安装 Hexo</span><br><span class="line">npm update hexo -g   // 更新 Hexo</span><br><span class="line">hexo init            // 初始化</span><br></pre></td></tr></table></figure>
-<h4 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"postname"</span></span><br></pre></td></tr></table></figure>
-<h4 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"pagename"</span></span><br></pre></td></tr></table></figure>
-<h4 id="生成静态页面至-public-目录"><a href="#生成静态页面至-public-目录" class="headerlink" title="生成静态页面至 public 目录"></a>生成静态页面至 public 目录</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-<h4 id="开启预览访问端口-默认端口4000"><a href="#开启预览访问端口-默认端口4000" class="headerlink" title="开启预览访问端口 (默认端口4000)"></a>开启预览访问端口 (默认端口4000)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<h4 id="hexo-发布-deploy-github"><a href="#hexo-发布-deploy-github" class="headerlink" title="hexo 发布(deploy) github"></a>hexo 发布(deploy) github</h4><h5 id="1-在-config-yml-中配置-git-信息"><a href="#1-在-config-yml-中配置-git-信息" class="headerlink" title="1. 在 _config.yml 中配置 git 信息"></a>1. 在 _config.yml 中配置 git 信息</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@github.com:YolandaXQY/xuqy.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<h5 id="2-hexo-deployer-git"><a href="#2-hexo-deployer-git" class="headerlink" title="2. hexo-deployer-git"></a>2. hexo-deployer-git</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<h5 id="2-通过-ssh-代理与-git-联系起来"><a href="#2-通过-ssh-代理与-git-联系起来" class="headerlink" title="2. 通过 ssh 代理与 git 联系起来"></a>2. 通过 ssh 代理与 git 联系起来</h5><h6 id="1-列出已存在的SSH-Key"><a href="#1-列出已存在的SSH-Key" class="headerlink" title="1) 列出已存在的SSH Key"></a>1) 列出已存在的SSH Key</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -al ~/.ssh</span><br></pre></td></tr></table></figure>
-<h6 id="2-生成密钥"><a href="#2-生成密钥" class="headerlink" title="2) 生成密钥"></a>2) 生成密钥</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure>
-<p>以上这个命令会生成以 “<a href="mailto:your_email@example.com" target="_blank" rel="noopener">your_email@example.com</a>“ 为标签的ssh key , 然后连续两个enter就可以。</p>
-<h6 id="3）加入SSH-Agent"><a href="#3）加入SSH-Agent" class="headerlink" title="3）加入SSH Agent"></a>3）加入SSH Agent</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash</span><br><span class="line">ssh-agent -s</span><br><span class="line"><span class="built_in">eval</span> `ssh-agent -s`</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
-<h6 id="4-将SSH添加到Github中"><a href="#4-将SSH添加到Github中" class="headerlink" title="4) 将SSH添加到Github中"></a>4) 将SSH添加到Github中</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> id_rsa.pub</span><br><span class="line">vi id_rsa.pub</span><br><span class="line">// 通过<span class="built_in">shift</span> + v 选中所有，再按下 p 复制</span><br><span class="line">// :q! 放弃修改退出 :wq保存退出</span><br></pre></td></tr></table></figure>
-<h6 id="5）-测试"><a href="#5）-测试" class="headerlink" title="5） 测试"></a>5） 测试</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<h4 id="hexo-deploy-发布"><a href="#hexo-deploy-发布" class="headerlink" title="hexo deploy 发布"></a>hexo deploy 发布</h4><h4 id="域名设置"><a href="#域名设置" class="headerlink" title="域名设置"></a>域名设置</h4><p>每个git账户只有一个域名可用，需要在你的仓库地址 setting 那边设置与git相同名字的域名</p>
-<h4 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/theme-next/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
-<h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><p>Git中vi操作: <a href="https://blog.csdn.net/zym18351887819/article/details/80468525" target="_blank" rel="noopener">https://blog.csdn.net/zym18351887819/article/details/80468525</a><br>关于SSH的绑定: <a href="https://xuanwo.org/2015/02/07/generate-a-ssh-key/" target="_blank" rel="noopener">https://xuanwo.org/2015/02/07/generate-a-ssh-key/</a></p>
 
           
         
@@ -1846,8 +1854,8 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
               
@@ -1887,8 +1895,10 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
-                    <span class="site-state-item-name">tags</span>
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">Tags</span>
                   
                 </div>
               
@@ -1941,7 +1951,7 @@
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
 
 
 

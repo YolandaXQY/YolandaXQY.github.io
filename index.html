@@ -218,7 +218,7 @@
           
           <li class="menu-item menu-item-home menu-item-active">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
   </li>
         
         
@@ -226,7 +226,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
   </li>
 
       
@@ -261,6 +261,335 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/node-离线编辑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/10/node-离线编辑/" itemprop="url">
+                  node 离线编辑
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-12-10 17:42:48" itemprop="dateCreated datePublished" datetime="2018-12-10T17:42:48+08:00">2018-12-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-12-11 09:19:58" itemprop="dateModified" datetime="2018-12-11T09:19:58+08:00">2018-12-11</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-参照教程"><a href="#1-参照教程" class="headerlink" title="1. 参照教程"></a>1. 参照教程</h3><p><a href="https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/" target="_blank" rel="noopener">https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/</a></p>
+<h3 id="2-离线编辑描述"><a href="#2-离线编辑描述" class="headerlink" title="2. 离线编辑描述"></a>2. 离线编辑描述</h3><blockquote>
+<p>做到类似于有道云协作离线编辑，有道云的逻辑是将文件下载到本地，立即用windows程序打开，当用户保存的时候提交到服务端。<br>有道云协作下载文件到本地的时候会记录文件的信息(包含文件的状态等)，和二进制。<br>我做的是有道云的简约版，因为是浏览器模式下，而不是客户端，只能如此简单。<br>我主要利用的是Node中的watch/watchFile/unWatchFile,对文件进行检测，当检测到文件有改动的时候立马覆盖上传。</p>
+</blockquote>
+<h3 id="3-利用默认程序打开文件"><a href="#3-利用默认程序打开文件" class="headerlink" title="3. 利用默认程序打开文件"></a>3. 利用默认程序打开文件</h3><blockquote>
+<p>此操作也是利用的是node子进程(child_process)，利用命令行打开文件<br><a href="http://blog.haoji.me/nodejs-open-explorer-select-file.html?from=xa" target="_blank" rel="noopener">http://blog.haoji.me/nodejs-open-explorer-select-file.html?from=xa</a></p>
+</blockquote>
+<h5 id="windows系统"><a href="#windows系统" class="headerlink" title="windows系统"></a>windows系统</h5><p>1) 打开文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const cp = require(&apos;child_process&apos;);</span><br><span class="line">cp.exec(&quot;explorer &quot; + pathstr); // 使用默认程序打开文件</span><br></pre></td></tr></table></figure></p>
+<p>2) 打开文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const cp = require(&apos;child_process&apos;);</span><br><span class="line">cp.exec(&quot;explorer /select,&quot; + pathstr); // 打开并选中</span><br></pre></td></tr></table></figure></p>
+<h5 id="mac系统"><a href="#mac系统" class="headerlink" title="mac系统"></a>mac系统</h5><p>1) 打开文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">openMacFile() &#123;</span><br><span class="line">    var cp = require(&quot;child_process&quot;);</span><br><span class="line">    pathstr = pathstr.replace(/\(/g, &apos;\\(&apos;);</span><br><span class="line">    pathstr = pathstr.replace(/\)/g, &apos;\\)&apos;);</span><br><span class="line">    cp.execFile(&quot;open &quot; + pathstr, &#123;shell: true&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2) 打开文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">openDirectionary(pathstr) &#123;</span><br><span class="line">    var cp = require(&quot;child_process&quot;);</span><br><span class="line">    const index = this.pathstr.lastIndexOf(&apos;/&apos;);</span><br><span class="line">    this.pathstr= this.pathstr.slice(0,index);</span><br><span class="line">    cp.execFile(&quot;open &quot; + this.pathstr, &#123;shell: true&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-检测文件"><a href="#4-检测文件" class="headerlink" title="4. 检测文件"></a>4. 检测文件</h3><p><a href="https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/" target="_blank" rel="noopener">https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/</a></p>
+<h4 id="4-1-第一步尝试-通过event来判断"><a href="#4-1-第一步尝试-通过event来判断" class="headerlink" title="4.1 第一步尝试: 通过event来判断"></a>4.1 第一步尝试: 通过event来判断</h4><blockquote>
+<p>触发的事件event来判断，无效(依据不同的操作系统底层，保存文件可能会触发rename/ change)</p>
+</blockquote>
+<h4 id="4-2-第二步尝试-比较文件修改时间"><a href="#4-2-第二步尝试-比较文件修改时间" class="headerlink" title="4.2 第二步尝试: 比较文件修改时间"></a>4.2 第二步尝试: 比较文件修改时间</h4><blockquote>
+<p>比较文件的修改时间mtime, 文件保存的时候只触发一次change， 但是是无论文件内容有无变化都会触发。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const stats = that.electronService.fs.statSync(pathstr);</span><br><span class="line">if (stats.mtime.getTime() === previousTime.getTime()) &#123;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line">console.log(`modify time: $&#123;stats.mtime.getTime()&#125;`);</span><br><span class="line">previousTime = stats.mtime;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="4-3-使用md5判断文件内容是否被修改-先使用"><a href="#4-3-使用md5判断文件内容是否被修改-先使用" class="headerlink" title="4.3 使用md5判断文件内容是否被修改, 先使用"></a>4.3 使用md5判断文件内容是否被修改, 先使用</h4><figure class="highlight bash"><figcaption><span>npm install --save md5```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">const newfilemd5 =  md5(that.electronService.fs.readFileSync(pathstr));</span><br><span class="line"><span class="keyword">if</span> (newfilemd5 === previousFilemd5) &#123;</span><br><span class="line">    <span class="built_in">return</span>;</span><br><span class="line">&#125;</span><br><span class="line">console.log(`newfilemd5: <span class="variable">$&#123;newfilemd5&#125;</span>`);</span><br><span class="line">previousFilemd5 = newfilemd5;</span><br></pre></td></tr></table></figure>
+<h4 id="4-4-加入延迟"><a href="#4-4-加入延迟" class="headerlink" title="4.4 加入延迟"></a>4.4 加入延迟</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (fswait) &#123; return; &#125;</span><br><span class="line">fswait = setTimeout(() =&gt; &#123;</span><br><span class="line">    fswait = false;</span><br><span class="line">&#125;, 3000);</span><br></pre></td></tr></table></figure>
+<h3 id="5-移除监控"><a href="#5-移除监控" class="headerlink" title="5. 移除监控"></a>5. 移除监控</h3><blockquote>
+<p>本实例本来是使用watch的方式，但是为了更好的移除用了watchFile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.unwatchFile(filePathstr)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h3><p>所有代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">   * 监听文件的变化（离线编辑）</span><br><span class="line">   * 教程原文: https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/</span><br><span class="line">   * @param pathstr [文件下载路径]</span><br><span class="line">   * @param bucketName [文件所在bucket]</span><br><span class="line">   * @param dirId  [文件所在目录]</span><br><span class="line">   * @param filedId [文件的fileId]</span><br><span class="line">   */</span><br><span class="line">  public watchFileChange(pathstr: string, bucketName: string, dirId: string, filedId: string) &#123;</span><br><span class="line">    const that = this;</span><br><span class="line">    if (this.electronService.isMac) &#123;</span><br><span class="line">      pathstr = pathstr.replace(/\(/g, &apos;\\(&apos;);</span><br><span class="line">      pathstr = pathstr.replace(/\)/g, &apos;\\)&apos;);</span><br><span class="line">      cp.execFile(&quot;open &quot; + pathstr, &#123;shell: true&#125;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      cp.exec(&quot;explorer &quot; + pathstr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    let previousTime = this.electronService.fs.statSync(pathstr).mtime;</span><br><span class="line">    let previousFilemd5 = md5(this.electronService.fs.readFileSync(pathstr));</span><br><span class="line">    let fswait: any = false;</span><br><span class="line">    console.log(`init file time:  $&#123;previousTime.getTime()&#125;`);</span><br><span class="line">    console.log(`md5: $&#123;previousFilemd5&#125;`);</span><br><span class="line">    </span><br><span class="line">    // 延时3s监听，防止在文件打开时监听到change事件</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      that.electronService.fs.watchFile(pathstr, (curr, prev) =&gt; &#123;</span><br><span class="line">        // if (fileName) &#123;</span><br><span class="line">          const fileName = that.sharedService.getFileNameByPath(pathstr);</span><br><span class="line">          // 尝试第一步: 触发的事件event来判断，无效(依据不同的操作系统底层，保存文件可能会触发rename/ change)</span><br><span class="line"></span><br><span class="line">          // 尝试第二步: 比较文件的修改时间mtime, 文件保存的时候只触发一次change， 但是是无论文件内容有无变化都会触发。</span><br><span class="line">          const stats = that.electronService.fs.statSync(pathstr);</span><br><span class="line">          if (stats.mtime.getTime() === previousTime.getTime()) &#123;</span><br><span class="line">            return;</span><br><span class="line">          &#125;</span><br><span class="line">          console.log(`modify time: $&#123;stats.mtime.getTime()&#125;`);</span><br><span class="line">          previousTime = stats.mtime;</span><br><span class="line">  </span><br><span class="line">          // 尝试第三步: 使用md5判断文件内容是否被修改, 先使用npm install --save md5</span><br><span class="line">          const newfilemd5 =  md5(that.electronService.fs.readFileSync(pathstr));</span><br><span class="line">          if (newfilemd5 === previousFilemd5) &#123;</span><br><span class="line">            return;</span><br><span class="line">          &#125;</span><br><span class="line">          console.log(`newfilemd5: $&#123;newfilemd5&#125;`);</span><br><span class="line">          previousFilemd5 = newfilemd5;</span><br><span class="line">          </span><br><span class="line">          // 尝试第四步: 加入延迟：教程上本来是100ms，我设置成3s</span><br><span class="line">          if (fswait) &#123; return; &#125;</span><br><span class="line">          fswait = setTimeout(() =&gt; &#123;</span><br><span class="line">            fswait = false;</span><br><span class="line">          &#125;, 3000);</span><br><span class="line">          console.log(`$&#123;fileName&#125; file Changed`);</span><br><span class="line"></span><br><span class="line">          // 如果文件改变则覆盖上传</span><br><span class="line">          that.createUpload([pathstr], dirId, bucketName, filedId);</span><br><span class="line">        // &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;, 3000);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/树形结构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/28/树形结构/" itemprop="url">
+                  树形结构
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-11-28 14:19:52" itemprop="dateCreated datePublished" datetime="2018-11-28T14:19:52+08:00">2018-11-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-12-10 17:41:43" itemprop="dateModified" datetime="2018-12-10T17:41:43+08:00">2018-12-10</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-形成树结构"><a href="#1-形成树结构" class="headerlink" title="1. 形成树结构"></a>1. 形成树结构</h4><blockquote>
+<p>形成树结构</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -316,14 +645,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-11-23 17:02:00 / Modified: 17:04:32" itemprop="dateCreated datePublished" datetime="2018-11-23T17:02:00+08:00">2018-11-23</time>
+              <time title="Post created: 2018-11-23 17:02:00 / Updated at: 17:04:32" itemprop="dateCreated datePublished" datetime="2018-11-23T17:02:00+08:00">2018-11-23</time>
             
 
             
@@ -464,14 +793,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-11-14 10:21:15" itemprop="dateCreated datePublished" datetime="2018-11-14T10:21:15+08:00">2018-11-14</time>
+              <time title="Post created: 2018-11-14 10:21:15" itemprop="dateCreated datePublished" datetime="2018-11-14T10:21:15+08:00">2018-11-14</time>
             
 
             
@@ -488,7 +817,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-23 16:59:52" itemprop="dateModified" datetime="2018-11-23T16:59:52+08:00">2018-11-23</time>
+                <time title="Updated at: 2018-11-29 17:39:46" itemprop="dateModified" datetime="2018-11-29T17:39:46+08:00">2018-11-29</time>
               
             
           </span>
@@ -620,14 +949,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-10-20 12:31:24 / Modified: 12:38:38" itemprop="dateCreated datePublished" datetime="2018-10-20T12:31:24+08:00">2018-10-20</time>
+              <time title="Post created: 2018-10-20 12:31:24 / Updated at: 12:38:38" itemprop="dateCreated datePublished" datetime="2018-10-20T12:31:24+08:00">2018-10-20</time>
             
 
             
@@ -760,14 +1089,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-10-20 12:28:56 / Modified: 12:53:23" itemprop="dateCreated datePublished" datetime="2018-10-20T12:28:56+08:00">2018-10-20</time>
+              <time title="Post created: 2018-10-20 12:28:56 / Updated at: 12:53:23" itemprop="dateCreated datePublished" datetime="2018-10-20T12:28:56+08:00">2018-10-20</time>
             
 
             
@@ -900,14 +1229,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-10-20 12:15:08 / Modified: 12:38:40" itemprop="dateCreated datePublished" datetime="2018-10-20T12:15:08+08:00">2018-10-20</time>
+              <time title="Post created: 2018-10-20 12:15:08 / Updated at: 12:38:40" itemprop="dateCreated datePublished" datetime="2018-10-20T12:15:08+08:00">2018-10-20</time>
             
 
             
@@ -1044,14 +1373,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-10-20 10:58:32 / Modified: 12:14:17" itemprop="dateCreated datePublished" datetime="2018-10-20T10:58:32+08:00">2018-10-20</time>
+              <time title="Post created: 2018-10-20 10:58:32 / Updated at: 12:14:17" itemprop="dateCreated datePublished" datetime="2018-10-20T10:58:32+08:00">2018-10-20</time>
             
 
             
@@ -1207,14 +1536,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-30 15:33:04" itemprop="dateCreated datePublished" datetime="2018-09-30T15:33:04+08:00">2018-09-30</time>
+              <time title="Post created: 2018-09-30 15:33:04" itemprop="dateCreated datePublished" datetime="2018-09-30T15:33:04+08:00">2018-09-30</time>
             
 
             
@@ -1231,7 +1560,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-20 10:57:27" itemprop="dateModified" datetime="2018-10-20T10:57:27+08:00">2018-10-20</time>
+                <time title="Updated at: 2018-10-20 10:57:27" itemprop="dateModified" datetime="2018-10-20T10:57:27+08:00">2018-10-20</time>
               
             
           </span>
@@ -1376,14 +1705,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-29 09:16:03 / Modified: 15:10:47" itemprop="dateCreated datePublished" datetime="2018-09-29T09:16:03+08:00">2018-09-29</time>
+              <time title="Post created: 2018-09-29 09:16:03 / Updated at: 15:10:47" itemprop="dateCreated datePublished" datetime="2018-09-29T09:16:03+08:00">2018-09-29</time>
             
 
             
@@ -1470,309 +1799,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/28/数组与字符串转换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/28/数组与字符串转换/" itemprop="url">
-                  数组与字符串转换
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-28 16:06:50 / Modified: 17:09:45" itemprop="dateCreated datePublished" datetime="2018-09-28T16:06:50+08:00">2018-09-28</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-split"><a href="#1-split" class="headerlink" title="1. split()"></a>1. split()</h4><blockquote>
-<p>将字符串转换成数组，以一个标记分隔</p>
-</blockquote>
-<h6 id="1-以空格分隔"><a href="#1-以空格分隔" class="headerlink" title="1) 以空格分隔"></a>1) 以空格分隔</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var message = &quot;Hello World Yolanda&quot;;</span><br><span class="line">var arr = message.split(&quot; &quot;);</span><br><span class="line">console.log(arr);   // [&quot;Hello&quot;, &quot;World&quot;, &quot;Yolanda&quot;]</span><br></pre></td></tr></table></figure>
-<h5 id="2-以逗号-分隔"><a href="#2-以逗号-分隔" class="headerlink" title="2) 以逗号,分隔"></a>2) 以逗号,分隔</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var message = &quot;Hello,Wor,ld,Yol,landa&quot;;</span><br><span class="line">var arr = message.split(&quot;,&quot;);</span><br><span class="line">console.log(arr); //[&quot;Hello&quot;, &quot;Wor&quot;, &quot;ld&quot;, &quot;Yol&quot;, &quot;landa&quot;]</span><br></pre></td></tr></table></figure>
-<h4 id="2-join"><a href="#2-join" class="headerlink" title="2. join()"></a>2. join()</h4><blockquote>
-<p>将数组转换成字符串</p>
-</blockquote>
-<h5 id="1-以-逗号-连接"><a href="#1-以-逗号-连接" class="headerlink" title="1) 以 逗号, 连接"></a>1) 以 逗号, 连接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;hi&quot;,&quot;my&quot;,&quot;name&quot;,&quot;is&quot;,&quot;landa&quot;];</span><br><span class="line">var str = arr.join(&quot;,&quot;);</span><br><span class="line">console.log(str);   // &quot;hi,my,name,is,landa&quot;</span><br></pre></td></tr></table></figure>
-<h5 id="2-以-横杠-连接"><a href="#2-以-横杠-连接" class="headerlink" title="2) 以 横杠- 连接"></a>2) 以 横杠- 连接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;hi&quot;,&quot;my&quot;,&quot;landa&quot;];</span><br><span class="line">var str = arr.join(&quot;-&quot;);</span><br><span class="line">console.log(str);   // &quot;hi-my-landa&quot;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/常用函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/常用函数/" itemprop="url">
-                  常用函数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-27 15:48:40" itemprop="dateCreated datePublished" datetime="2018-09-27T15:48:40+08:00">2018-09-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-28 17:04:19" itemprop="dateModified" datetime="2018-09-28T17:04:19+08:00">2018-09-28</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-获取Url的参数-queryUrlString"><a href="#1-获取Url的参数-queryUrlString" class="headerlink" title="1. 获取Url的参数   queryUrlString()"></a>1. 获取Url的参数   queryUrlString()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function queryUrlString(val) &#123;</span><br><span class="line">    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;age=12</span><br><span class="line">    var reg = new RegExp(&quot;[?&amp;]&quot;+val+&quot;=([^&amp;?]*)&quot;,&quot;ig&quot;);</span><br><span class="line">    var matchArr = uri.match(reg);    // 如果没有匹配到，返回null </span><br><span class="line">    return (matchArr ? matchArr[0].substr(val.length+2) : null)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-判断是否是空对象-isEmptyObject"><a href="#2-判断是否是空对象-isEmptyObject" class="headerlink" title="2. 判断是否是空对象 isEmptyObject()"></a>2. 判断是否是空对象 isEmptyObject()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isEmptyObject(obj) &#123;</span><br><span class="line">    for (var p in obj) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125; </span><br><span class="line">    return true; // 空对象</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-判断值是否为空-isBlank"><a href="#3-判断值是否为空-isBlank" class="headerlink" title="3. 判断值是否为空 isBlank()"></a>3. 判断值是否为空 isBlank()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isBlank(val) &#123;</span><br><span class="line">    if (!val) &#123;         // 如果值是undefined,null, NaN 返回&quot;&quot;, 不过NaN有自己判断方法isNaN()</span><br><span class="line">        return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="4-校验数字-checkNum"><a href="#4-校验数字-checkNum" class="headerlink" title="4. 校验数字 checkNum()"></a>4. 校验数字 checkNum()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function checkNum(str) &#123;</span><br><span class="line">    var reg = /^[0-9]*$/;</span><br><span class="line">    if (reg.test(str)) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1820,8 +1846,8 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">21</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
               
@@ -1861,8 +1887,10 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
-                    <span class="site-state-item-name">tags</span>
+                      
+                    
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">Tags</span>
                   
                 </div>
               
@@ -1915,7 +1943,7 @@
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
 
 
 
