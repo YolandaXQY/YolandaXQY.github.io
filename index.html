@@ -277,6 +277,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/11/H5-缓存/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/11/H5-缓存/" itemprop="url">
+                  H5 缓存
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-01-11 10:53:10 / Updated at: 16:59:45" itemprop="dateCreated datePublished" datetime="2019-01-11T10:53:10+08:00">2019-01-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-cookie"><a href="#1-cookie" class="headerlink" title="1. cookie"></a>1. cookie</h4><p>存储大小: 4kb;<br>特点: 1. cookie数据始终在同源的http请求中携带，即使不需要，会在浏览器和服务器之间来回传递。</p>
+<pre><code>2. 通常存用户的加密信息。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 设置cookie</span><br><span class="line">document.cookie=&quot;username=John Doe; expires=Thu, 18 Dec 2043 12:00:00 GMT&quot;;</span><br><span class="line"></span><br><span class="line">// 获取cookie</span><br><span class="line">function getCookie(cname)</span><br><span class="line">&#123;</span><br><span class="line">  var name = cname + &quot;=&quot;;</span><br><span class="line">  var ca = document.cookie.split(&apos;;&apos;);</span><br><span class="line">  for(var i=0; i&lt;ca.length; i++) </span><br><span class="line">  &#123;</span><br><span class="line">    var c = ca[i].trim();</span><br><span class="line">    if (c.indexOf(name)==0) return c.substring(name.length,c.length);</span><br><span class="line">  &#125;</span><br><span class="line">  return &quot;&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-sessionStorage"><a href="#2-sessionStorage" class="headerlink" title="2. sessionStorage"></a>2. sessionStorage</h4><p>存储大小: 5M<br>特点: 会话级别的本地缓存，当页面关闭，缓存清除。（爬虫不能爬到）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 设置值</span><br><span class="line">sessionStorage.setItem(&apos;key&apos;, &apos;value&apos;);</span><br><span class="line">// 获取值</span><br><span class="line">sessionStorage.getItem(&apos;key&apos;)</span><br><span class="line">// 删除值</span><br><span class="line">sessionStorage.removeItem(&apos;value&apos;);</span><br><span class="line">// 清空session storage中所有的数据</span><br><span class="line">sessionStorage.clear();</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-localStorage"><a href="#3-localStorage" class="headerlink" title="3. localStorage"></a>3. localStorage</h4><p>存储大小: 5M<br>特点： 本地存储，永久保存，需要手动删除。（爬虫不能爬到）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 设置值</span><br><span class="line">localStorage.setItem(&apos;key&apos;, &apos;value&apos;);</span><br><span class="line">// 获取值</span><br><span class="line">localStorage.getItem(&apos;key&apos;);</span><br><span class="line">// 清除值</span><br><span class="line">localStorage.removeItem(&apos;key&apos;);</span><br><span class="line">// 清空值</span><br><span class="line">localStorage.clear();</span><br></pre></td></tr></table></figure>
+<h4 id="4-如果溢出怎么办"><a href="#4-如果溢出怎么办" class="headerlink" title="4. 如果溢出怎么办?"></a>4. 如果溢出怎么办?</h4><p>溢出会报异常，不推荐很多数据走缓存。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/10/vue-resource-post请求-bug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1618,150 +1764,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/node-文件上传以及分段上传/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/20/node-文件上传以及分段上传/" itemprop="url">
-                  node fs 文件上传以及分段上传
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-10-20 12:15:08 / Updated at: 12:38:40" itemprop="dateCreated datePublished" datetime="2018-10-20T12:15:08+08:00">2018-10-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>直接上代码了哦，直接上传的文件使用的是 fs.readFile, 分段上传的文件使用的是可读流的概念 fs.createReadStream。<br>更多node,请看官网<a href="http://nodejs.cn/api/fs.html" target="_blank" rel="noopener">http://nodejs.cn/api/fs.html</a></p>
-</blockquote>
-<h4 id="文件的数据类型-uploadOptions"><a href="#文件的数据类型-uploadOptions" class="headerlink" title="文件的数据类型 uploadOptions"></a>文件的数据类型 uploadOptions</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">export interface UploadOptions  &#123;</span><br><span class="line">    path: string;</span><br><span class="line">    buffer: ArrayBuffer;</span><br><span class="line">    isSegment: boolean;</span><br><span class="line">    completed: boolean;</span><br><span class="line">    extension: string;</span><br><span class="line">    fileName: string;</span><br><span class="line">    filedId?: string;</span><br><span class="line">    start?: number;</span><br><span class="line">    end?: number;</span><br><span class="line">    totalSize: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export interface FileOptions &#123;</span><br><span class="line">    path: string;</span><br><span class="line">    completed: boolean;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="read-file-service-ts"><a href="#read-file-service-ts" class="headerlink" title="read-file.service.ts"></a>read-file.service.ts</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; ElectronService &#125; from &apos;./electron.service&apos;;</span><br><span class="line">import &#123; UploadOptions &#125; from &apos;./uploadOptions&apos;;</span><br><span class="line">import &#123; SharedService &#125; from &apos;./shared.service&apos;;</span><br><span class="line">import &#123; UploadService &#125; from &apos;./upload.service&apos;;</span><br><span class="line">import &#123; ApiService &#125; from &apos;./api.service&apos;;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">  providedIn: &apos;root&apos;</span><br><span class="line">&#125;)</span><br><span class="line">export class ReadFileService &#123;</span><br><span class="line"></span><br><span class="line">  SLICESECTION: number = 255 * 1024 * 10;</span><br><span class="line">  public filePathWaitingQueue: any = [];</span><br><span class="line">  public currentfilePath: string;</span><br><span class="line">  public readable;</span><br><span class="line">  public dataBuffer;</span><br><span class="line">  public reader_start = 0;</span><br><span class="line">  public reader_end = 0;</span><br><span class="line">  public fileInfoCommon;</span><br><span class="line">  public fileId: string;</span><br><span class="line">  </span><br><span class="line">  constructor(public electronService: ElectronService,</span><br><span class="line">              public sharedService: SharedService,</span><br><span class="line">              public uploadService: UploadService,</span><br><span class="line">              public apiService: ApiService) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  // 准备读</span><br><span class="line">  public prepareRead(filePaths: any = []) &#123;</span><br><span class="line">    this.filePathWaitingQueue = this.filePathWaitingQueue.concat(filePaths);</span><br><span class="line">    if (this.filePathWaitingQueue.length === 1) &#123;</span><br><span class="line">      this.start();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 开始读</span><br><span class="line">  public start() &#123;</span><br><span class="line">    if (this.filePathWaitingQueue.length === 0) &#123;return;&#125;</span><br><span class="line">    this.currentfilePath = this.filePathWaitingQueue[0];</span><br><span class="line"></span><br><span class="line">    this.fileInfoCommon = &#123;</span><br><span class="line">      path: this.currentfilePath,</span><br><span class="line">      completed: false,</span><br><span class="line">      extension: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">      fileName: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">      totalSize: this.electronService.fs.statSync(this.currentfilePath).size</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    if (this.electronService.fs.statSync(this.currentfilePath).size &lt;= this.SLICESECTION) &#123;</span><br><span class="line">        this.read();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      this.createEmptyFile().then(() =&gt; &#123;</span><br><span class="line">        this.sliceRead();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 全部读取</span><br><span class="line">  public read() &#123;</span><br><span class="line">    this.electronService.fs.readFile(this.currentfilePath, (readerr, data) =&gt; &#123;</span><br><span class="line">      if (readerr) &#123; throw readerr;&#125;</span><br><span class="line">      const fileInfo: UploadOptions = &#123;</span><br><span class="line">        buffer: this.sharedService.toArrayBuffer(data),</span><br><span class="line">        isSegment: false,</span><br><span class="line">        path: this.currentfilePath,</span><br><span class="line">        completed: false,</span><br><span class="line">        extension: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">        fileName: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">        totalSize: this.electronService.fs.statSync(this.currentfilePath).size</span><br><span class="line">      &#125;;</span><br><span class="line">      console.log(fileInfo);</span><br><span class="line">      this.uploadService.createUpload(fileInfo);</span><br><span class="line">      this.filePathWaitingQueue.shift();</span><br><span class="line">      this.start();</span><br><span class="line">  &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 分段读</span><br><span class="line">  public sliceRead() &#123;</span><br><span class="line">    const that = this;</span><br><span class="line">    this.readable = this.electronService.fs.createReadStream(this.currentfilePath, &#123;</span><br><span class="line">      highWaterMark: 2611200</span><br><span class="line">    &#125;);</span><br><span class="line">    this.dataBuffer = new Buffer(0);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;readable&apos;, function() &#123;</span><br><span class="line">        console.log(&apos;received readable&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;data&apos;, function(chunk) &#123; // chunk 默认16kb</span><br><span class="line">        console.log(&apos;read %d bytes: %s&apos;, chunk.length, chunk);</span><br><span class="line">       </span><br><span class="line">        that.dealData(chunk);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;end&apos;, function() &#123;</span><br><span class="line">        console.log(&apos;read end&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;close&apos;, function() &#123;</span><br><span class="line">        console.log(&apos;file was closed.&apos;);</span><br><span class="line">        that.filePathWaitingQueue.shift();</span><br><span class="line">        that.start();</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;error&apos;, function(err) &#123;</span><br><span class="line">        console.log(&apos;error occured: %s&apos;, err.message);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * </span><br><span class="line">   * @param data </span><br><span class="line">   */</span><br><span class="line">  public dealData(chunk) &#123;</span><br><span class="line">    this.readable.pause();         // 暂停读取</span><br><span class="line">    </span><br><span class="line">    this.reader_end += chunk.length;</span><br><span class="line">    this.reader_start = this.reader_end - chunk.length;</span><br><span class="line"></span><br><span class="line">    const start = this.reader_start;</span><br><span class="line">    const end = this.reader_end;</span><br><span class="line"></span><br><span class="line">    const fileInfo: UploadOptions = &#123;</span><br><span class="line">      buffer: this.sharedService.toArrayBuffer(chunk),</span><br><span class="line">      start: start,</span><br><span class="line">      end: end,</span><br><span class="line">      filedId: this.fileId,</span><br><span class="line">      isSegment: true,</span><br><span class="line">      path: this.currentfilePath,</span><br><span class="line">      completed: false,</span><br><span class="line">      extension: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">      fileName: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">      totalSize: this.electronService.fs.statSync(this.currentfilePath).size</span><br><span class="line">    &#125;;</span><br><span class="line">    console.log(fileInfo);</span><br><span class="line">    this.uploadService.createUpload(fileInfo);</span><br><span class="line">    this.readable.resume();      // 恢复读取文件</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 创建空文件</span><br><span class="line">   */</span><br><span class="line">  public createEmptyFile() &#123;</span><br><span class="line">    return new Promise(resolve =&gt; &#123;</span><br><span class="line">      const fileInfo = &#123; </span><br><span class="line">        &quot;extension&quot;: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">        &quot;displayName&quot;: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">        &quot;fileName&quot;: this.sharedService.getFileNameByPath(this.currentfilePath)</span><br><span class="line">      &#125;;</span><br><span class="line">      this.apiService.CreateEmptyFile(fileInfo).subscribe(res =&gt; &#123;</span><br><span class="line">        this.fileId = res[&quot;id&quot;];</span><br><span class="line">        resolve();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;); </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="upload-service-ts"><a href="#upload-service-ts" class="headerlink" title="upload.service.ts"></a>upload.service.ts</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; UploadOptions, FileOptions &#125; from &apos;./uploadOptions&apos;;</span><br><span class="line">import &#123; ApiService &#125; from &apos;./api.service&apos;;</span><br><span class="line">import &#123; FileService &#125; from &apos;./file.service&apos;;</span><br><span class="line">import &#123; SaveToJSONService &#125; from &apos;./save-to-json.service&apos;;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">  providedIn: &apos;root&apos;</span><br><span class="line">&#125;)</span><br><span class="line">export class UploadService &#123;</span><br><span class="line"></span><br><span class="line">  public uploadFileQueue: UploadOptions[] = [];           // 上传队列</span><br><span class="line">  public filesStateQueue: FileOptions[] = [];             // 上传成功或者失败的队列</span><br><span class="line">  public currentUploadInfo: UploadOptions;                // 当前正在上传的fileinfo</span><br><span class="line"></span><br><span class="line">  constructor(public apiService: ApiService,</span><br><span class="line">              public fileService: FileService,</span><br><span class="line">              public saveToJSONService: SaveToJSONService) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  // 创建上传</span><br><span class="line">  public createUpload(fileInfo: UploadOptions) &#123;</span><br><span class="line">    console.log(&quot;加入上传队列&quot;);</span><br><span class="line">    this.uploadFileQueue = this.uploadFileQueue.concat(fileInfo);</span><br><span class="line">    console.log(this.uploadFileQueue);</span><br><span class="line">    if (this.uploadFileQueue.length === 1) &#123;</span><br><span class="line">      this.uploadDispatch();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 上传</span><br><span class="line">  public uploadDispatch() &#123;</span><br><span class="line">    console.log(this.uploadFileQueue);</span><br><span class="line">    if (this.uploadFileQueue.length === 0) &#123;</span><br><span class="line">      this.saveToJSONService.saveToJSONFile(JSON.stringify(this.filesStateQueue), &apos;fileUploadStatus.json&apos;);</span><br><span class="line">      return; </span><br><span class="line">    &#125;</span><br><span class="line">    this.currentUploadInfo = this.uploadFileQueue[0];</span><br><span class="line">    console.log(&quot;正在上传：&quot;+ this.currentUploadInfo.fileName);</span><br><span class="line">    if (!this.currentUploadInfo.isSegment) &#123;</span><br><span class="line">        this.upload();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      this.sliceUpload();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 普通上传</span><br><span class="line">  public upload() &#123;</span><br><span class="line">      const fileInfo = &#123;</span><br><span class="line">        extension: this.currentUploadInfo.extension,</span><br><span class="line">        displayName: this.currentUploadInfo.fileName,</span><br><span class="line">        size: this.currentUploadInfo.totalSize,</span><br><span class="line">        segmentTotalSize: this.currentUploadInfo.totalSize,</span><br><span class="line">        fileName: this.currentUploadInfo.fileName,</span><br><span class="line">        directoryId: this.fileService.currentDirID</span><br><span class="line">      &#125;;</span><br><span class="line">      this.uploadFileQueue.shift();</span><br><span class="line">      this.apiService.UploadFiles(fileInfo, this.currentUploadInfo.buffer).subscribe(res =&gt; &#123;</span><br><span class="line">         this.setFileStatus(true);</span><br><span class="line">         this.uploadDispatch();</span><br><span class="line">      &#125;,</span><br><span class="line">      error =&gt; &#123;</span><br><span class="line">         this.setFileStatus(false);</span><br><span class="line">      &#125;</span><br><span class="line">     );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 分片上传</span><br><span class="line">  public sliceUpload() &#123;</span><br><span class="line">    this.apiService.SliceUploadingFiles(this.currentUploadInfo.filedId, this.currentUploadInfo.start, this.currentUploadInfo.end-1,this.currentUploadInfo.totalSize, this.currentUploadInfo.buffer).subscribe(</span><br><span class="line">      res =&gt; &#123;</span><br><span class="line">        console.log(&quot;上传成功&quot;);</span><br><span class="line">        this.uploadFileQueue.shift();</span><br><span class="line">        if (this.currentUploadInfo.end === this.currentUploadInfo.totalSize) &#123;</span><br><span class="line">          this.setFileStatus(true);</span><br><span class="line">        &#125;</span><br><span class="line">        this.uploadDispatch();</span><br><span class="line">      &#125;,</span><br><span class="line">      error =&gt; &#123;</span><br><span class="line">        this.setFileStatus(false);</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 设置文件状态</span><br><span class="line">  public setFileStatus(status: boolean) &#123;</span><br><span class="line">    this.currentUploadInfo.completed = status;</span><br><span class="line">    this.filesStateQueue.push(&#123;path: this.currentUploadInfo.path, completed: this.currentUploadInfo.completed&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1809,7 +1811,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
