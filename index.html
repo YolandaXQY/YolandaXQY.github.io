@@ -323,7 +323,7 @@
                 
               
 
-              <time title="Post created: 2019-01-22 14:48:42 / Updated at: 15:23:57" itemprop="dateCreated datePublished" datetime="2019-01-22T14:48:42+08:00">2019-01-22</time>
+              <time title="Post created: 2019-01-22 14:48:42 / Updated at: 15:25:12" itemprop="dateCreated datePublished" datetime="2019-01-22T14:48:42+08:00">2019-01-22</time>
             
 
             
@@ -372,10 +372,11 @@
 <li>配置网站 （选择的目录 是 build之后出现的dist文件夹）<br><img src="/images/angular-depoly-3.png" alt="logo"></li>
 <li>访问 127.0.0.1:8888</li>
 <li><strong>期间遇到页面刷新报404</strong><blockquote>
-<p>唯一不同的地方就是Angular项目在IIS中浏览时，当页面刷新时会出现404页面，这是因为Angular无刷新的特性引起的，在浏览器地址栏的网址不会真实映射到磁盘的特定位置。<br>解决方案:</p>
+<p>唯一不同的地方就是Angular项目在IIS中浏览时，当页面刷新时会出现404页面，这是因为Angular无刷新的特性引起的，在浏览器地址栏的网址不会真实映射到磁盘的特定位置。</p>
 </blockquote>
 </li>
 </ul>
+<p><strong>解决方案:</strong></p>
 <ol>
 <li><a href="https://www.microsoft.com/en-us/download/details.aspx?id=47337" target="_blank" rel="noopener">需要安装URL rewrite组件—-(这是传送门)</a></li>
 <li>在网站的dist目录下添加一个配置文件web.config，然后添加下面的内容到web.config中即可。<br>web.config<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">  &lt;system.webServer&gt;</span><br><span class="line">    &lt;rewrite&gt;</span><br><span class="line">      &lt;rules&gt;</span><br><span class="line">        &lt;rule name=&quot;AngularJS&quot; stopProcessing=&quot;true&quot;&gt;</span><br><span class="line">          &lt;match url=&quot;.*&quot; /&gt;</span><br><span class="line">          &lt;conditions logicalGrouping=&quot;MatchAll&quot;&gt;</span><br><span class="line">            &lt;add input=&quot;&#123;REQUEST_FILENAME&#125;&quot; matchType=&quot;IsFile&quot; negate=&quot;true&quot; /&gt;</span><br><span class="line">            &lt;add input=&quot;&#123;REQUEST_FILENAME&#125;&quot; matchType=&quot;IsDirectory&quot; negate=&quot;true&quot; /&gt;</span><br><span class="line">          &lt;/conditions&gt;</span><br><span class="line">          &lt;action type=&quot;Rewrite&quot; url=&quot;/&quot; /&gt;</span><br><span class="line">        &lt;/rule&gt;</span><br><span class="line">      &lt;/rules&gt;</span><br><span class="line">    &lt;/rewrite&gt;</span><br><span class="line">  &lt;/system.webServer&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
