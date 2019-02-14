@@ -277,6 +277,329 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/Ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/27/Ajax/" itemprop="url">
+                  $.ajax() 前后端的交互
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-09-27 15:09:21" itemprop="dateCreated datePublished" datetime="2018-09-27T15:09:21+08:00">2018-09-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-09-29 09:11:20" itemprop="dateModified" datetime="2018-09-29T09:11:20+08:00">2018-09-29</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://www.cnblogs.com/htoooth/p/7242217.html" target="_blank" rel="noopener">https://www.cnblogs.com/htoooth/p/7242217.html</a></p>
+<blockquote>
+<p>通过ajax进行前后端交互，主要就是定义数据类传输类型，contentType是规定客户端发送给服务器的数据格式；dataType是规定服务器发送给客户端的数据格式。</p>
+</blockquote>
+<h4 id="1-contentType"><a href="#1-contentType" class="headerlink" title="1. contentType"></a>1. contentType</h4><p>正常情况下是 ： application/x-www-form-urlencoded， 这种格式的特点就是 name/value的格式。 例如： name=xuqh&amp;value=2222</p>
+<p>但是为了解决前后端复杂对象的传输，后端就定义了一个数据类型： application/json , 当指定这个格式的时候需要JSON.stringify()序列化后，后台接收的时候再用JSON.parse()转换一下就可以。</p>
+<h4 id="2-data"><a href="#2-data" class="headerlink" title="2. data"></a>2. data</h4><p>data的类型只能是 string , Object ，数组，但是在请求的时候依然是转换成String的。 就像简单的Object会转换成 name=xuqh&amp;value=2222 这种格式。</p>
+<h4 id="3-后台接口请求成功进error"><a href="#3-后台接口请求成功进error" class="headerlink" title="3. 后台接口请求成功进error"></a>3. 后台接口请求成功进error</h4><p>原因是: 前端设置了 dataType:”json”，但是后端返回的类型不是严格的json导致出错。</p>
+<h4 id="4-type"><a href="#4-type" class="headerlink" title="4. type"></a>4. type</h4><p>ajax支持的请求类型有，常用的是 ‘POST’ , ‘GET’，对于 ‘PUT’, ‘DELETE’ 方法只有部分浏览器支持;</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/如何做优化内容丰富的table/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/25/如何做优化内容丰富的table/" itemprop="url">
+                  如何做优化内容丰富的table
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-09-25 15:42:28" itemprop="dateCreated datePublished" datetime="2018-09-25T15:42:28+08:00">2018-09-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-09-27 14:43:19" itemprop="dateModified" datetime="2018-09-27T14:43:19+08:00">2018-09-27</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>你本可以做的更好，没有做到的原因只有两种情况: 1) 看东西不足; 2) 经验不足</p>
+</blockquote>
+<h4 id="1-发现问题"><a href="#1-发现问题" class="headerlink" title="1. 发现问题"></a>1. 发现问题</h4><p>最近做了一个PC端的项目，展示列表的，但是其中的数据有长有短，但是当时的我没有考虑到适应性。当然我的电脑没有问题，但是不代表其他屏幕的电脑没有问题。</p>
+<h4 id="2-思考问题"><a href="#2-思考问题" class="headerlink" title="2. 思考问题"></a>2. 思考问题</h4><p>我当时想为啥我在页面没有想到这点，可能是我对页面的要求程度不高，可能是没有考虑的全面，以后做页面一定要追求精度。</p>
+<h4 id="3-PC端的尺寸"><a href="#3-PC端的尺寸" class="headerlink" title="3. PC端的尺寸"></a>3. PC端的尺寸</h4><p>1920 x 1080, 1366 x 768 , 1440 x 900 , 1600 x 900 这四种是比较常见的，所以做适配的时候，对于宽度至少到1366。<br><a href="https://blog.csdn.net/k912120/article/details/82587427" target="_blank" rel="noopener">https://blog.csdn.net/k912120/article/details/82587427</a></p>
+<h4 id="4-table列表如何好看"><a href="#4-table列表如何好看" class="headerlink" title="4. table列表如何好看"></a>4. table列表如何好看</h4><ol>
+<li>字小一号 13px</li>
+<li>如果文字过多，设置td为固定宽度，可允许换行word-break:break-all;</li>
+<li>padding 什么紧凑点</li>
+<li>如果字过多，考虑居左对齐，不要居中。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/Next-Learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1533,7 +1856,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>

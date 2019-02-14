@@ -277,6 +277,453 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/14/js比较版本号/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/14/js比较版本号/" itemprop="url">
+                  js比较版本号
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-02-14 16:56:24 / Updated at: 17:00:20" itemprop="dateCreated datePublished" datetime="2019-02-14T16:56:24+08:00">2019-02-14</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="JS比较版本号"><a href="#JS比较版本号" class="headerlink" title="JS比较版本号"></a>JS比较版本号</h4><blockquote>
+<p>版本号正常格式是xxxx.xxxx.xxxx.xxxx, 我的第一想法是将其转换成数字进行比较，去掉中间的.,但是一想不对，这跟位数有关，比如2.1.123.1与2.2.0.0，如果转换成数字进行比较就完蛋了，所以需要限制位数，就是都是四位，不足补0；</p>
+</blockquote>
+<p>代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 将版本号转换成数字</span><br><span class="line">private transferversionToNumber(version: string) &#123;</span><br><span class="line">    let versionNumArr = version.split(&apos;.&apos;);</span><br><span class="line">    const numPlace = [&quot;0000&quot;, &quot;000&quot;, &quot;00&quot;, &quot;0&quot;, &quot;&quot;];</span><br><span class="line">    versionNumArr = versionNumArr.map(num =&gt; &#123;</span><br><span class="line">        const len = num.length;</span><br><span class="line">        return numPlace[len] + num</span><br><span class="line">    &#125;);</span><br><span class="line">    return versionNumArr.join(&apos;&apos;);</span><br><span class="line">&#125;</span><br><span class="line">cosnole.log(this.transferversionToNumber(&quot;2.1.0.0&quot;) &gt;= this.transferversionToNumber(&quot;2.0.12.0&quot;))</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/31/获取Dom元素的高度/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/31/获取Dom元素的高度/" itemprop="url">
+                  获取Dom元素的高度
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-01-31 14:12:16 / Updated at: 14:12:58" itemprop="dateCreated datePublished" datetime="2019-01-31T14:12:16+08:00">2019-01-31</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>//获取盒子客户端的高度<br>box.clientHeight //输出110 (内容高度+padding * 2)</p>
+<p>clientHeight表示内容的实际高度,包括padding<br>offsetHeight表示元素的实际高度，包括内容的实际高度+边框的高度,可用尺子量的。</p>
+<p>scrollHeight 为子元素的实际高度加margin，也就是子元素的offsetHeight + margin*2。如果该元素没有产生滚动条，即其子元素的高度少于该元素的高度，则scrollHeight等于该元素的clientHeight</p>
+<p>//如果box的父容器没有设置定位，则box.offsetLeft是相对body而言，否则是根据离它最近且有设置定位的父容器而言<br>box.offsetLeft //获取box盒子相对它的父容器水平的偏移<br>box.offsetTop //获取box盒子相对它的父容器垂直的偏移</p>
+<p>//当一个容器设置高度，如果该容器有滚动条，则该容器的内容高度要减去滚动条的高度,滚动条的高度一般为17px</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/http请求/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/30/http请求/" itemprop="url">
+                  http请求
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2019-01-30 17:02:00" itemprop="dateCreated datePublished" datetime="2019-01-30T17:02:00+08:00">2019-01-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2019-01-31 14:11:33" itemprop="dateModified" datetime="2019-01-31T14:11:33+08:00">2019-01-31</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-数据库long类型的，JS-解析精度损耗"><a href="#1-数据库long类型的，JS-解析精度损耗" class="headerlink" title="1. 数据库long类型的，JS 解析精度损耗"></a>1. 数据库long类型的，JS 解析精度损耗</h3><blockquote>
+<p>JS对number类型的只能精确到17位，解决方案只能是后端转成string给前端</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 1034990866281926656;</span><br><span class="line">console.log(a);     // 1034990866281926700</span><br></pre></td></tr></table></figure>
+<h3 id="2-http-请求成功，angular订阅之后进error"><a href="#2-http-请求成功，angular订阅之后进error" class="headerlink" title="2. http 请求成功，angular订阅之后进error"></a>2. http 请求成功，angular订阅之后进error</h3><blockquote>
+<p>场景: angular 在调用下载文件的接口, 接口返回的数据类型是·二进制流·, 一开始非常惆怅为什么接口调用成功但是却在success的回调函数中没有任何体现，我怕是请求问题，去看了请求，我打印出来,返回的值是Observable对象，是可订阅的，后来想肯定是进error了，果然打印出”失败”；网上去搜相关的，说是ajax请求成功，但是进error,是因为dataType没有设置；后来一想，因为angular中默认的返回类型就是json, 但是这次返回的是二进制流不匹配导致的，所以在请求参数中加了 {responseType: ‘blob’} 就成功了。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">console.log(this.fileService.DownLoadFile(id, bucketname));</span><br><span class="line">this.fileService.DownLoadFile(id, bucketname).subscribe(</span><br><span class="line">    res =&gt; &#123;</span><br><span class="line">        console.log(&quot;成功&quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">    error =&gt; &#123;</span><br><span class="line">        console.log(&quot;失败&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DownLoadFile(fileId: string, bucketName: string) &#123;</span><br><span class="line"></span><br><span class="line">    const url = this.APPURL + `/api/dmc/v1/buckets/$&#123;bucketName&#125;/files/$&#123;fileId&#125;`;</span><br><span class="line"></span><br><span class="line">    let header = new HttpHeaders(&#123;</span><br><span class="line">        &quot;Content-Type&quot;: &quot;application/octet-stream&quot;,</span><br><span class="line">        &quot;digi-middleware-auth-user&quot;: this.httpService.userToken</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return this.http.get(url, &#123; headers: header, responseType: &apos;blob&apos; &#125;).pipe(catchError(res =&gt; this.handleError(res)));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-http请求被canceled"><a href="#3-http请求被canceled" class="headerlink" title="3. http请求被canceled"></a>3. http请求被canceled</h3>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/22/angularDeploy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -323,7 +770,7 @@
                 
               
 
-              <time title="Post created: 2019-01-22 14:48:42 / Updated at: 15:25:12" itemprop="dateCreated datePublished" datetime="2019-01-22T14:48:42+08:00">2019-01-22</time>
+              <time title="Post created: 2019-01-22 14:48:42 / Updated at: 18:32:43" itemprop="dateCreated datePublished" datetime="2019-01-22T14:48:42+08:00">2019-01-22</time>
             
 
             
@@ -382,7 +829,7 @@
 <li>在网站的dist目录下添加一个配置文件web.config，然后添加下面的内容到web.config中即可。<br>web.config<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">  &lt;system.webServer&gt;</span><br><span class="line">    &lt;rewrite&gt;</span><br><span class="line">      &lt;rules&gt;</span><br><span class="line">        &lt;rule name=&quot;AngularJS&quot; stopProcessing=&quot;true&quot;&gt;</span><br><span class="line">          &lt;match url=&quot;.*&quot; /&gt;</span><br><span class="line">          &lt;conditions logicalGrouping=&quot;MatchAll&quot;&gt;</span><br><span class="line">            &lt;add input=&quot;&#123;REQUEST_FILENAME&#125;&quot; matchType=&quot;IsFile&quot; negate=&quot;true&quot; /&gt;</span><br><span class="line">            &lt;add input=&quot;&#123;REQUEST_FILENAME&#125;&quot; matchType=&quot;IsDirectory&quot; negate=&quot;true&quot; /&gt;</span><br><span class="line">          &lt;/conditions&gt;</span><br><span class="line">          &lt;action type=&quot;Rewrite&quot; url=&quot;/&quot; /&gt;</span><br><span class="line">        &lt;/rule&gt;</span><br><span class="line">      &lt;/rules&gt;</span><br><span class="line">    &lt;/rewrite&gt;</span><br><span class="line">  &lt;/system.webServer&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-
+<h4 id="docker-nginx-部署"><a href="#docker-nginx-部署" class="headerlink" title="docker + nginx 部署"></a>docker + nginx 部署</h4>
           
         
       
@@ -1350,450 +1797,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/http请求/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/http请求/" itemprop="url">
-                  http请求
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-11-23 17:02:00 / Updated at: 17:04:32" itemprop="dateCreated datePublished" datetime="2018-11-23T17:02:00+08:00">2018-11-23</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-数据库long类型的，JS-解析精度损耗"><a href="#1-数据库long类型的，JS-解析精度损耗" class="headerlink" title="1. 数据库long类型的，JS 解析精度损耗"></a>1. 数据库long类型的，JS 解析精度损耗</h4><blockquote>
-<p>JS对number类型的只能精确到17位，解决方案只能是后端转成string给前端</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 1034990866281926656;</span><br><span class="line">console.log(a);     // 1034990866281926700</span><br></pre></td></tr></table></figure>
-<h4 id="2-http-请求成功，angular订阅之后进error"><a href="#2-http-请求成功，angular订阅之后进error" class="headerlink" title="2. http 请求成功，angular订阅之后进error"></a>2. http 请求成功，angular订阅之后进error</h4><blockquote>
-<p>场景: angular 在调用下载文件的接口, 接口返回的数据类型是·二进制流·, 一开始非常惆怅为什么接口调用成功但是却在success的回调函数中没有任何体现，我怕是请求问题，去看了请求，我打印出来,返回的值是Observable对象，是可订阅的，后来想肯定是进error了，果然打印出”失败”；网上去搜相关的，说是ajax请求成功，但是进error,是因为dataType没有设置；后来一想，因为angular中默认的返回类型就是json, 但是这次返回的是二进制流不匹配导致的，所以在请求参数中加了 {responseType: ‘blob’} 就成功了。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">console.log(this.fileService.DownLoadFile(id, bucketname));</span><br><span class="line">this.fileService.DownLoadFile(id, bucketname).subscribe(</span><br><span class="line">    res =&gt; &#123;</span><br><span class="line">        console.log(&quot;成功&quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">    error =&gt; &#123;</span><br><span class="line">        console.log(&quot;失败&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DownLoadFile(fileId: string, bucketName: string) &#123;</span><br><span class="line"></span><br><span class="line">    const url = this.APPURL + `/api/dmc/v1/buckets/$&#123;bucketName&#125;/files/$&#123;fileId&#125;`;</span><br><span class="line"></span><br><span class="line">    let header = new HttpHeaders(&#123;</span><br><span class="line">        &quot;Content-Type&quot;: &quot;application/octet-stream&quot;,</span><br><span class="line">        &quot;digi-middleware-auth-user&quot;: this.httpService.userToken</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return this.http.get(url, &#123; headers: header, responseType: &apos;blob&apos; &#125;).pipe(catchError(res =&gt; this.handleError(res)));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/11月整理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/14/11月整理/" itemprop="url">
-                  11月整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-11-14 10:21:15" itemprop="dateCreated datePublished" datetime="2018-11-14T10:21:15+08:00">2018-11-14</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-11-29 17:39:46" itemprop="dateModified" datetime="2018-11-29T17:39:46+08:00">2018-11-29</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-Array-from"><a href="#1-Array-from" class="headerlink" title="1. Array.from()"></a>1. Array.from()</h4><h4 id="2-map-构造函数"><a href="#2-map-构造函数" class="headerlink" title="2. map 构造函数"></a>2. map 构造函数</h4><h4 id="3-数组的高级用法"><a href="#3-数组的高级用法" class="headerlink" title="3. 数组的高级用法"></a>3. 数组的高级用法</h4><h5 id="1-map"><a href="#1-map" class="headerlink" title="1. map()"></a>1. map()</h5><h5 id="2-filter"><a href="#2-filter" class="headerlink" title="2. filter()"></a>2. filter()</h5><h5 id="3-forEach"><a href="#3-forEach" class="headerlink" title="3. forEach()"></a>3. forEach()</h5><h5 id="4-reduce"><a href="#4-reduce" class="headerlink" title="4. reduce()"></a>4. reduce()</h5><h5 id="5-findIndex"><a href="#5-findIndex" class="headerlink" title="5. findIndex()"></a>5. findIndex()</h5><h5 id="6-find"><a href="#6-find" class="headerlink" title="6. find()"></a>6. find()</h5><h5 id="7-every"><a href="#7-every" class="headerlink" title="7. every()"></a>7. every()</h5><h5 id="8-eaach"><a href="#8-eaach" class="headerlink" title="8. eaach()"></a>8. eaach()</h5><h4 id="4-assign"><a href="#4-assign" class="headerlink" title="4. assign()"></a>4. assign()</h4><h4 id="5-形成树形结构"><a href="#5-形成树形结构" class="headerlink" title="5. 形成树形结构"></a>5. 形成树形结构</h4><h4 id="6-树形结构中的checkbox的选择原理"><a href="#6-树形结构中的checkbox的选择原理" class="headerlink" title="6. 树形结构中的checkbox的选择原理"></a>6. 树形结构中的checkbox的选择原理</h4><h4 id="7-原型链"><a href="#7-原型链" class="headerlink" title="7. 原型链"></a>7. 原型链</h4><h4 id="8-对象的操作"><a href="#8-对象的操作" class="headerlink" title="8. 对象的操作"></a>8. 对象的操作</h4><ol>
-<li>判断有无属性</li>
-<li>判断是否为空对象</li>
-<li>对象的复制与拷贝</li>
-</ol>
-<h4 id="9-hasOwnProperty"><a href="#9-hasOwnProperty" class="headerlink" title="9. hasOwnProperty()"></a>9. hasOwnProperty()</h4><h4 id="10-typeof"><a href="#10-typeof" class="headerlink" title="10. typeof"></a>10. typeof</h4>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/Buffer-ArrayBuffer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/20/Buffer-ArrayBuffer/" itemprop="url">
-                  Buffer ArrayBuffer 相互转换
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-10-20 12:31:24 / Updated at: 12:38:38" itemprop="dateCreated datePublished" datetime="2018-10-20T12:31:24+08:00">2018-10-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer" target="_blank" rel="noopener">https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 将arrayBUffer 转换成Buffer</span><br><span class="line">public toBuffer(ab) &#123;</span><br><span class="line">  const buffer = new Buffer(ab.byteLength);</span><br><span class="line">  const view = new Uint8Array(ab);</span><br><span class="line">  for (let i = 0; i &lt; buffer.length; ++i) &#123;</span><br><span class="line">      buffer[i] = view[i];</span><br><span class="line">  &#125;</span><br><span class="line">  return buffer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 将Buffer转换成ArrayBuffer</span><br><span class="line">public toArrayBuffer(buf) &#123;</span><br><span class="line">  const ab = new ArrayBuffer(buf.length);</span><br><span class="line">  const view = new Uint8Array(ab);</span><br><span class="line">  for (let i = 0; i &lt; buf.length; ++i) &#123;</span><br><span class="line">      view[i] = buf[i];</span><br><span class="line">  &#125;</span><br><span class="line">  return ab;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1841,7 +1844,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>

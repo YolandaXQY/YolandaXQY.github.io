@@ -108,25 +108,24 @@
 
 
 
-  <meta name="description" content="1. 页面的适配性 也就是说，确保产品在不同平台、设备、浏览器上均能有优质的用户体验  2. ES5 与 ES6的区别 和他们的新特性。3. Html5 挑出比较重点的巩固4. CSS3 挑出比较重点的巩固5. webpack 、 gulp 打包工具6. angular/vue/react 三者都要重头学习7. 持续优化前端体验和优化页面响应速度?8. 了解前后端交互的restful！9. UCD">
-<meta name="keywords" content="个人总结">
+  <meta name="description" content="1. 数据库long类型的，JS 解析精度损耗 JS对number类型的只能精确到17位，解决方案只能是后端转成string给前端  12var a = 1034990866281926656;console.log(a);     // 1034990866281926700 2. http 请求成功，angular订阅之后进error 场景: angular 在调用下载文件的接口, 接口返回的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Next Learning">
-<meta property="og:url" content="http://yoursite.com/2018/09/25/Next-Learning/index.html">
+<meta property="og:title" content="http请求">
+<meta property="og:url" content="http://yoursite.com/2019/01/30/http请求/index.html">
 <meta property="og:site_name" content="青檬眼豆豆">
-<meta property="og:description" content="1. 页面的适配性 也就是说，确保产品在不同平台、设备、浏览器上均能有优质的用户体验  2. ES5 与 ES6的区别 和他们的新特性。3. Html5 挑出比较重点的巩固4. CSS3 挑出比较重点的巩固5. webpack 、 gulp 打包工具6. angular/vue/react 三者都要重头学习7. 持续优化前端体验和优化页面响应速度?8. 了解前后端交互的restful！9. UCD">
+<meta property="og:description" content="1. 数据库long类型的，JS 解析精度损耗 JS对number类型的只能精确到17位，解决方案只能是后端转成string给前端  12var a = 1034990866281926656;console.log(a);     // 1034990866281926700 2. http 请求成功，angular订阅之后进error 场景: angular 在调用下载文件的接口, 接口返回的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-29T01:11:18.728Z">
+<meta property="og:updated_time" content="2019-01-31T06:11:33.298Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Next Learning">
-<meta name="twitter:description" content="1. 页面的适配性 也就是说，确保产品在不同平台、设备、浏览器上均能有优质的用户体验  2. ES5 与 ES6的区别 和他们的新特性。3. Html5 挑出比较重点的巩固4. CSS3 挑出比较重点的巩固5. webpack 、 gulp 打包工具6. angular/vue/react 三者都要重头学习7. 持续优化前端体验和优化页面响应速度?8. 了解前后端交互的restful！9. UCD">
+<meta name="twitter:title" content="http请求">
+<meta name="twitter:description" content="1. 数据库long类型的，JS 解析精度损耗 JS对number类型的只能精确到17位，解决方案只能是后端转成string给前端  12var a = 1034990866281926656;console.log(a);     // 1034990866281926700 2. http 请求成功，angular订阅之后进error 场景: angular 在调用下载文件的接口, 接口返回的">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/25/Next-Learning/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/01/30/http请求/"/>
 
 
 
@@ -136,7 +135,7 @@
   };
 </script>
 
-  <title>Next Learning | 青檬眼豆豆</title>
+  <title>http请求 | 青檬眼豆豆</title>
   
 
 
@@ -281,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/Next-Learning/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/30/http请求/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yolanda2">
@@ -298,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Next Learning
+          <h1 class="post-title" itemprop="name headline">http请求
               
             
           </h1>
@@ -323,7 +322,7 @@
                 
               
 
-              <time title="Post created: 2018-09-25 09:07:00" itemprop="dateCreated datePublished" datetime="2018-09-25T09:07:00+08:00">2018-09-25</time>
+              <time title="Post created: 2019-01-30 17:02:00" itemprop="dateCreated datePublished" datetime="2019-01-30T17:02:00+08:00">2019-01-30</time>
             
 
             
@@ -340,7 +339,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2018-09-29 09:11:18" itemprop="dateModified" datetime="2018-09-29T09:11:18+08:00">2018-09-29</time>
+                <time title="Updated at: 2019-01-31 14:11:33" itemprop="dateModified" datetime="2019-01-31T14:11:33+08:00">2019-01-31</time>
               
             
           </span>
@@ -373,10 +372,16 @@
       
 
       
-        <h4 id="1-页面的适配性"><a href="#1-页面的适配性" class="headerlink" title="1. 页面的适配性"></a>1. 页面的适配性</h4><blockquote>
-<p>也就是说，确保产品在不同平台、设备、浏览器上均能有优质的用户体验</p>
+        <h3 id="1-数据库long类型的，JS-解析精度损耗"><a href="#1-数据库long类型的，JS-解析精度损耗" class="headerlink" title="1. 数据库long类型的，JS 解析精度损耗"></a>1. 数据库long类型的，JS 解析精度损耗</h3><blockquote>
+<p>JS对number类型的只能精确到17位，解决方案只能是后端转成string给前端</p>
 </blockquote>
-<h4 id="2-ES5-与-ES6的区别-和他们的新特性。"><a href="#2-ES5-与-ES6的区别-和他们的新特性。" class="headerlink" title="2. ES5 与 ES6的区别 和他们的新特性。"></a>2. ES5 与 ES6的区别 和他们的新特性。</h4><h4 id="3-Html5-挑出比较重点的巩固"><a href="#3-Html5-挑出比较重点的巩固" class="headerlink" title="3. Html5 挑出比较重点的巩固"></a>3. Html5 挑出比较重点的巩固</h4><h4 id="4-CSS3-挑出比较重点的巩固"><a href="#4-CSS3-挑出比较重点的巩固" class="headerlink" title="4. CSS3 挑出比较重点的巩固"></a>4. CSS3 挑出比较重点的巩固</h4><h4 id="5-webpack-、-gulp-打包工具"><a href="#5-webpack-、-gulp-打包工具" class="headerlink" title="5. webpack 、 gulp 打包工具"></a>5. webpack 、 gulp 打包工具</h4><h4 id="6-angular-vue-react-三者都要重头学习"><a href="#6-angular-vue-react-三者都要重头学习" class="headerlink" title="6. angular/vue/react 三者都要重头学习"></a>6. angular/vue/react 三者都要重头学习</h4><h4 id="7-持续优化前端体验和优化页面响应速度"><a href="#7-持续优化前端体验和优化页面响应速度" class="headerlink" title="7. 持续优化前端体验和优化页面响应速度?"></a>7. 持续优化前端体验和优化页面响应速度?</h4><h4 id="8-了解前后端交互的restful！"><a href="#8-了解前后端交互的restful！" class="headerlink" title="8. 了解前后端交互的restful！"></a>8. 了解前后端交互的restful！</h4><h4 id="9-UCD-UX-是什么"><a href="#9-UCD-UX-是什么" class="headerlink" title="9. UCD / UX 是什么?"></a>9. UCD / UX 是什么?</h4><h4 id="10-网站性能优化、解决兼容性问题。"><a href="#10-网站性能优化、解决兼容性问题。" class="headerlink" title="10. 网站性能优化、解决兼容性问题。"></a>10. 网站性能优化、解决兼容性问题。</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = 1034990866281926656;</span><br><span class="line">console.log(a);     // 1034990866281926700</span><br></pre></td></tr></table></figure>
+<h3 id="2-http-请求成功，angular订阅之后进error"><a href="#2-http-请求成功，angular订阅之后进error" class="headerlink" title="2. http 请求成功，angular订阅之后进error"></a>2. http 请求成功，angular订阅之后进error</h3><blockquote>
+<p>场景: angular 在调用下载文件的接口, 接口返回的数据类型是·二进制流·, 一开始非常惆怅为什么接口调用成功但是却在success的回调函数中没有任何体现，我怕是请求问题，去看了请求，我打印出来,返回的值是Observable对象，是可订阅的，后来想肯定是进error了，果然打印出”失败”；网上去搜相关的，说是ajax请求成功，但是进error,是因为dataType没有设置；后来一想，因为angular中默认的返回类型就是json, 但是这次返回的是二进制流不匹配导致的，所以在请求参数中加了 {responseType: ‘blob’} 就成功了。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">console.log(this.fileService.DownLoadFile(id, bucketname));</span><br><span class="line">this.fileService.DownLoadFile(id, bucketname).subscribe(</span><br><span class="line">    res =&gt; &#123;</span><br><span class="line">        console.log(&quot;成功&quot;);</span><br><span class="line">    &#125;,</span><br><span class="line">    error =&gt; &#123;</span><br><span class="line">        console.log(&quot;失败&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">DownLoadFile(fileId: string, bucketName: string) &#123;</span><br><span class="line"></span><br><span class="line">    const url = this.APPURL + `/api/dmc/v1/buckets/$&#123;bucketName&#125;/files/$&#123;fileId&#125;`;</span><br><span class="line"></span><br><span class="line">    let header = new HttpHeaders(&#123;</span><br><span class="line">        &quot;Content-Type&quot;: &quot;application/octet-stream&quot;,</span><br><span class="line">        &quot;digi-middleware-auth-user&quot;: this.httpService.userToken</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    return this.http.get(url, &#123; headers: header, responseType: &apos;blob&apos; &#125;).pipe(catchError(res =&gt; this.handleError(res)));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-http请求被canceled"><a href="#3-http请求被canceled" class="headerlink" title="3. http请求被canceled"></a>3. http请求被canceled</h3>
       
     </div>
 
@@ -394,12 +399,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/个人总结/" rel="tag"># 个人总结</a>
-          
-        </div>
-      
 
       
       
@@ -409,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/21/reduce累加器/" rel="next" title="reduce累加器">
-                <i class="fa fa-chevron-left"></i> reduce累加器
+              <a href="/2019/01/22/angularDeploy/" rel="next" title="angularDeploy">
+                <i class="fa fa-chevron-left"></i> angularDeploy
               </a>
             
           </div>
@@ -419,8 +418,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/25/如何做优化内容丰富的table/" rel="prev" title="如何做优化内容丰富的table">
-                如何做优化内容丰富的table <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/31/获取Dom元素的高度/" rel="prev" title="获取Dom元素的高度">
+                获取Dom元素的高度 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -570,7 +569,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-页面的适配性"><span class="nav-number">1.</span> <span class="nav-text">1. 页面的适配性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ES5-与-ES6的区别-和他们的新特性。"><span class="nav-number">2.</span> <span class="nav-text">2. ES5 与 ES6的区别 和他们的新特性。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Html5-挑出比较重点的巩固"><span class="nav-number">3.</span> <span class="nav-text">3. Html5 挑出比较重点的巩固</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-CSS3-挑出比较重点的巩固"><span class="nav-number">4.</span> <span class="nav-text">4. CSS3 挑出比较重点的巩固</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-webpack-、-gulp-打包工具"><span class="nav-number">5.</span> <span class="nav-text">5. webpack 、 gulp 打包工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-angular-vue-react-三者都要重头学习"><span class="nav-number">6.</span> <span class="nav-text">6. angular/vue/react 三者都要重头学习</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-持续优化前端体验和优化页面响应速度"><span class="nav-number">7.</span> <span class="nav-text">7. 持续优化前端体验和优化页面响应速度?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-了解前后端交互的restful！"><span class="nav-number">8.</span> <span class="nav-text">8. 了解前后端交互的restful！</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-UCD-UX-是什么"><span class="nav-number">9.</span> <span class="nav-text">9. UCD / UX 是什么?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-网站性能优化、解决兼容性问题。"><span class="nav-number">10.</span> <span class="nav-text">10. 网站性能优化、解决兼容性问题。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数据库long类型的，JS-解析精度损耗"><span class="nav-number">1.</span> <span class="nav-text">1. 数据库long类型的，JS 解析精度损耗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-http-请求成功，angular订阅之后进error"><span class="nav-number">2.</span> <span class="nav-text">2. http 请求成功，angular订阅之后进error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-http请求被canceled"><span class="nav-number">3.</span> <span class="nav-text">3. http请求被canceled</span></a></li></ol></div>
             
 
           </div>
