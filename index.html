@@ -218,7 +218,7 @@
           
           <li class="menu-item menu-item-home menu-item-active">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
   </li>
         
         
@@ -226,7 +226,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
   </li>
 
       
@@ -316,14 +316,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-02-14 16:56:24 / Updated at: 17:00:20" itemprop="dateCreated datePublished" datetime="2019-02-14T16:56:24+08:00">2019-02-14</time>
+              <time title="Created: 2019-02-14 16:56:24 / Modified: 17:00:20" itemprop="dateCreated datePublished" datetime="2019-02-14T16:56:24+08:00">2019-02-14</time>
             
 
             
@@ -459,14 +459,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-01-31 14:12:16 / Updated at: 14:12:58" itemprop="dateCreated datePublished" datetime="2019-01-31T14:12:16+08:00">2019-01-31</time>
+              <time title="Created: 2019-01-31 14:12:16 / Modified: 14:12:58" itemprop="dateCreated datePublished" datetime="2019-01-31T14:12:16+08:00">2019-01-31</time>
             
 
             
@@ -603,14 +603,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-01-30 17:02:00" itemprop="dateCreated datePublished" datetime="2019-01-30T17:02:00+08:00">2019-01-30</time>
+              <time title="Created: 2019-01-30 17:02:00" itemprop="dateCreated datePublished" datetime="2019-01-30T17:02:00+08:00">2019-01-30</time>
             
 
             
@@ -627,7 +627,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2019-01-31 14:11:33" itemprop="dateModified" datetime="2019-01-31T14:11:33+08:00">2019-01-31</time>
+                <time title="Modified: 2019-01-31 14:11:33" itemprop="dateModified" datetime="2019-01-31T14:11:33+08:00">2019-01-31</time>
               
             
           </span>
@@ -763,19 +763,31 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-01-22 14:48:42 / Updated at: 18:32:43" itemprop="dateCreated datePublished" datetime="2019-01-22T14:48:42+08:00">2019-01-22</time>
+              <time title="Created: 2019-01-22 14:48:42" itemprop="dateCreated datePublished" datetime="2019-01-22T14:48:42+08:00">2019-01-22</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-02-19 10:54:31" itemprop="dateModified" datetime="2019-02-19T10:54:31+08:00">2019-02-19</time>
               
             
           </span>
@@ -829,7 +841,49 @@
 <li>在网站的dist目录下添加一个配置文件web.config，然后添加下面的内容到web.config中即可。<br>web.config<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">  &lt;system.webServer&gt;</span><br><span class="line">    &lt;rewrite&gt;</span><br><span class="line">      &lt;rules&gt;</span><br><span class="line">        &lt;rule name=&quot;AngularJS&quot; stopProcessing=&quot;true&quot;&gt;</span><br><span class="line">          &lt;match url=&quot;.*&quot; /&gt;</span><br><span class="line">          &lt;conditions logicalGrouping=&quot;MatchAll&quot;&gt;</span><br><span class="line">            &lt;add input=&quot;&#123;REQUEST_FILENAME&#125;&quot; matchType=&quot;IsFile&quot; negate=&quot;true&quot; /&gt;</span><br><span class="line">            &lt;add input=&quot;&#123;REQUEST_FILENAME&#125;&quot; matchType=&quot;IsDirectory&quot; negate=&quot;true&quot; /&gt;</span><br><span class="line">          &lt;/conditions&gt;</span><br><span class="line">          &lt;action type=&quot;Rewrite&quot; url=&quot;/&quot; /&gt;</span><br><span class="line">        &lt;/rule&gt;</span><br><span class="line">      &lt;/rules&gt;</span><br><span class="line">    &lt;/rewrite&gt;</span><br><span class="line">  &lt;/system.webServer&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="docker-nginx-部署"><a href="#docker-nginx-部署" class="headerlink" title="docker + nginx 部署"></a>docker + nginx 部署</h4>
+<h4 id="docker-nginx-部署"><a href="#docker-nginx-部署" class="headerlink" title="docker + nginx 部署"></a>docker + nginx 部署</h4><ol>
+<li><p>Run <code>npm run build-prod</code>, 会打出一个dist的文件夹，压缩成dist.zip;</p>
+</li>
+<li><p>以服务器192.168.9.27为例，进行docker发布;</p>
+<ul>
+<li><code>cd /</code>进入根目录;</li>
+<li><code>cd /home/ms</code>;</li>
+<li><code>mkdir cc-app</code>;</li>
+<li>通过 <code>rz</code> 命令上传 dist.zip/Dockerfile/nginx.conf, 并 <code>unzip dist.zip</code>解压文件夹;<blockquote>
+<p>Dockerfile/nginx.conf与package.json同一级目录。</p>
+</blockquote>
+</li>
+<li>打镜像: <code>docker build -t cc-app:test .</code><blockquote>
+<p>注意： 后面cc-app:test 是指的是 容器名称:tag, 一个容器可以存在多个tag</p>
+</blockquote>
+</li>
+<li>运行镜像: <code>docker run -idt -p 8081:80 --name cc-app cc-app:test</code><blockquote>
+<p>注意: 8081:80 前者是此项目访问是的端口，后者是nginx的端口。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>docker的服务停止和删除</p>
+<blockquote>
+<p>如果要重新部署，必须先停掉服务，再删除容器和镜像，重新执行第二步命令（存放的文件夹可以不删哦）</p>
+<ul>
+<li>停止docker容器: <code>docker stop cc-app</code>;</li>
+<li>删除docker容器: <code>docker rm cc-app</code>;</li>
+<li>删除镜像image: <code>docker rmi -f cc-app:test</code>;</li>
+</ul>
+</blockquote>
+</li>
+<li><p>其他命令</p>
+<ul>
+<li>查看所有容器: <code>docker ps -a</code>;</li>
+<li>查看所有image: <code>docker images</code>;</li>
+<li>复制镜像: <code>docker tag cc-app-test:test cc-app:test</code>;</li>
+<li>删除文件: <code>docker -f dist.zip</code>;</li>
+<li>删除文件夹: <code>docker -rf dist</code></li>
+</ul>
+</li>
+</ol>
+
           
         
       
@@ -921,14 +975,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-01-11 10:53:10" itemprop="dateCreated datePublished" datetime="2019-01-11T10:53:10+08:00">2019-01-11</time>
+              <time title="Created: 2019-01-11 10:53:10" itemprop="dateCreated datePublished" datetime="2019-01-11T10:53:10+08:00">2019-01-11</time>
             
 
             
@@ -945,7 +999,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2019-01-22 09:25:32" itemprop="dateModified" datetime="2019-01-22T09:25:32+08:00">2019-01-22</time>
+                <time title="Modified: 2019-01-22 09:25:32" itemprop="dateModified" datetime="2019-01-22T09:25:32+08:00">2019-01-22</time>
               
             
           </span>
@@ -1079,14 +1133,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2019-01-10 09:43:12 / Updated at: 09:58:38" itemprop="dateCreated datePublished" datetime="2019-01-10T09:43:12+08:00">2019-01-10</time>
+              <time title="Created: 2019-01-10 09:43:12 / Modified: 09:58:38" itemprop="dateCreated datePublished" datetime="2019-01-10T09:43:12+08:00">2019-01-10</time>
             
 
             
@@ -1225,14 +1279,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-12-18 15:15:53 / Updated at: 15:16:22" itemprop="dateCreated datePublished" datetime="2018-12-18T15:15:53+08:00">2018-12-18</time>
+              <time title="Created: 2018-12-18 15:15:53 / Modified: 15:16:22" itemprop="dateCreated datePublished" datetime="2018-12-18T15:15:53+08:00">2018-12-18</time>
             
 
             
@@ -1367,14 +1421,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-12-17 14:36:28 / Updated at: 15:41:48" itemprop="dateCreated datePublished" datetime="2018-12-17T14:36:28+08:00">2018-12-17</time>
+              <time title="Created: 2018-12-17 14:36:28 / Modified: 15:41:48" itemprop="dateCreated datePublished" datetime="2018-12-17T14:36:28+08:00">2018-12-17</time>
             
 
             
@@ -1522,14 +1576,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-12-10 17:42:48" itemprop="dateCreated datePublished" datetime="2018-12-10T17:42:48+08:00">2018-12-10</time>
+              <time title="Created: 2018-12-10 17:42:48" itemprop="dateCreated datePublished" datetime="2018-12-10T17:42:48+08:00">2018-12-10</time>
             
 
             
@@ -1546,7 +1600,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2018-12-11 09:19:58" itemprop="dateModified" datetime="2018-12-11T09:19:58+08:00">2018-12-11</time>
+                <time title="Modified: 2018-12-11 09:19:58" itemprop="dateModified" datetime="2018-12-11T09:19:58+08:00">2018-12-11</time>
               
             
           </span>
@@ -1697,14 +1751,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Post created: 2018-11-28 14:19:52" itemprop="dateCreated datePublished" datetime="2018-11-28T14:19:52+08:00">2018-11-28</time>
+              <time title="Created: 2018-11-28 14:19:52" itemprop="dateCreated datePublished" datetime="2018-11-28T14:19:52+08:00">2018-11-28</time>
             
 
             
@@ -1721,7 +1775,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Updated at: 2018-12-10 17:41:43" itemprop="dateModified" datetime="2018-12-10T17:41:43+08:00">2018-12-10</time>
+                <time title="Modified: 2018-12-10 17:41:43" itemprop="dateModified" datetime="2018-12-10T17:41:43+08:00">2018-12-10</time>
               
             
           </span>
@@ -1845,7 +1899,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">30</span>
-                    <span class="site-state-item-name">Artikel</span>
+                    <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
               
@@ -1888,7 +1942,7 @@
                       
                     
                     <span class="site-state-item-count">14</span>
-                    <span class="site-state-item-name">Tags</span>
+                    <span class="site-state-item-name">tags</span>
                   
                 </div>
               
@@ -1941,7 +1995,7 @@
 
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
 
 
 
