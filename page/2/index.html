@@ -218,7 +218,7 @@
           
           <li class="menu-item menu-item-home">
     <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
   </li>
         
         
@@ -226,7 +226,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
   </li>
 
       
@@ -261,6 +261,490 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/文件上传-下载封装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/17/文件上传-下载封装/" itemprop="url">
+                  文件上传/下载封装
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-12-17 14:36:28 / Updated at: 15:41:48" itemprop="dateCreated datePublished" datetime="2018-12-17T14:36:28+08:00">2018-12-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="一-概述"><a href="#一-概述" class="headerlink" title="(一) 概述"></a>(一) 概述</h3><blockquote>
+<p>我一直在做文档中心的事，类如做文档中心的桌面应用程序、手机端的应用程序，都在做关于大小文件的上传、下载、增删改查、分享、复制、移动等，其他部门的用我们的文档中心，也有前端用，基于公司平台都是使用angular框架，所以可以封装一个服务出来加快他们的开发。</p>
+</blockquote>
+<h3 id="二-疑难杂症"><a href="#二-疑难杂症" class="headerlink" title="(二)疑难杂症"></a>(二)疑难杂症</h3><h4 id="1-如何及时反馈正确或者错误信息"><a href="#1-如何及时反馈正确或者错误信息" class="headerlink" title="1. 如何及时反馈正确或者错误信息"></a>1. 如何及时反馈正确或者错误信息</h4><blockquote>
+<p>因为用户只是调我们一个上传函数，但是上传函数内部也会去调好多服务，比如登录、分段上传、创建空文件等，比如分段上传，如何同步返回上传的进度，也就是说如果去主动推送消息??第一次脑中闪现的是Promise,但是Promise决定了向回调函数推送值的时间，并没有达到同步推送。<br>下面的文件让我真正知道了Observable/ Pormise是用来做什么的一个东西</p>
+</blockquote>
+<p><a href="https://blog.csdn.net/Tangshuai33333/article/details/79910809" target="_blank" rel="noopener">https://blog.csdn.net/Tangshuai33333/article/details/79910809</a><br><a href="https://ithelp.ithome.com.tw/articles/10186832" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10186832</a></p>
+<p>我的感悟:<br>熟悉两个名词，一个是observer和Iterator，分别对应两种模式: 观察者模式和迭代器模式。这两者的相同的地方是渐进式（progressive）地取数据,差别在于observer是生产者（producer）主动推送(push)数据给消费者（consumer); Iterator是消费者(consumer) 向生产者（producer）主动拉取(pull)数据;而 Observable 是两者地结合。<br>现在我可能了解比较浅显，会用。之后再有发现会更新。<br>对于Promise，也是主动推送的模型，但是其决定了推送的时间，不能实现同步推。</p>
+<h4 id="2-JS一切皆对象的思想"><a href="#2-JS一切皆对象的思想" class="headerlink" title="2. JS一切皆对象的思想"></a>2. JS一切皆对象的思想</h4><p>正常对我来说，传参传的比较多的就是对象、变量等，很少对一个函数进行传来传去的，用户调一个函数，之后订阅一次回调，我需要将所有的过程数据、以及正确错误信息全部返回到这个订阅函数里面，所以需要将返回对象observer进行传递。</p>
+<h3 id="三-文件上传"><a href="#三-文件上传" class="headerlink" title="(三) 文件上传"></a>(三) 文件上传</h3><ol>
+<li>校验用户名密码</li>
+<li>校验参数</li>
+<li>判断是普通上传还是分段上传</li>
+<li>此函数返回的是Observable对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 上传文件</span><br><span class="line"> * @param &#123;File&#125; file [ File对象 ]</span><br><span class="line"> * @param &#123;string&#125; bucket [ bucket ]</span><br><span class="line"> * @param &#123;string&#125; dirId [ 目录id]</span><br><span class="line"> * @param &#123;&#125;</span><br><span class="line"> * @returns</span><br><span class="line"> */</span><br><span class="line">public upload(file: File, bucket: string, dirId: string): Observable&lt;any&gt; &#123;</span><br><span class="line">    return Observable.create((observer) =&gt; &#123;</span><br><span class="line">        if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">        if (typeof file !== &apos;object&apos; || !bucket || !dirId) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;参数传递有误或者不能为空!&quot;); return; &#125;</span><br><span class="line">        if (file.size &lt;= SLICESECTION) &#123; // 读取并上传整个文件</span><br><span class="line">            this.pushFileMessage(observer, &apos;ongoing&apos;, 0);</span><br><span class="line">            this.entireUpload(file, bucket, dirId, observer);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            this.pushFileMessage(observer, &apos;ongoing&apos;, 0);</span><br><span class="line">            this.newEmptyFile(file, bucket, dirId).then(data =&gt; &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;ongoing&apos;, 5);</span><br><span class="line">                const reader = new FileReader();</span><br><span class="line">                this.sliceUpload(file, reader, bucket, dirId, data[&quot;id&quot;], 0, SLICESECTION, observer);</span><br><span class="line">            &#125;).catch(data =&gt; &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;error&apos;, data);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="四-全部代码"><a href="#四-全部代码" class="headerlink" title="(四) 全部代码"></a>(四) 全部代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br></pre></td><td class="code"><pre><span class="line">const SLICESECTION: number = 255 * 1024 * 10; // 2.55M</span><br><span class="line">import &#123; Injectable, Inject &#125; from &quot;@angular/core&quot;;</span><br><span class="line">import &#123; DmcRepository &#125; from &quot;@commonRepository/dmc-repository&quot;;</span><br><span class="line">import &#123; Observable &#125; from &apos;rxjs&apos;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 文档上传、下载服务</span><br><span class="line"> * 当文件超过255 * 1024 * 10 byte时，自动启用分段上传。</span><br><span class="line"> * 分段上传时，会报告进度;</span><br><span class="line"> * @export</span><br><span class="line"> * @class DwUploadFileService</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line">export class DwFileService &#123;</span><br><span class="line"></span><br><span class="line">    public dmc_username = &quot;digiwincloud&quot;;</span><br><span class="line">    public dmc_password = &quot;digiwincloud&quot;;</span><br><span class="line"></span><br><span class="line">    constructor(private dmcRepository: DmcRepository) &#123; &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 上传文件</span><br><span class="line">     * @param &#123;File&#125; file [ File对象 ]</span><br><span class="line">     * @param &#123;string&#125; bucket [ bucket ]</span><br><span class="line">     * @param &#123;string&#125; dirId [ 目录id]</span><br><span class="line">     * @param &#123;&#125;</span><br><span class="line">     * @returns</span><br><span class="line">     */</span><br><span class="line">    public upload(file: File, bucket: string, dirId: string): Observable&lt;any&gt; &#123;</span><br><span class="line">        return Observable.create((observer) =&gt; &#123;</span><br><span class="line">            if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">            if (typeof file !== &apos;object&apos; || !bucket || !dirId) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;参数传递有误或者不能为空!&quot;); return; &#125;</span><br><span class="line">            if (file.size &lt;= SLICESECTION) &#123; // 读取并上传整个文件</span><br><span class="line">                this.pushFileMessage(observer, &apos;ongoing&apos;, 0);</span><br><span class="line">                this.entireUpload(file, bucket, dirId, observer);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;ongoing&apos;, 0);</span><br><span class="line">                this.newEmptyFile(file, bucket, dirId).then(data =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;ongoing&apos;, 5);</span><br><span class="line">                    const reader = new FileReader();</span><br><span class="line">                    this.sliceUpload(file, reader, bucket, dirId, data[&quot;id&quot;], 0, SLICESECTION, observer);</span><br><span class="line">                &#125;).catch(data =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;error&apos;, data);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 覆盖上传</span><br><span class="line">     * @param &#123;File&#125; file [ File ]</span><br><span class="line">     * @param &#123;string&#125; bucket [ bucket]</span><br><span class="line">     * @param &#123;string&#125; dirId  [ 目录id ]</span><br><span class="line">     * @param &#123;string&#125; fileId [ 文件id ]</span><br><span class="line">     */</span><br><span class="line">    public coverUpload(file: File, bucket: string, dirId: string, fileId: string): Observable&lt;any&gt; &#123;</span><br><span class="line">        return Observable.create((observer) =&gt; &#123;</span><br><span class="line">            if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">            if (typeof file !== &apos;object&apos; || !bucket || !dirId || !fileId) &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;error&apos;, &quot;参数传递有误或者不能为空!&quot;);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            this.pushFileMessage(observer, &apos;ongoing&apos;, 0);</span><br><span class="line">            if (file.size &lt;= SLICESECTION) &#123;</span><br><span class="line">                this.entireCoverUpload(file, bucket, fileId, observer);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                const reader = new FileReader();</span><br><span class="line">                this.sliceUpload(file, reader, bucket, dirId, fileId, 0, SLICESECTION, observer, true);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 上传并分享</span><br><span class="line">     * @param &#123;File&#125; file</span><br><span class="line">     * @param &#123;string&#125; bucket</span><br><span class="line">     * @param &#123;string&#125; dirId</span><br><span class="line">     */</span><br><span class="line">    public uploadAndShare(file: File, bucket: string, dirId: string): Observable&lt;any&gt; &#123;</span><br><span class="line">        return Observable.create((observer) =&gt; &#123;</span><br><span class="line">            if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">            if (typeof file !== &apos;object&apos; || !bucket || !dirId) &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;error&apos;, &quot;参数传递有误或者不能为空!&quot;);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            this.upload(file, bucket, dirId).subscribe(</span><br><span class="line">                res =&gt; &#123;</span><br><span class="line">                    observer.next(res);</span><br><span class="line">                    if (res.status !== &apos;success&apos;) &#123; return; &#125;</span><br><span class="line">                    let info = res;</span><br><span class="line">                    this.dmcRepository.dmcLogin(this.dmc_username, this.dmc_password).subscribe(</span><br><span class="line">                        r1 =&gt; &#123;</span><br><span class="line">                            this.dmcRepository.dmcShareToAll(bucket, [res.fileId], r1.userToken).subscribe(</span><br><span class="line">                                r2 =&gt; &#123;</span><br><span class="line">                                    info.shareUrl = r2[0];</span><br><span class="line">                                    observer.next(info);</span><br><span class="line">                                &#125;,</span><br><span class="line">                                e2 =&gt; &#123;</span><br><span class="line">                                    observer.error(e2)</span><br><span class="line">                                &#125;);</span><br><span class="line">                        &#125;,</span><br><span class="line">                        e1 =&gt; &#123;</span><br><span class="line">                            observer.error(e1);</span><br><span class="line">                        &#125;);</span><br><span class="line">                &#125;,</span><br><span class="line">                error =&gt; &#123;</span><br><span class="line">                    observer.error(error);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 上传整个文件</span><br><span class="line">     * @private</span><br><span class="line">     * @param &#123;File&#125; file [ File ]</span><br><span class="line">     * @param &#123;string&#125; bucket [ buketName ]</span><br><span class="line">     * @param &#123;string&#125; dirId [ 目录Id]</span><br><span class="line">     * @param &#123;*&#125; resolve [ Function ]</span><br><span class="line">     * @param &#123;*&#125; reject [ Function ]</span><br><span class="line">     */</span><br><span class="line">    private entireUpload(file: File, bucket: string, dirId: string, observer: any) &#123;</span><br><span class="line">        const that = this;</span><br><span class="line">        const reader = new FileReader();    // 阅读器</span><br><span class="line">        reader.onload = (e) =&gt; &#123;</span><br><span class="line">            that.dmcRepository.dmcLogin(that.dmc_username, that.dmc_password).subscribe(</span><br><span class="line">                r1 =&gt; &#123;</span><br><span class="line">                    const fileInfo = &#123;      // 文件信息</span><br><span class="line">                        &quot;extension&quot;: this.getFileExtension(file.name),</span><br><span class="line">                        &quot;displayName&quot;: file.name,</span><br><span class="line">                        &quot;totalSize&quot;: file.size,</span><br><span class="line">                        &quot;segmentTotalSize&quot;: file.size,</span><br><span class="line">                        &quot;fileName&quot;: file.name,</span><br><span class="line">                        &quot;directoryId&quot;: dirId</span><br><span class="line">                    &#125;;</span><br><span class="line">                    that.dmcRepository.dmcUploadEntireFile(fileInfo, e.target[&quot;result&quot;], bucket, dirId, r1.userToken).subscribe(</span><br><span class="line">                        r2 =&gt; &#123;</span><br><span class="line">                            this.pushFileMessage(observer, &apos;success&apos;, 100, r2[&quot;id&quot;]);</span><br><span class="line">                        &#125;,</span><br><span class="line">                        e2 =&gt; &#123;</span><br><span class="line">                            this.pushFileMessage(observer, &apos;error&apos;, e2);</span><br><span class="line">                        &#125;);</span><br><span class="line">                &#125;,</span><br><span class="line">                e1 =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;error&apos;, e1);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        reader.readAsArrayBuffer(file); // 读文件</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 整个文件覆盖上传</span><br><span class="line">     * @private</span><br><span class="line">     * @param &#123;File&#125; file</span><br><span class="line">     * @param &#123;string&#125; bucket</span><br><span class="line">     * @param &#123;string&#125; fileId</span><br><span class="line">     * @param &#123;*&#125; observer</span><br><span class="line">     */</span><br><span class="line">    private entireCoverUpload(file: File, bucket: string, fileId: string, observer: any) &#123;</span><br><span class="line">        const that = this;</span><br><span class="line">        const reader = new FileReader();    // 阅读器</span><br><span class="line">        reader.onload = (e) =&gt; &#123;</span><br><span class="line">            that.dmcRepository.dmcLogin(that.dmc_username, that.dmc_password).subscribe(</span><br><span class="line">                r1 =&gt; &#123;</span><br><span class="line">                    that.dmcRepository.dmcCoverUploadEntireFile(fileId, e.target[&quot;result&quot;], bucket, r1.userToken).subscribe(</span><br><span class="line">                        r2 =&gt; &#123;</span><br><span class="line">                            this.pushFileMessage(observer, &apos;success&apos;, 100, r2[&quot;id&quot;]);</span><br><span class="line">                        &#125;,</span><br><span class="line">                        e2 =&gt; &#123;</span><br><span class="line">                            this.pushFileMessage(observer, &apos;error&apos;, e2);</span><br><span class="line">                        &#125;);</span><br><span class="line">                &#125;,</span><br><span class="line">                e1 =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;error&apos;, e1);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        reader.readAsArrayBuffer(file); // 读文件</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 创建分段上传的空文件</span><br><span class="line">     * @private</span><br><span class="line">     * @param &#123;File&#125; file [ File ]</span><br><span class="line">     * @param &#123;string&#125; bucket [ bucket ]</span><br><span class="line">     * @param &#123;string&#125; dirId [ 目录Id ]</span><br><span class="line">     * @returns Promise</span><br><span class="line">     */</span><br><span class="line">    private newEmptyFile(file: File, bucket: string, dirId: string) &#123;</span><br><span class="line">        return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">            let fileInfo = &#123;</span><br><span class="line">                &quot;extension&quot;: this.getFileExtension(file.name),</span><br><span class="line">                &quot;displayName&quot;: file.name,</span><br><span class="line">                &quot;fileName&quot;: file.name,</span><br><span class="line">                &quot;directoryId&quot;: dirId</span><br><span class="line">            &#125;;</span><br><span class="line">            this.dmcRepository.dmcLogin(this.dmc_username, this.dmc_password).subscribe(</span><br><span class="line">                res =&gt; &#123;</span><br><span class="line">                    this.dmcRepository.dmcCreateEmptyFile(fileInfo, bucket, dirId, res.userToken).subscribe(</span><br><span class="line">                        res2 =&gt; &#123;</span><br><span class="line">                            resolve(res2);</span><br><span class="line">                        &#125;,</span><br><span class="line">                        error =&gt; &#123;</span><br><span class="line">                            reject(error);</span><br><span class="line">                        &#125;)</span><br><span class="line">                &#125;,</span><br><span class="line">                error =&gt; &#123;</span><br><span class="line">                    reject(error);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 分段上传</span><br><span class="line">     * @private</span><br><span class="line">     * @param &#123;File&#125; file [ File ]</span><br><span class="line">     * @param &#123;FileReader&#125; reader [ 阅读器 ]</span><br><span class="line">     * @param &#123;*&#125; bucket [ bucket ]</span><br><span class="line">     * @param &#123;*&#125; dirId [ 目录Id ]</span><br><span class="line">     * @param &#123;*&#125; fileId  [ 文件id ]</span><br><span class="line">     * @param &#123;*&#125; reader_start [ 开始上传位置 ]</span><br><span class="line">     * @param &#123;*&#125; reader_end [ 结束上传位置 ]</span><br><span class="line">     * @param &#123;*&#125; resolve [ Function ]</span><br><span class="line">     * @param &#123;*&#125; reject [ Function ]</span><br><span class="line">     */</span><br><span class="line">    private sliceUpload(file: File, reader: FileReader, bucket, dirId, fileId, reader_start, reader_end, observer, cover?: boolean) &#123;</span><br><span class="line">        const that = this;</span><br><span class="line">        const blob = file.slice(reader_start, reader_end);  // 分割file</span><br><span class="line">        cover = cover || false;</span><br><span class="line">        reader.onload = (e) =&gt; &#123;</span><br><span class="line">            that.dmcRepository.dmcLogin(that.dmc_username, that.dmc_password).subscribe(</span><br><span class="line">                r1 =&gt; &#123;</span><br><span class="line">                    that.dmcRepository.dmcPieceUploadFile(fileId, reader_start, reader_end - 1, file.size,</span><br><span class="line">                        e.target[&quot;result&quot;], bucket, r1.userToken, cover)</span><br><span class="line">                        .subscribe(</span><br><span class="line">                            r2 =&gt; &#123;</span><br><span class="line">                                if (reader_end === file.size) &#123;</span><br><span class="line">                                    this.pushFileMessage(observer, &apos;success&apos;, 100, r2[&quot;id&quot;]);</span><br><span class="line">                                    return;</span><br><span class="line">                                &#125;</span><br><span class="line">                                that.pushFileMessage(observer, &apos;ongoing&apos;, 100 * reader_end / file.size);</span><br><span class="line">                                let new_reader_start = reader_start + SLICESECTION, new_reader_end;</span><br><span class="line">                                new_reader_end = (reader_end + SLICESECTION &gt; file.size) ? file.size : reader_end + SLICESECTION;</span><br><span class="line">                                that.sliceUpload(file, reader, bucket, dirId, fileId, new_reader_start, new_reader_end, observer, cover);</span><br><span class="line">                            &#125;,</span><br><span class="line">                            e2 =&gt; &#123;</span><br><span class="line">                                that.pushFileMessage(observer, &apos;error&apos;, e2);</span><br><span class="line">                            &#125;);</span><br><span class="line">                &#125;,</span><br><span class="line">                e1 =&gt; &#123;</span><br><span class="line">                    that.pushFileMessage(observer, &apos;error&apos;, e1);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        reader.readAsArrayBuffer(blob);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 下载文件 [ 整个下载，适合小文件 ]</span><br><span class="line">     * @param &#123;string&#125; bucket</span><br><span class="line">     * @param &#123;string&#125; fileId</span><br><span class="line">     * @param &#123;string&#125; fileName</span><br><span class="line">     * @returns Promise</span><br><span class="line">     */</span><br><span class="line">    public download(bucket: string, fileId: string, fileName: string): Observable&lt;any&gt; &#123;</span><br><span class="line">        return Observable.create((observer) =&gt; &#123;</span><br><span class="line">            if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">            if (!bucket || !fileId || !fileName) &#123; this.pushFileMessage(observer, &apos;error&apos;, &apos;函数参数不能为空&apos;); return; &#125;</span><br><span class="line">            this.dmcRepository.dmcLogin(this.dmc_username, this.dmc_password).subscribe(</span><br><span class="line">                r1 =&gt; &#123;</span><br><span class="line">                    this.dmcRepository.dmcDownload(bucket, fileId, r1.userToken).subscribe(</span><br><span class="line">                        blobFile =&gt; &#123;</span><br><span class="line">                            let aLink = window.document.createElement(&apos;a&apos;);</span><br><span class="line">                            let objUrl = window.URL.createObjectURL(blobFile);</span><br><span class="line">                            aLink.href = objUrl;</span><br><span class="line">                            aLink.download = fileName;</span><br><span class="line">                            document.body.appendChild(aLink);</span><br><span class="line"></span><br><span class="line">                            let evt = document.createEvent(&quot;MouseEvents&quot;);</span><br><span class="line">                            evt.initEvent(&quot;click&quot;, false, false);</span><br><span class="line">                            aLink.dispatchEvent(evt);</span><br><span class="line"></span><br><span class="line">                            window.URL.revokeObjectURL(objUrl);</span><br><span class="line">                            document.body.removeChild(aLink);</span><br><span class="line">                            this.pushFileMessage(observer, &apos;success&apos;, 100);</span><br><span class="line">                        &#125;,</span><br><span class="line">                        e2 =&gt; &#123;</span><br><span class="line">                            this.pushFileMessage(observer, &apos;error&apos;, e2);</span><br><span class="line">                        &#125;);</span><br><span class="line">                &#125;,</span><br><span class="line">                e1 =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;error&apos;, e1);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 批量删除文件</span><br><span class="line">     * @param &#123;string&#125; bucket</span><br><span class="line">     * @param &#123;*&#125; [fileIdArr=[]]</span><br><span class="line">     * @memberof DwFileService</span><br><span class="line">     */</span><br><span class="line">    public deleteFile(bucket: string, fileIdArr: any = []) &#123;</span><br><span class="line">        return Observable.create((observer) =&gt; &#123;</span><br><span class="line">            if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">            if (!bucket || fileIdArr.length === 0) &#123; this.pushFileMessage(observer, &apos;error&apos;, &apos;bucket不能为空或者删除数组不能为空&apos;); return; &#125;</span><br><span class="line">            this.dmcRepository.dmcLogin(this.dmc_username, this.dmc_password).subscribe(r1 =&gt; &#123;</span><br><span class="line">                this.dmcRepository.dmcBatchDelete(bucket, fileIdArr, r1.userToken).subscribe(r2 =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;success&apos;, &quot;删除成功&quot;);</span><br><span class="line">                &#125;, e2 =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;error&apos;, e2);</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;, e1 =&gt; &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;error&apos;, e1);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 获取文件名的后缀</span><br><span class="line">     * @param fileName [ 文件名 ]</span><br><span class="line">     */</span><br><span class="line">    private getFileExtension(fileName: string) &#123;</span><br><span class="line">        const pos = fileName.lastIndexOf(&quot;.&quot;);</span><br><span class="line">        return fileName.substring(pos + 1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 推送文件上传、下载成功、进度等信息</span><br><span class="line">     * @private</span><br><span class="line">     * @param &#123;*&#125; callfun</span><br><span class="line">     * @param &#123;string&#125; status</span><br><span class="line">     * @param &#123;*&#125; data</span><br><span class="line">     */</span><br><span class="line">    private pushFileMessage(callfun: any, status: string, data: any, fileId?: string) &#123;</span><br><span class="line">        const message: Message = &#123;</span><br><span class="line">            status: status,</span><br><span class="line">            data: data,</span><br><span class="line">        &#125;;</span><br><span class="line">        if (fileId) &#123;</span><br><span class="line">            message.fileId = fileId;</span><br><span class="line">        &#125;</span><br><span class="line">        if (status === &apos;error&apos;) &#123;</span><br><span class="line">            callfun.error(message);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            callfun.next(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 校验用户名、密码是否设置</span><br><span class="line">     */</span><br><span class="line">    private validateUser() &#123;</span><br><span class="line">        return !this.dmc_username || !this.dmc_password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export interface Message &#123;</span><br><span class="line">    status: string;  // &apos;success&apos;, &apos;error&apos;, &apos;ongoing&apos;</span><br><span class="line">    data: any;</span><br><span class="line">    fileId?: string;</span><br><span class="line">    shareUrl?: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/node-离线编辑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/10/node-离线编辑/" itemprop="url">
+                  node 离线编辑
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-12-10 17:42:48" itemprop="dateCreated datePublished" datetime="2018-12-10T17:42:48+08:00">2018-12-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-12-11 09:19:58" itemprop="dateModified" datetime="2018-12-11T09:19:58+08:00">2018-12-11</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-参照教程"><a href="#1-参照教程" class="headerlink" title="1. 参照教程"></a>1. 参照教程</h3><p><a href="https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/" target="_blank" rel="noopener">https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/</a></p>
+<h3 id="2-离线编辑描述"><a href="#2-离线编辑描述" class="headerlink" title="2. 离线编辑描述"></a>2. 离线编辑描述</h3><blockquote>
+<p>做到类似于有道云协作离线编辑，有道云的逻辑是将文件下载到本地，立即用windows程序打开，当用户保存的时候提交到服务端。<br>有道云协作下载文件到本地的时候会记录文件的信息(包含文件的状态等)，和二进制。<br>我做的是有道云的简约版，因为是浏览器模式下，而不是客户端，只能如此简单。<br>我主要利用的是Node中的watch/watchFile/unWatchFile,对文件进行检测，当检测到文件有改动的时候立马覆盖上传。</p>
+</blockquote>
+<h3 id="3-利用默认程序打开文件"><a href="#3-利用默认程序打开文件" class="headerlink" title="3. 利用默认程序打开文件"></a>3. 利用默认程序打开文件</h3><blockquote>
+<p>此操作也是利用的是node子进程(child_process)，利用命令行打开文件<br><a href="http://blog.haoji.me/nodejs-open-explorer-select-file.html?from=xa" target="_blank" rel="noopener">http://blog.haoji.me/nodejs-open-explorer-select-file.html?from=xa</a></p>
+</blockquote>
+<h5 id="windows系统"><a href="#windows系统" class="headerlink" title="windows系统"></a>windows系统</h5><p>1) 打开文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const cp = require(&apos;child_process&apos;);</span><br><span class="line">cp.exec(&quot;explorer &quot; + pathstr); // 使用默认程序打开文件</span><br></pre></td></tr></table></figure></p>
+<p>2) 打开文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const cp = require(&apos;child_process&apos;);</span><br><span class="line">cp.exec(&quot;explorer /select,&quot; + pathstr); // 打开并选中</span><br></pre></td></tr></table></figure></p>
+<h5 id="mac系统"><a href="#mac系统" class="headerlink" title="mac系统"></a>mac系统</h5><p>1) 打开文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">openMacFile() &#123;</span><br><span class="line">    var cp = require(&quot;child_process&quot;);</span><br><span class="line">    pathstr = pathstr.replace(/\(/g, &apos;\\(&apos;);</span><br><span class="line">    pathstr = pathstr.replace(/\)/g, &apos;\\)&apos;);</span><br><span class="line">    cp.execFile(&quot;open &quot; + pathstr, &#123;shell: true&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2) 打开文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">openDirectionary(pathstr) &#123;</span><br><span class="line">    var cp = require(&quot;child_process&quot;);</span><br><span class="line">    const index = this.pathstr.lastIndexOf(&apos;/&apos;);</span><br><span class="line">    this.pathstr= this.pathstr.slice(0,index);</span><br><span class="line">    cp.execFile(&quot;open &quot; + this.pathstr, &#123;shell: true&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-检测文件"><a href="#4-检测文件" class="headerlink" title="4. 检测文件"></a>4. 检测文件</h3><p><a href="https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/" target="_blank" rel="noopener">https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/</a></p>
+<h4 id="4-1-第一步尝试-通过event来判断"><a href="#4-1-第一步尝试-通过event来判断" class="headerlink" title="4.1 第一步尝试: 通过event来判断"></a>4.1 第一步尝试: 通过event来判断</h4><blockquote>
+<p>触发的事件event来判断，无效(依据不同的操作系统底层，保存文件可能会触发rename/ change)</p>
+</blockquote>
+<h4 id="4-2-第二步尝试-比较文件修改时间"><a href="#4-2-第二步尝试-比较文件修改时间" class="headerlink" title="4.2 第二步尝试: 比较文件修改时间"></a>4.2 第二步尝试: 比较文件修改时间</h4><blockquote>
+<p>比较文件的修改时间mtime, 文件保存的时候只触发一次change， 但是是无论文件内容有无变化都会触发。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const stats = that.electronService.fs.statSync(pathstr);</span><br><span class="line">if (stats.mtime.getTime() === previousTime.getTime()) &#123;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line">console.log(`modify time: $&#123;stats.mtime.getTime()&#125;`);</span><br><span class="line">previousTime = stats.mtime;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="4-3-使用md5判断文件内容是否被修改-先使用"><a href="#4-3-使用md5判断文件内容是否被修改-先使用" class="headerlink" title="4.3 使用md5判断文件内容是否被修改, 先使用"></a>4.3 使用md5判断文件内容是否被修改, 先使用</h4><figure class="highlight bash"><figcaption><span>npm install --save md5```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">const newfilemd5 =  md5(that.electronService.fs.readFileSync(pathstr));</span><br><span class="line"><span class="keyword">if</span> (newfilemd5 === previousFilemd5) &#123;</span><br><span class="line">    <span class="built_in">return</span>;</span><br><span class="line">&#125;</span><br><span class="line">console.log(`newfilemd5: <span class="variable">$&#123;newfilemd5&#125;</span>`);</span><br><span class="line">previousFilemd5 = newfilemd5;</span><br></pre></td></tr></table></figure>
+<h4 id="4-4-加入延迟"><a href="#4-4-加入延迟" class="headerlink" title="4.4 加入延迟"></a>4.4 加入延迟</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (fswait) &#123; return; &#125;</span><br><span class="line">fswait = setTimeout(() =&gt; &#123;</span><br><span class="line">    fswait = false;</span><br><span class="line">&#125;, 3000);</span><br></pre></td></tr></table></figure>
+<h3 id="5-移除监控"><a href="#5-移除监控" class="headerlink" title="5. 移除监控"></a>5. 移除监控</h3><blockquote>
+<p>本实例本来是使用watch的方式，但是为了更好的移除用了watchFile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.unwatchFile(filePathstr)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h3><p>所有代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">   * 监听文件的变化（离线编辑）</span><br><span class="line">   * 教程原文: https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/</span><br><span class="line">   * @param pathstr [文件下载路径]</span><br><span class="line">   * @param bucketName [文件所在bucket]</span><br><span class="line">   * @param dirId  [文件所在目录]</span><br><span class="line">   * @param filedId [文件的fileId]</span><br><span class="line">   */</span><br><span class="line">  public watchFileChange(pathstr: string, bucketName: string, dirId: string, filedId: string) &#123;</span><br><span class="line">    const that = this;</span><br><span class="line">    if (this.electronService.isMac) &#123;</span><br><span class="line">      pathstr = pathstr.replace(/\(/g, &apos;\\(&apos;);</span><br><span class="line">      pathstr = pathstr.replace(/\)/g, &apos;\\)&apos;);</span><br><span class="line">      cp.execFile(&quot;open &quot; + pathstr, &#123;shell: true&#125;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      cp.exec(&quot;explorer &quot; + pathstr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    let previousTime = this.electronService.fs.statSync(pathstr).mtime;</span><br><span class="line">    let previousFilemd5 = md5(this.electronService.fs.readFileSync(pathstr));</span><br><span class="line">    let fswait: any = false;</span><br><span class="line">    console.log(`init file time:  $&#123;previousTime.getTime()&#125;`);</span><br><span class="line">    console.log(`md5: $&#123;previousFilemd5&#125;`);</span><br><span class="line">    </span><br><span class="line">    // 延时3s监听，防止在文件打开时监听到change事件</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      that.electronService.fs.watchFile(pathstr, (curr, prev) =&gt; &#123;</span><br><span class="line">        // if (fileName) &#123;</span><br><span class="line">          const fileName = that.sharedService.getFileNameByPath(pathstr);</span><br><span class="line">          // 尝试第一步: 触发的事件event来判断，无效(依据不同的操作系统底层，保存文件可能会触发rename/ change)</span><br><span class="line"></span><br><span class="line">          // 尝试第二步: 比较文件的修改时间mtime, 文件保存的时候只触发一次change， 但是是无论文件内容有无变化都会触发。</span><br><span class="line">          const stats = that.electronService.fs.statSync(pathstr);</span><br><span class="line">          if (stats.mtime.getTime() === previousTime.getTime()) &#123;</span><br><span class="line">            return;</span><br><span class="line">          &#125;</span><br><span class="line">          console.log(`modify time: $&#123;stats.mtime.getTime()&#125;`);</span><br><span class="line">          previousTime = stats.mtime;</span><br><span class="line">  </span><br><span class="line">          // 尝试第三步: 使用md5判断文件内容是否被修改, 先使用npm install --save md5</span><br><span class="line">          const newfilemd5 =  md5(that.electronService.fs.readFileSync(pathstr));</span><br><span class="line">          if (newfilemd5 === previousFilemd5) &#123;</span><br><span class="line">            return;</span><br><span class="line">          &#125;</span><br><span class="line">          console.log(`newfilemd5: $&#123;newfilemd5&#125;`);</span><br><span class="line">          previousFilemd5 = newfilemd5;</span><br><span class="line">          </span><br><span class="line">          // 尝试第四步: 加入延迟：教程上本来是100ms，我设置成3s</span><br><span class="line">          if (fswait) &#123; return; &#125;</span><br><span class="line">          fswait = setTimeout(() =&gt; &#123;</span><br><span class="line">            fswait = false;</span><br><span class="line">          &#125;, 3000);</span><br><span class="line">          console.log(`$&#123;fileName&#125; file Changed`);</span><br><span class="line"></span><br><span class="line">          // 如果文件改变则覆盖上传</span><br><span class="line">          that.createUpload([pathstr], dirId, bucketName, filedId);</span><br><span class="line">        // &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;, 3000);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/树形结构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="yolanda2">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="青檬眼豆豆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/28/树形结构/" itemprop="url">
+                  树形结构
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Post created: 2018-11-28 14:19:52" itemprop="dateCreated datePublished" datetime="2018-11-28T14:19:52+08:00">2018-11-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2018-12-10 17:41:43" itemprop="dateModified" datetime="2018-12-10T17:41:43+08:00">2018-12-10</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-形成树结构"><a href="#1-形成树结构" class="headerlink" title="1. 形成树结构"></a>1. 形成树结构</h4><blockquote>
+<p>形成树结构</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -316,14 +800,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-11-14 10:21:15" itemprop="dateCreated datePublished" datetime="2018-11-14T10:21:15+08:00">2018-11-14</time>
+              <time title="Post created: 2018-11-14 10:21:15" itemprop="dateCreated datePublished" datetime="2018-11-14T10:21:15+08:00">2018-11-14</time>
             
 
             
@@ -340,7 +824,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-29 17:39:46" itemprop="dateModified" datetime="2018-11-29T17:39:46+08:00">2018-11-29</time>
+                <time title="Updated at: 2019-02-26 09:08:08" itemprop="dateModified" datetime="2019-02-26T09:08:08+08:00">2019-02-26</time>
               
             
           </span>
@@ -472,14 +956,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-10-20 12:31:24 / Modified: 12:38:38" itemprop="dateCreated datePublished" datetime="2018-10-20T12:31:24+08:00">2018-10-20</time>
+              <time title="Post created: 2018-10-20 12:31:24 / Updated at: 12:38:38" itemprop="dateCreated datePublished" datetime="2018-10-20T12:31:24+08:00">2018-10-20</time>
             
 
             
@@ -612,14 +1096,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-10-20 12:28:56 / Modified: 12:53:23" itemprop="dateCreated datePublished" datetime="2018-10-20T12:28:56+08:00">2018-10-20</time>
+              <time title="Post created: 2018-10-20 12:28:56 / Updated at: 12:53:23" itemprop="dateCreated datePublished" datetime="2018-10-20T12:28:56+08:00">2018-10-20</time>
             
 
             
@@ -752,14 +1236,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-10-20 12:15:08 / Modified: 12:38:40" itemprop="dateCreated datePublished" datetime="2018-10-20T12:15:08+08:00">2018-10-20</time>
+              <time title="Post created: 2018-10-20 12:15:08 / Updated at: 12:38:40" itemprop="dateCreated datePublished" datetime="2018-10-20T12:15:08+08:00">2018-10-20</time>
             
 
             
@@ -896,14 +1380,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-10-20 10:58:32" itemprop="dateCreated datePublished" datetime="2018-10-20T10:58:32+08:00">2018-10-20</time>
+              <time title="Post created: 2018-10-20 10:58:32" itemprop="dateCreated datePublished" datetime="2018-10-20T10:58:32+08:00">2018-10-20</time>
             
 
             
@@ -920,7 +1404,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-30 17:44:02" itemprop="dateModified" datetime="2019-01-30T17:44:02+08:00">2019-01-30</time>
+                <time title="Updated at: 2019-01-30 17:44:02" itemprop="dateModified" datetime="2019-01-30T17:44:02+08:00">2019-01-30</time>
               
             
           </span>
@@ -1071,14 +1555,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-30 15:33:04" itemprop="dateCreated datePublished" datetime="2018-09-30T15:33:04+08:00">2018-09-30</time>
+              <time title="Post created: 2018-09-30 15:33:04" itemprop="dateCreated datePublished" datetime="2018-09-30T15:33:04+08:00">2018-09-30</time>
             
 
             
@@ -1095,7 +1579,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-18 09:40:14" itemprop="dateModified" datetime="2018-12-18T09:40:14+08:00">2018-12-18</time>
+                <time title="Updated at: 2018-12-18 09:40:14" itemprop="dateModified" datetime="2018-12-18T09:40:14+08:00">2018-12-18</time>
               
             
           </span>
@@ -1240,14 +1724,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
               
                 
               
 
-              <time title="Created: 2018-09-29 09:16:03 / Modified: 15:10:47" itemprop="dateCreated datePublished" datetime="2018-09-29T09:16:03+08:00">2018-09-29</time>
+              <time title="Post created: 2018-09-29 09:16:03 / Updated at: 15:10:47" itemprop="dateCreated datePublished" datetime="2018-09-29T09:16:03+08:00">2018-09-29</time>
             
 
             
@@ -1334,460 +1818,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/28/数组与字符串转换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/28/数组与字符串转换/" itemprop="url">
-                  数组与字符串转换
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-28 16:06:50 / Modified: 17:09:45" itemprop="dateCreated datePublished" datetime="2018-09-28T16:06:50+08:00">2018-09-28</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-split"><a href="#1-split" class="headerlink" title="1. split()"></a>1. split()</h4><blockquote>
-<p>将字符串转换成数组，以一个标记分隔</p>
-</blockquote>
-<h6 id="1-以空格分隔"><a href="#1-以空格分隔" class="headerlink" title="1) 以空格分隔"></a>1) 以空格分隔</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var message = &quot;Hello World Yolanda&quot;;</span><br><span class="line">var arr = message.split(&quot; &quot;);</span><br><span class="line">console.log(arr);   // [&quot;Hello&quot;, &quot;World&quot;, &quot;Yolanda&quot;]</span><br></pre></td></tr></table></figure>
-<h5 id="2-以逗号-分隔"><a href="#2-以逗号-分隔" class="headerlink" title="2) 以逗号,分隔"></a>2) 以逗号,分隔</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var message = &quot;Hello,Wor,ld,Yol,landa&quot;;</span><br><span class="line">var arr = message.split(&quot;,&quot;);</span><br><span class="line">console.log(arr); //[&quot;Hello&quot;, &quot;Wor&quot;, &quot;ld&quot;, &quot;Yol&quot;, &quot;landa&quot;]</span><br></pre></td></tr></table></figure>
-<h4 id="2-join"><a href="#2-join" class="headerlink" title="2. join()"></a>2. join()</h4><blockquote>
-<p>将数组转换成字符串</p>
-</blockquote>
-<h5 id="1-以-逗号-连接"><a href="#1-以-逗号-连接" class="headerlink" title="1) 以 逗号, 连接"></a>1) 以 逗号, 连接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;hi&quot;,&quot;my&quot;,&quot;name&quot;,&quot;is&quot;,&quot;landa&quot;];</span><br><span class="line">var str = arr.join(&quot;,&quot;);</span><br><span class="line">console.log(str);   // &quot;hi,my,name,is,landa&quot;</span><br></pre></td></tr></table></figure>
-<h5 id="2-以-横杠-连接"><a href="#2-以-横杠-连接" class="headerlink" title="2) 以 横杠- 连接"></a>2) 以 横杠- 连接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;hi&quot;,&quot;my&quot;,&quot;landa&quot;];</span><br><span class="line">var str = arr.join(&quot;-&quot;);</span><br><span class="line">console.log(str);   // &quot;hi-my-landa&quot;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/常用函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/常用函数/" itemprop="url">
-                  常用函数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-27 15:48:40" itemprop="dateCreated datePublished" datetime="2018-09-27T15:48:40+08:00">2018-09-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-28 17:04:19" itemprop="dateModified" datetime="2018-09-28T17:04:19+08:00">2018-09-28</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-获取Url的参数-queryUrlString"><a href="#1-获取Url的参数-queryUrlString" class="headerlink" title="1. 获取Url的参数   queryUrlString()"></a>1. 获取Url的参数   queryUrlString()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function queryUrlString(val) &#123;</span><br><span class="line">    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;age=12</span><br><span class="line">    var reg = new RegExp(&quot;[?&amp;]&quot;+val+&quot;=([^&amp;?]*)&quot;,&quot;ig&quot;);</span><br><span class="line">    var matchArr = uri.match(reg);    // 如果没有匹配到，返回null </span><br><span class="line">    return (matchArr ? matchArr[0].substr(val.length+2) : null)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-判断是否是空对象-isEmptyObject"><a href="#2-判断是否是空对象-isEmptyObject" class="headerlink" title="2. 判断是否是空对象 isEmptyObject()"></a>2. 判断是否是空对象 isEmptyObject()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isEmptyObject(obj) &#123;</span><br><span class="line">    for (var p in obj) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125; </span><br><span class="line">    return true; // 空对象</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-判断值是否为空-isBlank"><a href="#3-判断值是否为空-isBlank" class="headerlink" title="3. 判断值是否为空 isBlank()"></a>3. 判断值是否为空 isBlank()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isBlank(val) &#123;</span><br><span class="line">    if (!val) &#123;         // 如果值是undefined,null, NaN 返回&quot;&quot;, 不过NaN有自己判断方法isNaN()</span><br><span class="line">        return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="4-校验数字-checkNum"><a href="#4-校验数字-checkNum" class="headerlink" title="4. 校验数字 checkNum()"></a>4. 校验数字 checkNum()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function checkNum(str) &#123;</span><br><span class="line">    var reg = /^[0-9]*$/;</span><br><span class="line">    if (reg.test(str)) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/springBoot-写静态页面/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/springBoot-写静态页面/" itemprop="url">
-                  springBoot 写静态页面
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-27 15:29:26 / Modified: 15:35:06" itemprop="dateCreated datePublished" datetime="2018-09-27T15:29:26+08:00">2018-09-27</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>使用的是Idea开发</li>
-<li>在 src/resources/template中新建页面</li>
-<li>css/img/js 放入resources/static</li>
-<li>在Controller中添加访问页面的接口，要注意不要用RestController 了，需要改成Controller，否则没有办法访问页面<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* 访问参数设定的静态页面</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">@RequestMapping(&quot;/parameterSetting&quot;)</span><br><span class="line">public String parameterSetting() &#123;</span><br><span class="line">    return &quot;/parameterSetting&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1830,8 +1865,8 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
-                    <span class="site-state-item-name">posts</span>
+                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-name">Artikel</span>
                   </a>
                 </div>
               
@@ -1874,7 +1909,7 @@
                       
                     
                     <span class="site-state-item-count">14</span>
-                    <span class="site-state-item-name">tags</span>
+                    <span class="site-state-item-name">Tags</span>
                   
                 </div>
               
@@ -1927,7 +1962,7 @@
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
 
 
 
