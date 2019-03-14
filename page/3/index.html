@@ -1,2115 +1,671 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
+<html>
   
-
-
-<html class="theme-next muse use-motion" lang="">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
+  <meta charset="utf-8">
+  <meta name="author" content="Dong Yuanxin" />
+  
+  
+  <title> | 第3页 | 青檬眼豆豆</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  
+    <meta name="keywords" content="Hexo, Theme-AD" />
+  
 
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.4.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
+  
+  <meta name="description" content="青檬眼豆豆">
 
   
 
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
 
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
 
+  
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="青檬眼豆豆">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
-<meta property="og:site_name" content="青檬眼豆豆">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="青檬眼豆豆">
+  
 
-
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/page/3/"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz","appkey":"WaR7nrzhliHj9aVwdQzkdlGd","comment":false,"count":true},
+    welcome: {"enable":true,"interval":30},
+    start_time: "2018-02-10",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: false,
+    lock: false,
+    author: "Dong Yuanxin",
+    share: {"twitter":false,"facebook":false,"weibo":true,"qq":true,"wechat":true},
+    mathjax: true,
+    page_type: "",
+    root: "/"
   };
 </script>
 
-  <title>青檬眼豆豆</title>
+  <script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
   
 
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
 
-
-
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
-
+  
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
-
-  
-  
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
     
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+      <span class="site-header-brand-title">
+        <a href="/">GOODGIRL</a>
+      </span>
     
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">青檬眼豆豆</span>
-        <span class="logo-line-after"><i></i></span>
+    
+      <span class="site-header-brand-motto"> | 安静写些东西</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+        <a href="/friends/" target="_self">友链</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/dongyuanxin/" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
       </a>
     </div>
-    
   </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
   </div>
-</div>
-
-
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
+  <div class="table-content-main">
+    <ol class="toc">
       
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
-  </li>
-
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
       
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
       
-    </ul>
-  
-
-  
-    
-
-  
-
-  
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/friends/" target="_self">
+            友链
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
 </nav>
-
-
-
+<div id="site-process"></div>
+    <main>
+      <div class="home">
   
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/angular-electron开发桌面应用程序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/30/angular-electron开发桌面应用程序/" itemprop="url">
-                  angular electron开发桌面应用程序
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-10-20
+            </span>
             
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
               </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-30 15:33:04" itemprop="dateCreated datePublished" datetime="2018-09-30T15:33:04+08:00">2018-09-30</time>
             
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-12-18 09:40:14" itemprop="dateModified" datetime="2018-12-18T09:40:14+08:00">2018-12-18</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我的demo项目: <a href="https://github.com/YolandaXQY/angular-electron-demo" target="_blank" rel="noopener">https://github.com/YolandaXQY/angular-electron-demo</a></p>
-<h4 id="一-开发桌面应用程序框架选型"><a href="#一-开发桌面应用程序框架选型" class="headerlink" title="(一) 开发桌面应用程序框架选型"></a>(一) 开发桌面应用程序框架选型</h4><p>由于本人只会html,css,js,部门就我一个写web的，然后就想要寻找一种框架，能够使用html,css,javascript等技术快速搭建一个原生的应用。<br>经过搜寻，下面几种框架都是可以跨应用的。</p>
-<ol>
-<li>ioinc: 基于HTML5开发的移动端APP的原生应用开发框架。<a href="https://ionicframework.com/" target="_blank" rel="noopener">https://ionicframework.com/</a></li>
-<li>hex: 网易开发的一个桌面应用程序，其产品主要应用于有道词典。<a href="http://hex.youdao.com/zh-cn/tutorial/index.html" target="_blank" rel="noopener">http://hex.youdao.com/zh-cn/tutorial/index.html</a> (好像已经不再更新了)</li>
-<li>NW(node webkit): 与hex实现原理差不多，但是NW是在hex之前出现的，也就算鼻祖。都是利用HTML + javascript开发的桌面应用程序，主要是实现方式就是在应用的配置文件中配置入口。</li>
-<li>electron: <a href="https://electronjs.org/docs" target="_blank" rel="noopener">https://electronjs.org/docs</a> 这个应用的作者与NW是同一个人，electron是在NW之后，与NW明显不同的地方是，它的入口是一个脚本，通过手动创建窗口的方式，集成了node, 更符如今的开发方式。</li>
-</ol>
-<p>综上所述，我们采用了electron的框架。</p>
-<p>参考链接:<br><a href="https://electronjs.org/docs/development/atom-shell-vs-node-webkit" target="_blank" rel="noopener">https://electronjs.org/docs/development/atom-shell-vs-node-webkit</a><br><a href="https://segmentfault.com/a/1190000008427041" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008427041</a><br><a href="https://segmentfault.com/a/1190000008205112" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008205112</a></p>
-<h4 id="二-开发前提"><a href="#二-开发前提" class="headerlink" title="(二) 开发前提"></a>(二) 开发前提</h4><p>需要安装node, npm , angular-cli</p>
-<h4 id="三-创建一个angular框架"><a href="#三-创建一个angular框架" class="headerlink" title="(三) 创建一个angular框架"></a>(三) 创建一个angular框架</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ng new angular-electron-demo</span><br><span class="line">$ npm install</span><br><span class="line">$ ng serve</span><br></pre></td></tr></table></figure>
-<h4 id="四-更新index-html-为electron做准备"><a href="#四-更新index-html-为electron做准备" class="headerlink" title="(四) 更新index.html,为electron做准备"></a>(四) 更新index.html,为electron做准备</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;base href=&quot;./&quot;&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="五-加入electron模块"><a href="#五-加入electron模块" class="headerlink" title="(五) 加入electron模块"></a>(五) 加入electron模块</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install electron --save-dev</span><br></pre></td></tr></table></figure>
-<h4 id="六-根目录增加index-js"><a href="#六-根目录增加index-js" class="headerlink" title="(六) 根目录增加index.js"></a>(六) 根目录增加index.js</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">const &#123; app, BrowserWindow &#125; = require(&quot;electron&quot;);</span><br><span class="line">const path = require(&quot;path&quot;);</span><br><span class="line">const url = require(&quot;url&quot;);</span><br><span class="line"></span><br><span class="line">let win;</span><br><span class="line"></span><br><span class="line">function createWindow() &#123;</span><br><span class="line">  win = new BrowserWindow(&#123; width: 800, height: 600&#125;);</span><br><span class="line"></span><br><span class="line">  // load the dist folder from Angular</span><br><span class="line">  win.loadURL(</span><br><span class="line">    url.format(&#123;</span><br><span class="line">      pathname: path.join(__dirname, `/dist/index.html`),</span><br><span class="line">      protocol: &quot;file:&quot;,</span><br><span class="line">      slashes: true</span><br><span class="line">    &#125;)</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  win.webContents.openDevTools();</span><br><span class="line"></span><br><span class="line">  // The following is optional and will open the DevTools:</span><br><span class="line">  // win.webContents.openDevTools()</span><br><span class="line"></span><br><span class="line">  win.on(&quot;closed&quot;, () =&gt; &#123;</span><br><span class="line">    win = null;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">app.on(&quot;ready&quot;, createWindow);</span><br><span class="line"></span><br><span class="line">// on macOS, closing the window doesn&apos;t quit the app</span><br><span class="line">app.on(&quot;window-all-closed&quot;, () =&gt; &#123;</span><br><span class="line">  if (process.platform !== &quot;darwin&quot;) &#123;</span><br><span class="line">    app.quit();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// initialize the app&apos;s main window</span><br><span class="line">app.on(&quot;activate&quot;, () =&gt; &#123;</span><br><span class="line">  if (win === null) &#123;</span><br><span class="line">    createWindow();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="七-修改package-json"><a href="#七-修改package-json" class="headerlink" title="(七) 修改package.json"></a>(七) 修改package.json</h4><p>主要是添加 “main”: “index.js” , 还有一个就是增加脚本命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;angular-electron-demo&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;0.0.0&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;ng&quot;: &quot;ng&quot;,</span><br><span class="line">    &quot;start&quot;: &quot;ng serve&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;ng build&quot;,</span><br><span class="line">    &quot;test&quot;: &quot;ng test&quot;,</span><br><span class="line">    &quot;lint&quot;: &quot;ng lint&quot;,</span><br><span class="line">    &quot;e2e&quot;: &quot;ng e2e&quot;,</span><br><span class="line">    &quot;electron&quot;: &quot;electron .&quot;,</span><br><span class="line">    &quot;electron-build&quot;: &quot;ng build --prod &amp;&amp; electron .&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;@angular/animations&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/common&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/compiler&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/core&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/forms&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/http&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/platform-browser&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/platform-browser-dynamic&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/router&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;core-js&quot;: &quot;^2.5.4&quot;,</span><br><span class="line">    &quot;rxjs&quot;: &quot;^6.0.0&quot;,</span><br><span class="line">    &quot;zone.js&quot;: &quot;^0.8.26&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;@angular-devkit/build-angular&quot;: &quot;~0.6.8&quot;,</span><br><span class="line">    &quot;@angular/cli&quot;: &quot;~6.0.8&quot;,</span><br><span class="line">    &quot;@angular/compiler-cli&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@angular/language-service&quot;: &quot;^6.0.3&quot;,</span><br><span class="line">    &quot;@types/jasmine&quot;: &quot;~2.8.6&quot;,</span><br><span class="line">    &quot;@types/jasminewd2&quot;: &quot;~2.0.3&quot;,</span><br><span class="line">    &quot;@types/node&quot;: &quot;~8.9.4&quot;,</span><br><span class="line">    &quot;codelyzer&quot;: &quot;~4.2.1&quot;,</span><br><span class="line">    &quot;electron&quot;: &quot;^3.0.2&quot;,</span><br><span class="line">    &quot;jasmine-core&quot;: &quot;~2.99.1&quot;,</span><br><span class="line">    &quot;jasmine-spec-reporter&quot;: &quot;~4.2.1&quot;,</span><br><span class="line">    &quot;karma&quot;: &quot;~1.7.1&quot;,</span><br><span class="line">    &quot;karma-chrome-launcher&quot;: &quot;~2.2.0&quot;,</span><br><span class="line">    &quot;karma-coverage-istanbul-reporter&quot;: &quot;~2.0.0&quot;,</span><br><span class="line">    &quot;karma-jasmine&quot;: &quot;~1.1.1&quot;,</span><br><span class="line">    &quot;karma-jasmine-html-reporter&quot;: &quot;^0.2.2&quot;,</span><br><span class="line">    &quot;protractor&quot;: &quot;~5.3.0&quot;,</span><br><span class="line">    &quot;ts-node&quot;: &quot;~5.0.1&quot;,</span><br><span class="line">    &quot;tslint&quot;: &quot;~5.9.1&quot;,</span><br><span class="line">    &quot;typescript&quot;: &quot;~2.7.2&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="八-启动"><a href="#八-启动" class="headerlink" title="(八) 启动"></a>(八) 启动</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run electron-build</span><br></pre></td></tr></table></figure>
-<p>参考链接:<br><a href="https://alligator.io/angular/electron/" target="_blank" rel="noopener">https://alligator.io/angular/electron/</a><br><a href="https://angularfirebase.com/lessons/desktop-apps-with-electron-and-angular/" target="_blank" rel="noopener">https://angularfirebase.com/lessons/desktop-apps-with-electron-and-angular/</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/29/CSS3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/29/CSS3/" itemprop="url">
-                  CSS3
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-29 09:16:03 / Updated at: 15:10:47" itemprop="dateCreated datePublished" datetime="2018-09-29T09:16:03+08:00">2018-09-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="（一）CSS3-模块"><a href="#（一）CSS3-模块" class="headerlink" title="（一）CSS3 模块"></a>（一）CSS3 模块</h4><blockquote>
-<p>CSS3按模块划分，分成 选择器 、 框模型 、 背景与边框 、 文本效果 、 2D/3D 转换 、动画 、多列布局 、 用户界面</p>
-</blockquote>
-<h4 id="（二）CSS3-边框"><a href="#（二）CSS3-边框" class="headerlink" title="（二）CSS3 边框"></a>（二）CSS3 边框</h4><h5 id="1-border-radius-圆角"><a href="#1-border-radius-圆角" class="headerlink" title="1. border-radius 圆角"></a>1. border-radius 圆角</h5><p><a href="https://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/" target="_blank" rel="noopener">https://www.zhangxinxu.com/wordpress/2015/11/css3-border-radius-tips/</a><br><a href="https://blog.csdn.net/YaoDeBiAn/article/details/78295725" target="_blank" rel="noopener">https://blog.csdn.net/YaoDeBiAn/article/details/78295725</a></p>
-<h6 id="border-radius的圆角计算原理：-首先遵从两个原理，一是大值特性，二是等比例特性。"><a href="#border-radius的圆角计算原理：-首先遵从两个原理，一是大值特性，二是等比例特性。" class="headerlink" title="border-radius的圆角计算原理： 首先遵从两个原理，一是大值特性，二是等比例特性。"></a>border-radius的圆角计算原理： 首先遵从两个原理，一是大值特性，二是等比例特性。</h6><p>1) 大值特性: 如果border-radius设置的值很大的适合，只会采用能够渲染圆角的大小渲染。<br>比如说，width:300px;height:200px;设置成border-radius:250px;只会按照&lt;200px去渲染，因为如果太大了就没法渲染了。<br>2) 等比例特性<br>border-radius: 300px/200px;需要遵从水平/垂直= 3:2进行渲染。</p>
-<p>####### border-radius的写法:<br>1) border-radius: 200px 10px 0 30px/200px 10px 0 30px; 这是原始的最复杂的写法，即： 水平方向/垂直方向，依次是左上，右上，右下，左下；<br>2) border-top-left-radius: 300px 100px;<br>   border-top-right-radius: 300px 100px;<br>   border-bottom-right-radius: 300px 100px;<br>   border-bottom-left-radius: 300px 100px;<br>3) border-radius: 300px;<br>4) border-radius: 50%; </p>
-<h5 id="2-box-shadow"><a href="#2-box-shadow" class="headerlink" title="2. box-shadow"></a>2. box-shadow</h5><p>1) box-shadow: h-shadow v-shadow blur spread inset/outset;  参数分别是: 水平距离/垂直距离/模糊距离/阴影尺寸/内部或者外部阴影</p>
-<p>2) 实现四周阴影: box-shadow: 0 0 15px 4px #999; 需要将h-shadow,v-shadow 设置为 0</p>
-<p>3) 只有底部阴影的: box-shadow: 0 7px 0 #999; 但是不能设模糊距离<br>   只有顶部阴影: box-shadow: 0 10px #999 inset;<br>   只有左部阴影:  box-shadow: 10px 0 #999 inset;<br>   只有右部阴影: box-shadow: 10px 0 0 #999;</p>
-<h5 id="3-border-image"><a href="#3-border-image" class="headerlink" title="3. border-image"></a>3. border-image</h5>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/28/数组与字符串转换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/28/数组与字符串转换/" itemprop="url">
-                  数组与字符串转换
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-28 16:06:50 / Updated at: 17:09:45" itemprop="dateCreated datePublished" datetime="2018-09-28T16:06:50+08:00">2018-09-28</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-split"><a href="#1-split" class="headerlink" title="1. split()"></a>1. split()</h4><blockquote>
-<p>将字符串转换成数组，以一个标记分隔</p>
-</blockquote>
-<h6 id="1-以空格分隔"><a href="#1-以空格分隔" class="headerlink" title="1) 以空格分隔"></a>1) 以空格分隔</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var message = &quot;Hello World Yolanda&quot;;</span><br><span class="line">var arr = message.split(&quot; &quot;);</span><br><span class="line">console.log(arr);   // [&quot;Hello&quot;, &quot;World&quot;, &quot;Yolanda&quot;]</span><br></pre></td></tr></table></figure>
-<h5 id="2-以逗号-分隔"><a href="#2-以逗号-分隔" class="headerlink" title="2) 以逗号,分隔"></a>2) 以逗号,分隔</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var message = &quot;Hello,Wor,ld,Yol,landa&quot;;</span><br><span class="line">var arr = message.split(&quot;,&quot;);</span><br><span class="line">console.log(arr); //[&quot;Hello&quot;, &quot;Wor&quot;, &quot;ld&quot;, &quot;Yol&quot;, &quot;landa&quot;]</span><br></pre></td></tr></table></figure>
-<h4 id="2-join"><a href="#2-join" class="headerlink" title="2. join()"></a>2. join()</h4><blockquote>
-<p>将数组转换成字符串</p>
-</blockquote>
-<h5 id="1-以-逗号-连接"><a href="#1-以-逗号-连接" class="headerlink" title="1) 以 逗号, 连接"></a>1) 以 逗号, 连接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;hi&quot;,&quot;my&quot;,&quot;name&quot;,&quot;is&quot;,&quot;landa&quot;];</span><br><span class="line">var str = arr.join(&quot;,&quot;);</span><br><span class="line">console.log(str);   // &quot;hi,my,name,is,landa&quot;</span><br></pre></td></tr></table></figure>
-<h5 id="2-以-横杠-连接"><a href="#2-以-横杠-连接" class="headerlink" title="2) 以 横杠- 连接"></a>2) 以 横杠- 连接</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;hi&quot;,&quot;my&quot;,&quot;landa&quot;];</span><br><span class="line">var str = arr.join(&quot;-&quot;);</span><br><span class="line">console.log(str);   // &quot;hi-my-landa&quot;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/常用函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/常用函数/" itemprop="url">
-                  常用函数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-27 15:48:40" itemprop="dateCreated datePublished" datetime="2018-09-27T15:48:40+08:00">2018-09-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-09-28 17:04:19" itemprop="dateModified" datetime="2018-09-28T17:04:19+08:00">2018-09-28</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-获取Url的参数-queryUrlString"><a href="#1-获取Url的参数-queryUrlString" class="headerlink" title="1. 获取Url的参数   queryUrlString()"></a>1. 获取Url的参数   queryUrlString()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function queryUrlString(val) &#123;</span><br><span class="line">    var uri = window.location.search;  // url的参数部分 ?name=zhangxioa&amp;age=12</span><br><span class="line">    var reg = new RegExp(&quot;[?&amp;]&quot;+val+&quot;=([^&amp;?]*)&quot;,&quot;ig&quot;);</span><br><span class="line">    var matchArr = uri.match(reg);    // 如果没有匹配到，返回null </span><br><span class="line">    return (matchArr ? matchArr[0].substr(val.length+2) : null)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-判断是否是空对象-isEmptyObject"><a href="#2-判断是否是空对象-isEmptyObject" class="headerlink" title="2. 判断是否是空对象 isEmptyObject()"></a>2. 判断是否是空对象 isEmptyObject()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isEmptyObject(obj) &#123;</span><br><span class="line">    for (var p in obj) &#123;</span><br><span class="line">        return false;</span><br><span class="line">    &#125; </span><br><span class="line">    return true; // 空对象</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-判断值是否为空-isBlank"><a href="#3-判断值是否为空-isBlank" class="headerlink" title="3. 判断值是否为空 isBlank()"></a>3. 判断值是否为空 isBlank()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function isBlank(val) &#123;</span><br><span class="line">    if (!val) &#123;         // 如果值是undefined,null, NaN 返回&quot;&quot;, 不过NaN有自己判断方法isNaN()</span><br><span class="line">        return &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    return val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="4-校验数字-checkNum"><a href="#4-校验数字-checkNum" class="headerlink" title="4. 校验数字 checkNum()"></a>4. 校验数字 checkNum()</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function checkNum(str) &#123;</span><br><span class="line">    var reg = /^[0-9]*$/;</span><br><span class="line">    if (reg.test(str)) &#123;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/springBoot-写静态页面/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/springBoot-写静态页面/" itemprop="url">
-                  springBoot 写静态页面
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-27 15:29:26 / Updated at: 15:35:06" itemprop="dateCreated datePublished" datetime="2018-09-27T15:29:26+08:00">2018-09-27</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>使用的是Idea开发</li>
-<li>在 src/resources/template中新建页面</li>
-<li>css/img/js 放入resources/static</li>
-<li>在Controller中添加访问页面的接口，要注意不要用RestController 了，需要改成Controller，否则没有办法访问页面<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">* 访问参数设定的静态页面</span><br><span class="line">* @return</span><br><span class="line">*/</span><br><span class="line">@RequestMapping(&quot;/parameterSetting&quot;)</span><br><span class="line">public String parameterSetting() &#123;</span><br><span class="line">    return &quot;/parameterSetting&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/27/Ajax/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/Ajax/" itemprop="url">
-                  $.ajax() 前后端的交互
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-27 15:09:21" itemprop="dateCreated datePublished" datetime="2018-09-27T15:09:21+08:00">2018-09-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-09-29 09:11:20" itemprop="dateModified" datetime="2018-09-29T09:11:20+08:00">2018-09-29</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://www.cnblogs.com/htoooth/p/7242217.html" target="_blank" rel="noopener">https://www.cnblogs.com/htoooth/p/7242217.html</a></p>
-<blockquote>
-<p>通过ajax进行前后端交互，主要就是定义数据类传输类型，contentType是规定客户端发送给服务器的数据格式；dataType是规定服务器发送给客户端的数据格式。</p>
-</blockquote>
-<h4 id="1-contentType"><a href="#1-contentType" class="headerlink" title="1. contentType"></a>1. contentType</h4><p>正常情况下是 ： application/x-www-form-urlencoded， 这种格式的特点就是 name/value的格式。 例如： name=xuqh&amp;value=2222</p>
-<p>但是为了解决前后端复杂对象的传输，后端就定义了一个数据类型： application/json , 当指定这个格式的时候需要JSON.stringify()序列化后，后台接收的时候再用JSON.parse()转换一下就可以。</p>
-<h4 id="2-data"><a href="#2-data" class="headerlink" title="2. data"></a>2. data</h4><p>data的类型只能是 string , Object ，数组，但是在请求的时候依然是转换成String的。 就像简单的Object会转换成 name=xuqh&amp;value=2222 这种格式。</p>
-<h4 id="3-后台接口请求成功进error"><a href="#3-后台接口请求成功进error" class="headerlink" title="3. 后台接口请求成功进error"></a>3. 后台接口请求成功进error</h4><p>原因是: 前端设置了 dataType:”json”，但是后端返回的类型不是严格的json导致出错。</p>
-<h4 id="4-type"><a href="#4-type" class="headerlink" title="4. type"></a>4. type</h4><p>ajax支持的请求类型有，常用的是 ‘POST’ , ‘GET’，对于 ‘PUT’, ‘DELETE’ 方法只有部分浏览器支持;</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/如何做优化内容丰富的table/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/25/如何做优化内容丰富的table/" itemprop="url">
-                  如何做优化内容丰富的table
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-25 15:42:28" itemprop="dateCreated datePublished" datetime="2018-09-25T15:42:28+08:00">2018-09-25</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-09-27 14:43:19" itemprop="dateModified" datetime="2018-09-27T14:43:19+08:00">2018-09-27</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>你本可以做的更好，没有做到的原因只有两种情况: 1) 看东西不足; 2) 经验不足</p>
-</blockquote>
-<h4 id="1-发现问题"><a href="#1-发现问题" class="headerlink" title="1. 发现问题"></a>1. 发现问题</h4><p>最近做了一个PC端的项目，展示列表的，但是其中的数据有长有短，但是当时的我没有考虑到适应性。当然我的电脑没有问题，但是不代表其他屏幕的电脑没有问题。</p>
-<h4 id="2-思考问题"><a href="#2-思考问题" class="headerlink" title="2. 思考问题"></a>2. 思考问题</h4><p>我当时想为啥我在页面没有想到这点，可能是我对页面的要求程度不高，可能是没有考虑的全面，以后做页面一定要追求精度。</p>
-<h4 id="3-PC端的尺寸"><a href="#3-PC端的尺寸" class="headerlink" title="3. PC端的尺寸"></a>3. PC端的尺寸</h4><p>1920 x 1080, 1366 x 768 , 1440 x 900 , 1600 x 900 这四种是比较常见的，所以做适配的时候，对于宽度至少到1366。<br><a href="https://blog.csdn.net/k912120/article/details/82587427" target="_blank" rel="noopener">https://blog.csdn.net/k912120/article/details/82587427</a></p>
-<h4 id="4-table列表如何好看"><a href="#4-table列表如何好看" class="headerlink" title="4. table列表如何好看"></a>4. table列表如何好看</h4><ol>
-<li>字小一号 13px</li>
-<li>如果文字过多，设置td为固定宽度，可允许换行word-break:break-all;</li>
-<li>padding 什么紧凑点</li>
-<li>如果字过多，考虑居左对齐，不要居中。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/25/Next-Learning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/25/Next-Learning/" itemprop="url">
-                  Next Learning
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-25 09:07:00" itemprop="dateCreated datePublished" datetime="2018-09-25T09:07:00+08:00">2018-09-25</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-09-29 09:11:18" itemprop="dateModified" datetime="2018-09-29T09:11:18+08:00">2018-09-29</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-页面的适配性"><a href="#1-页面的适配性" class="headerlink" title="1. 页面的适配性"></a>1. 页面的适配性</h4><blockquote>
-<p>也就是说，确保产品在不同平台、设备、浏览器上均能有优质的用户体验</p>
-</blockquote>
-<h4 id="2-ES5-与-ES6的区别-和他们的新特性。"><a href="#2-ES5-与-ES6的区别-和他们的新特性。" class="headerlink" title="2. ES5 与 ES6的区别 和他们的新特性。"></a>2. ES5 与 ES6的区别 和他们的新特性。</h4><h4 id="3-Html5-挑出比较重点的巩固"><a href="#3-Html5-挑出比较重点的巩固" class="headerlink" title="3. Html5 挑出比较重点的巩固"></a>3. Html5 挑出比较重点的巩固</h4><h4 id="4-CSS3-挑出比较重点的巩固"><a href="#4-CSS3-挑出比较重点的巩固" class="headerlink" title="4. CSS3 挑出比较重点的巩固"></a>4. CSS3 挑出比较重点的巩固</h4><h4 id="5-webpack-、-gulp-打包工具"><a href="#5-webpack-、-gulp-打包工具" class="headerlink" title="5. webpack 、 gulp 打包工具"></a>5. webpack 、 gulp 打包工具</h4><h4 id="6-angular-vue-react-三者都要重头学习"><a href="#6-angular-vue-react-三者都要重头学习" class="headerlink" title="6. angular/vue/react 三者都要重头学习"></a>6. angular/vue/react 三者都要重头学习</h4><h4 id="7-持续优化前端体验和优化页面响应速度"><a href="#7-持续优化前端体验和优化页面响应速度" class="headerlink" title="7. 持续优化前端体验和优化页面响应速度?"></a>7. 持续优化前端体验和优化页面响应速度?</h4><h4 id="8-了解前后端交互的restful！"><a href="#8-了解前后端交互的restful！" class="headerlink" title="8. 了解前后端交互的restful！"></a>8. 了解前后端交互的restful！</h4><h4 id="9-UCD-UX-是什么"><a href="#9-UCD-UX-是什么" class="headerlink" title="9. UCD / UX 是什么?"></a>9. UCD / UX 是什么?</h4><h4 id="10-网站性能优化、解决兼容性问题。"><a href="#10-网站性能优化、解决兼容性问题。" class="headerlink" title="10. 网站性能优化、解决兼容性问题。"></a>10. 网站性能优化、解决兼容性问题。</h4>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/reduce累加器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/21/reduce累加器/" itemprop="url">
-                  reduce累加器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-21 15:14:32" itemprop="dateCreated datePublished" datetime="2018-09-21T15:14:32+08:00">2018-09-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-09-25 09:05:55" itemprop="dateModified" datetime="2018-09-25T09:05:55+08:00">2018-09-25</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce</a></p>
-<p>以下案例仿照MDN做的</p>
-<blockquote>
-<p>reduce方法的好用之处就是有一个累加器</p>
-</blockquote>
-<h4 id="数值累加器"><a href="#数值累加器" class="headerlink" title="数值累加器"></a>数值累加器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [0,1,2,3];</span><br><span class="line">var sum = arr.reduce((acc, cur) =&gt; &#123;</span><br><span class="line">	return acc + cur;</span><br><span class="line">&#125;, 0);</span><br><span class="line">console.log(sum);</span><br></pre></td></tr></table></figure>
-<h4 id="计算数组中每个元素出现的次数"><a href="#计算数组中每个元素出现的次数" class="headerlink" title="计算数组中每个元素出现的次数"></a>计算数组中每个元素出现的次数</h4><blockquote>
-<p>对于reduce来说,累加器不仅可能是数组,还可以是个对象</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;miko&quot;,&quot;yolanda&quot;,&quot;sorry&quot;,&quot;mike&quot;,&quot;sorry&quot;,&quot;miko&quot;,&quot;love&quot;,&quot;love&quot;,&quot;yolanda&quot;,&quot;flower&quot;];</span><br><span class="line">var obj = arr.reduce((accObj,cur) =&gt; &#123;</span><br><span class="line">	 if (cur in accObj) &#123;</span><br><span class="line">       accObj[cur]++</span><br><span class="line">     &#125; else &#123;</span><br><span class="line">      accObj[cur] = 1;</span><br><span class="line">	 &#125;</span><br><span class="line">	 return accObj;</span><br><span class="line">&#125;,&#123;&#125;);</span><br><span class="line">console.log(obj);</span><br></pre></td></tr></table></figure>
-<h4 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&quot;miko&quot;,&quot;yolanda&quot;,&quot;sorry&quot;,&quot;mike&quot;,&quot;sorry&quot;,&quot;miko&quot;,&quot;love&quot;,&quot;love&quot;,&quot;yolanda&quot;,&quot;flower&quot;];</span><br><span class="line">var arr2 = arr.reduce((acc,cur) =&gt; &#123;</span><br><span class="line">	if (acc.indexOf(cur) === -1) &#123;</span><br><span class="line">       acc.push(cur);</span><br><span class="line">    &#125;</span><br><span class="line">    return acc;</span><br><span class="line">&#125;,[]);</span><br><span class="line">console.log(arr2);</span><br></pre></td></tr></table></figure>
-<h4 id="将二维数组转化成一维"><a href="#将二维数组转化成一维" class="headerlink" title="将二维数组转化成一维"></a>将二维数组转化成一维</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [[0,1],[3,4],[5,7]];</span><br><span class="line">var arr2 =  arr.reduce((newArr, cur) =&gt; &#123;</span><br><span class="line">	return newArr.concat(cur);</span><br><span class="line">&#125;,[]);</span><br><span class="line">arr2;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/Object.assign() 操作对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/21/Object.assign() 操作对象/" itemprop="url">
-                  Object.assign()
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-09-21 13:41:53 / Updated at: 14:21:31" itemprop="dateCreated datePublished" datetime="2018-09-21T13:41:53+08:00">2018-09-21</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign</a></p>
-<h4 id="1-用来更新对象中的某些属性"><a href="#1-用来更新对象中的某些属性" class="headerlink" title="1. 用来更新对象中的某些属性"></a>1. 用来更新对象中的某些属性</h4><blockquote>
-<p>Object.assign(targetObj, sourceObj); sourceObj是用来更新targetObj的</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;</span><br><span class="line">    a: 1,</span><br><span class="line">    b: 2,</span><br><span class="line">    c: 5,</span><br><span class="line">    d: 6,</span><br><span class="line">&#125;;</span><br><span class="line">let obj3 = Object.assign(&#123;&#125;, obj);</span><br><span class="line">const obj2  = &#123;</span><br><span class="line">    a: 100,</span><br><span class="line">    c: 99</span><br><span class="line">&#125;</span><br><span class="line">// 合并</span><br><span class="line">Object.assign(obj3, obj2);</span><br><span class="line">console.log(obj,obj3);</span><br></pre></td></tr></table></figure>
-<h4 id="2-用来深拷贝"><a href="#2-用来深拷贝" class="headerlink" title="2. 用来深拷贝"></a>2. 用来深拷贝</h4><blockquote>
-<p>Object.assign({},obj) 的方法，第一个参数一定要为空</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let obj = &#123;name: &apos;二月&apos;, age: &#123;c: 12&#125;&#125;</span><br><span class="line">let age = &#123;c: 88&#125;</span><br><span class="line">let o2 = Object.assign(&#123;&#125;, obj, &#123;age&#125;);</span><br><span class="line">let o3 = Object.assign(&#123;&#125;,obj);</span><br><span class="line">o3.name = &quot;四月&quot;;</span><br><span class="line">console.log(obj,o2,o3);</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
-
           </div>
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <h1 class="home-article-title">
+            <a href="/2018/10/20/electron-打包/">electron-builder 打包</a>
+          </h1>
+          <div class="home-article-content passage-article">
             
-              <p class="site-author-name" itemprop="name">yolanda2</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              
+            
           </div>
-
+          <a class="home-article-read" href="/2018/10/20/electron-打包/">
+            README MORE >>>
+          </a>
           
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">34</span>
-                    <span class="site-state-item-name">Artikel</span>
-                  </a>
-                </div>
-              
-
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">14</span>
-                    <span class="site-state-item-name">Tags</span>
-                  
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
+            <div class="passage-tags">
+             
+              <a href="/tags/electron-electron-builder/"><i class="fa fa-tags"></i>electron, electron-builder</a>
             
+            </div>
           
-          
-
         </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
         
       </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-09-30
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/09/30/angular-electron开发桌面应用程序/">angular electron开发桌面应用程序</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/09/30/angular-electron开发桌面应用程序/">
+            README MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/angular-electron-桌面应用程序/"><i class="fa fa-tags"></i>angular,electron,桌面应用程序</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-09-29
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/09/29/CSS3/">CSS3</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/09/29/CSS3/">
+            README MORE >>>
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-09-28
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/09/28/数组与字符串转换/">数组与字符串转换</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/09/28/数组与字符串转换/">
+            README MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/array-string/"><i class="fa fa-tags"></i>array string</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-09-27
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/09/27/常用函数/">常用函数</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/09/27/常用函数/">
+            README MORE >>>
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-09-27
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/09/27/springBoot-写静态页面/">springBoot 写静态页面</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/09/27/springBoot-写静态页面/">
+            README MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/springboot-html/"><i class="fa fa-tags"></i>springboot html</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-09-27
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/09/27/Ajax/">$.ajax() 前后端的交互</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/09/27/Ajax/">
+            README MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/jquery-ajax/"><i class="fa fa-tags"></i>jquery ajax</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-09-25
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/09/25/如何做优化内容丰富的table/">如何做优化内容丰富的table</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/09/25/如何做优化内容丰富的table/">
+            README MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/移动端-自适应/"><i class="fa fa-tags"></i>移动端 自适应</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-09-25
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/09/25/Next-Learning/">Next Learning</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/09/25/Next-Learning/">
+            README MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/个人总结/"><i class="fa fa-tags"></i>个人总结</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-09-21
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/09/21/reduce累加器/">reduce累加器</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/09/21/reduce累加器/">
+            README MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/js-reduce/"><i class="fa fa-tags"></i>js reduce</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+</div>
     </main>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+      <div class="site-footer-col">
+        <h5 class="site-footer-title">博客推荐</h5>
+        
+          <span class="site-footer-item">
+            <a href="https://godbmw.com/" target="_blank">GodBMW</a>
+          </span>
+        
+          <span class="site-footer-item">
+            <a href="http://ruanyifeng.com/" target="_blank">阮一峰的个人网站</a>
+          </span>
+        
+      </div>
+    
+      <div class="site-footer-col">
+        <h5 class="site-footer-title">系列教程</h5>
+        
+          <span class="site-footer-item">
+            <a href="https://godbmw.com/categories/webpack4%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/" target="_blank">webpack4系列教程</a>
+          </span>
+        
+          <span class="site-footer-item">
+            <a href="https://godbmw.com/design-patterns/" target="_blank">设计模式手册</a>
+          </span>
+        
+      </div>
+    
+      <div class="site-footer-col">
+        <h5 class="site-footer-title">抓到我</h5>
+        
+          <span class="site-footer-item">
+            <a href="https://juejin.im/user/5b91fcf06fb9a05d3c7fd4a5" target="_blank">掘金</a>
+          </span>
+        
+          <span class="site-footer-item">
+            <a href="https://segmentfault.com/" target="_blank">思否</a>
+          </span>
+        
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+      <div class="site-footer-info">
+        <i class="fa fa-at"></i> Email: yuanxin.me@gmail.com
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 <a href="https://github.com/dongyuanxin/theme-ad/" target="_blank">Theme-AD</a>.
+      Created by <a href="https://godbmw.com/" target="_blank">GodBMW</a>.
+      All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+        <input type="text">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+        
+          <div>
+            <img src="/images/wechat.png" alt="WeChat">
+            
+              <p>WeChat</p>
+            
+          </div>
+        
+          <div>
+            <img src="/images/alipay.png" alt="AliPay">
+            
+              <p>AliPay</p>
+            
+          </div>
+        
+      </div>
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+    
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">yolanda2</span>
-
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="/page/2/" data-enable="true">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="/page/4/" data-enable="true">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="false" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    <a href="javascript:void(0);" id="site-reward">
+      <i class="fa fa-thumbs-up"></i>
+    </a>
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
   
-
+  
+  
+    <a id="share-btn-weibo" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-weibo"></i>
+    </a>
+  
+  
+    <a id="share-btn-qq" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-qq"></i>
+    </a>
+  
+  
+    <a id="share-btn-wechat" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-wechat"></i>
+    </a>
   
 </div>
-
-
-
-
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
+
+
+
+
     
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</body>
+  </body>
 </html>

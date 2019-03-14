@@ -1,747 +1,361 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
+<html>
   
-
-
-<html class="theme-next muse use-motion" lang="">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.4.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
+  <meta charset="utf-8">
+  <meta name="author" content="Dong Yuanxin" />
   
-
-
-
-
-  <meta name="description" content="直接上代码了哦，直接上传的文件使用的是 fs.readFile, 分段上传的文件使用的是可读流的概念 fs.createReadStream。更多node,请看官网http://nodejs.cn/api/fs.html  文件的数据类型 uploadOptions1234567891011121314151617export interface UploadOptions  &amp;#123;">
-<meta property="og:type" content="article">
-<meta property="og:title" content="node fs 文件上传以及分段上传">
-<meta property="og:url" content="http://yoursite.com/2018/10/20/node-文件上传以及分段上传/index.html">
-<meta property="og:site_name" content="青檬眼豆豆">
-<meta property="og:description" content="直接上代码了哦，直接上传的文件使用的是 fs.readFile, 分段上传的文件使用的是可读流的概念 fs.createReadStream。更多node,请看官网http://nodejs.cn/api/fs.html  文件的数据类型 uploadOptions1234567891011121314151617export interface UploadOptions  &amp;#123;">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-20T04:38:40.937Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node fs 文件上传以及分段上传">
-<meta name="twitter:description" content="直接上代码了哦，直接上传的文件使用的是 fs.readFile, 分段上传的文件使用的是可读流的概念 fs.createReadStream。更多node,请看官网http://nodejs.cn/api/fs.html  文件的数据类型 uploadOptions1234567891011121314151617export interface UploadOptions  &amp;#123;">
-
-
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/10/20/node-文件上传以及分段上传/"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
+  
   <title>node fs 文件上传以及分段上传 | 青檬眼豆豆</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Hexo, Theme-AD" />
   
 
+  
+  <meta name="description" content="青檬眼豆豆">
 
+  
 
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
 
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
 
+  
 
+  
 
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz","appkey":"WaR7nrzhliHj9aVwdQzkdlGd","comment":false,"count":true},
+    welcome: {"enable":true,"interval":30},
+    start_time: "2018-02-10",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: true,
+    lock: false,
+    author: "Dong Yuanxin",
+    share: {"twitter":false,"facebook":false,"weibo":true,"qq":true,"wechat":true},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
 
+  <script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
 
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
+  <link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
 
+  
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
-
-  
-  
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
     
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+      <span class="site-header-brand-title">
+        <a href="/">GOODGIRL</a>
+      </span>
     
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">青檬眼豆豆</span>
-        <span class="logo-line-after"><i></i></span>
+    
+      <span class="site-header-brand-motto"> | 安静写些东西</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+        <a href="/friends/" target="_self">友链</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/dongyuanxin/" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
       </a>
     </div>
-    
   </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
   </div>
-</div>
-
-
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
+  <div class="table-content-main">
+    <ol class="toc">
       
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
-  </li>
-
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
       
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
       
-    </ul>
-  
-
-  
-    
-
-  
-
-  
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/friends/" target="_self">
+            友链
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
 </nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/node-文件上传以及分段上传/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+<div id="site-process"></div>
+    <main>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2018-10-20
     </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">node fs 文件上传以及分段上传
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-10-20 12:15:08 / Updated at: 12:38:40" itemprop="dateCreated datePublished" datetime="2018-10-20T12:15:08+08:00">2018-10-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
     
     
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
     
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <blockquote>
+  </div>
+  <h1 class="passage-title">
+    node fs 文件上传以及分段上传
+  </h1>
+  
+  <article class="passage-article">
+    <blockquote>
 <p>直接上代码了哦，直接上传的文件使用的是 fs.readFile, 分段上传的文件使用的是可读流的概念 fs.createReadStream。<br>更多node,请看官网<a href="http://nodejs.cn/api/fs.html" target="_blank" rel="noopener">http://nodejs.cn/api/fs.html</a></p>
 </blockquote>
 <h4 id="文件的数据类型-uploadOptions"><a href="#文件的数据类型-uploadOptions" class="headerlink" title="文件的数据类型 uploadOptions"></a>文件的数据类型 uploadOptions</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">export interface UploadOptions  &#123;</span><br><span class="line">    path: string;</span><br><span class="line">    buffer: ArrayBuffer;</span><br><span class="line">    isSegment: boolean;</span><br><span class="line">    completed: boolean;</span><br><span class="line">    extension: string;</span><br><span class="line">    fileName: string;</span><br><span class="line">    filedId?: string;</span><br><span class="line">    start?: number;</span><br><span class="line">    end?: number;</span><br><span class="line">    totalSize: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export interface FileOptions &#123;</span><br><span class="line">    path: string;</span><br><span class="line">    completed: boolean;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="read-file-service-ts"><a href="#read-file-service-ts" class="headerlink" title="read-file.service.ts"></a>read-file.service.ts</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; ElectronService &#125; from &apos;./electron.service&apos;;</span><br><span class="line">import &#123; UploadOptions &#125; from &apos;./uploadOptions&apos;;</span><br><span class="line">import &#123; SharedService &#125; from &apos;./shared.service&apos;;</span><br><span class="line">import &#123; UploadService &#125; from &apos;./upload.service&apos;;</span><br><span class="line">import &#123; ApiService &#125; from &apos;./api.service&apos;;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">  providedIn: &apos;root&apos;</span><br><span class="line">&#125;)</span><br><span class="line">export class ReadFileService &#123;</span><br><span class="line"></span><br><span class="line">  SLICESECTION: number = 255 * 1024 * 10;</span><br><span class="line">  public filePathWaitingQueue: any = [];</span><br><span class="line">  public currentfilePath: string;</span><br><span class="line">  public readable;</span><br><span class="line">  public dataBuffer;</span><br><span class="line">  public reader_start = 0;</span><br><span class="line">  public reader_end = 0;</span><br><span class="line">  public fileInfoCommon;</span><br><span class="line">  public fileId: string;</span><br><span class="line">  </span><br><span class="line">  constructor(public electronService: ElectronService,</span><br><span class="line">              public sharedService: SharedService,</span><br><span class="line">              public uploadService: UploadService,</span><br><span class="line">              public apiService: ApiService) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  // 准备读</span><br><span class="line">  public prepareRead(filePaths: any = []) &#123;</span><br><span class="line">    this.filePathWaitingQueue = this.filePathWaitingQueue.concat(filePaths);</span><br><span class="line">    if (this.filePathWaitingQueue.length === 1) &#123;</span><br><span class="line">      this.start();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 开始读</span><br><span class="line">  public start() &#123;</span><br><span class="line">    if (this.filePathWaitingQueue.length === 0) &#123;return;&#125;</span><br><span class="line">    this.currentfilePath = this.filePathWaitingQueue[0];</span><br><span class="line"></span><br><span class="line">    this.fileInfoCommon = &#123;</span><br><span class="line">      path: this.currentfilePath,</span><br><span class="line">      completed: false,</span><br><span class="line">      extension: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">      fileName: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">      totalSize: this.electronService.fs.statSync(this.currentfilePath).size</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    if (this.electronService.fs.statSync(this.currentfilePath).size &lt;= this.SLICESECTION) &#123;</span><br><span class="line">        this.read();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      this.createEmptyFile().then(() =&gt; &#123;</span><br><span class="line">        this.sliceRead();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 全部读取</span><br><span class="line">  public read() &#123;</span><br><span class="line">    this.electronService.fs.readFile(this.currentfilePath, (readerr, data) =&gt; &#123;</span><br><span class="line">      if (readerr) &#123; throw readerr;&#125;</span><br><span class="line">      const fileInfo: UploadOptions = &#123;</span><br><span class="line">        buffer: this.sharedService.toArrayBuffer(data),</span><br><span class="line">        isSegment: false,</span><br><span class="line">        path: this.currentfilePath,</span><br><span class="line">        completed: false,</span><br><span class="line">        extension: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">        fileName: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">        totalSize: this.electronService.fs.statSync(this.currentfilePath).size</span><br><span class="line">      &#125;;</span><br><span class="line">      console.log(fileInfo);</span><br><span class="line">      this.uploadService.createUpload(fileInfo);</span><br><span class="line">      this.filePathWaitingQueue.shift();</span><br><span class="line">      this.start();</span><br><span class="line">  &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 分段读</span><br><span class="line">  public sliceRead() &#123;</span><br><span class="line">    const that = this;</span><br><span class="line">    this.readable = this.electronService.fs.createReadStream(this.currentfilePath, &#123;</span><br><span class="line">      highWaterMark: 2611200</span><br><span class="line">    &#125;);</span><br><span class="line">    this.dataBuffer = new Buffer(0);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;readable&apos;, function() &#123;</span><br><span class="line">        console.log(&apos;received readable&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;data&apos;, function(chunk) &#123; // chunk 默认16kb</span><br><span class="line">        console.log(&apos;read %d bytes: %s&apos;, chunk.length, chunk);</span><br><span class="line">       </span><br><span class="line">        that.dealData(chunk);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;end&apos;, function() &#123;</span><br><span class="line">        console.log(&apos;read end&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;close&apos;, function() &#123;</span><br><span class="line">        console.log(&apos;file was closed.&apos;);</span><br><span class="line">        that.filePathWaitingQueue.shift();</span><br><span class="line">        that.start();</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;error&apos;, function(err) &#123;</span><br><span class="line">        console.log(&apos;error occured: %s&apos;, err.message);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * </span><br><span class="line">   * @param data </span><br><span class="line">   */</span><br><span class="line">  public dealData(chunk) &#123;</span><br><span class="line">    this.readable.pause();         // 暂停读取</span><br><span class="line">    </span><br><span class="line">    this.reader_end += chunk.length;</span><br><span class="line">    this.reader_start = this.reader_end - chunk.length;</span><br><span class="line"></span><br><span class="line">    const start = this.reader_start;</span><br><span class="line">    const end = this.reader_end;</span><br><span class="line"></span><br><span class="line">    const fileInfo: UploadOptions = &#123;</span><br><span class="line">      buffer: this.sharedService.toArrayBuffer(chunk),</span><br><span class="line">      start: start,</span><br><span class="line">      end: end,</span><br><span class="line">      filedId: this.fileId,</span><br><span class="line">      isSegment: true,</span><br><span class="line">      path: this.currentfilePath,</span><br><span class="line">      completed: false,</span><br><span class="line">      extension: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">      fileName: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">      totalSize: this.electronService.fs.statSync(this.currentfilePath).size</span><br><span class="line">    &#125;;</span><br><span class="line">    console.log(fileInfo);</span><br><span class="line">    this.uploadService.createUpload(fileInfo);</span><br><span class="line">    this.readable.resume();      // 恢复读取文件</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 创建空文件</span><br><span class="line">   */</span><br><span class="line">  public createEmptyFile() &#123;</span><br><span class="line">    return new Promise(resolve =&gt; &#123;</span><br><span class="line">      const fileInfo = &#123; </span><br><span class="line">        &quot;extension&quot;: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">        &quot;displayName&quot;: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">        &quot;fileName&quot;: this.sharedService.getFileNameByPath(this.currentfilePath)</span><br><span class="line">      &#125;;</span><br><span class="line">      this.apiService.CreateEmptyFile(fileInfo).subscribe(res =&gt; &#123;</span><br><span class="line">        this.fileId = res[&quot;id&quot;];</span><br><span class="line">        resolve();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;); </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="upload-service-ts"><a href="#upload-service-ts" class="headerlink" title="upload.service.ts"></a>upload.service.ts</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; UploadOptions, FileOptions &#125; from &apos;./uploadOptions&apos;;</span><br><span class="line">import &#123; ApiService &#125; from &apos;./api.service&apos;;</span><br><span class="line">import &#123; FileService &#125; from &apos;./file.service&apos;;</span><br><span class="line">import &#123; SaveToJSONService &#125; from &apos;./save-to-json.service&apos;;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">  providedIn: &apos;root&apos;</span><br><span class="line">&#125;)</span><br><span class="line">export class UploadService &#123;</span><br><span class="line"></span><br><span class="line">  public uploadFileQueue: UploadOptions[] = [];           // 上传队列</span><br><span class="line">  public filesStateQueue: FileOptions[] = [];             // 上传成功或者失败的队列</span><br><span class="line">  public currentUploadInfo: UploadOptions;                // 当前正在上传的fileinfo</span><br><span class="line"></span><br><span class="line">  constructor(public apiService: ApiService,</span><br><span class="line">              public fileService: FileService,</span><br><span class="line">              public saveToJSONService: SaveToJSONService) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  // 创建上传</span><br><span class="line">  public createUpload(fileInfo: UploadOptions) &#123;</span><br><span class="line">    console.log(&quot;加入上传队列&quot;);</span><br><span class="line">    this.uploadFileQueue = this.uploadFileQueue.concat(fileInfo);</span><br><span class="line">    console.log(this.uploadFileQueue);</span><br><span class="line">    if (this.uploadFileQueue.length === 1) &#123;</span><br><span class="line">      this.uploadDispatch();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 上传</span><br><span class="line">  public uploadDispatch() &#123;</span><br><span class="line">    console.log(this.uploadFileQueue);</span><br><span class="line">    if (this.uploadFileQueue.length === 0) &#123;</span><br><span class="line">      this.saveToJSONService.saveToJSONFile(JSON.stringify(this.filesStateQueue), &apos;fileUploadStatus.json&apos;);</span><br><span class="line">      return; </span><br><span class="line">    &#125;</span><br><span class="line">    this.currentUploadInfo = this.uploadFileQueue[0];</span><br><span class="line">    console.log(&quot;正在上传：&quot;+ this.currentUploadInfo.fileName);</span><br><span class="line">    if (!this.currentUploadInfo.isSegment) &#123;</span><br><span class="line">        this.upload();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      this.sliceUpload();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 普通上传</span><br><span class="line">  public upload() &#123;</span><br><span class="line">      const fileInfo = &#123;</span><br><span class="line">        extension: this.currentUploadInfo.extension,</span><br><span class="line">        displayName: this.currentUploadInfo.fileName,</span><br><span class="line">        size: this.currentUploadInfo.totalSize,</span><br><span class="line">        segmentTotalSize: this.currentUploadInfo.totalSize,</span><br><span class="line">        fileName: this.currentUploadInfo.fileName,</span><br><span class="line">        directoryId: this.fileService.currentDirID</span><br><span class="line">      &#125;;</span><br><span class="line">      this.uploadFileQueue.shift();</span><br><span class="line">      this.apiService.UploadFiles(fileInfo, this.currentUploadInfo.buffer).subscribe(res =&gt; &#123;</span><br><span class="line">         this.setFileStatus(true);</span><br><span class="line">         this.uploadDispatch();</span><br><span class="line">      &#125;,</span><br><span class="line">      error =&gt; &#123;</span><br><span class="line">         this.setFileStatus(false);</span><br><span class="line">      &#125;</span><br><span class="line">     );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 分片上传</span><br><span class="line">  public sliceUpload() &#123;</span><br><span class="line">    this.apiService.SliceUploadingFiles(this.currentUploadInfo.filedId, this.currentUploadInfo.start, this.currentUploadInfo.end-1,this.currentUploadInfo.totalSize, this.currentUploadInfo.buffer).subscribe(</span><br><span class="line">      res =&gt; &#123;</span><br><span class="line">        console.log(&quot;上传成功&quot;);</span><br><span class="line">        this.uploadFileQueue.shift();</span><br><span class="line">        if (this.currentUploadInfo.end === this.currentUploadInfo.totalSize) &#123;</span><br><span class="line">          this.setFileStatus(true);</span><br><span class="line">        &#125;</span><br><span class="line">        this.uploadDispatch();</span><br><span class="line">      &#125;,</span><br><span class="line">      error =&gt; &#123;</span><br><span class="line">        this.setFileStatus(false);</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 设置文件状态</span><br><span class="line">  public setFileStatus(status: boolean) &#123;</span><br><span class="line">    this.currentUploadInfo.completed = status;</span><br><span class="line">    this.filesStateQueue.push(&#123;path: this.currentUploadInfo.path, completed: this.currentUploadInfo.completed&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/10/20/electron-打包/" rel="next" title="electron-builder 打包">
-                <i class="fa fa-chevron-left"></i> electron-builder 打包
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/20/node-下载文件/" rel="prev" title="node 下载文件">
-                node 下载文件 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
   </article>
-
-
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
   </div>
-
-
-          </div>
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="table-content-main">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件的数据类型-uploadOptions"><span class="toc-text">文件的数据类型 uploadOptions</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#read-file-service-ts"><span class="toc-text">read-file.service.ts</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#upload-service-ts"><span class="toc-text">upload.service.ts</span></a></li></ol>
   </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
+</aside>
+  
+    <aside class="passage-copyright">
+      <div>本文作者: 胥庆玉</div>
       
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">yolanda2</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">34</span>
-                    <span class="site-state-item-name">Artikel</span>
-                  </a>
-                </div>
-              
-
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">14</span>
-                    <span class="site-state-item-name">Tags</span>
-                  
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
+        <div>
+          原文链接: 
+          <a href="" target="_blank">http://yoursite.com/2018/10/20/node-文件上传以及分段上传/</a>
         </div>
-      </section>
-
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#文件的数据类型-uploadOptions"><span class="nav-number">1.</span> <span class="nav-text">文件的数据类型 uploadOptions</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#read-file-service-ts"><span class="nav-number">2.</span> <span class="nav-text">read-file.service.ts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#upload-service-ts"><span class="nav-number">3.</span> <span class="nav-text">upload.service.ts</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
       </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">yolanda2</span>
-
+    </aside>
   
-
   
 </div>
 
-
-
-
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
+    </main>
     
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+      <div class="site-footer-col">
+        <h5 class="site-footer-title">博客推荐</h5>
+        
+          <span class="site-footer-item">
+            <a href="https://godbmw.com/" target="_blank">GodBMW</a>
+          </span>
+        
+          <span class="site-footer-item">
+            <a href="http://ruanyifeng.com/" target="_blank">阮一峰的个人网站</a>
+          </span>
         
       </div>
     
-
+      <div class="site-footer-col">
+        <h5 class="site-footer-title">系列教程</h5>
+        
+          <span class="site-footer-item">
+            <a href="https://godbmw.com/categories/webpack4%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/" target="_blank">webpack4系列教程</a>
+          </span>
+        
+          <span class="site-footer-item">
+            <a href="https://godbmw.com/design-patterns/" target="_blank">设计模式手册</a>
+          </span>
+        
+      </div>
     
-	
+      <div class="site-footer-col">
+        <h5 class="site-footer-title">抓到我</h5>
+        
+          <span class="site-footer-item">
+            <a href="https://juejin.im/user/5b91fcf06fb9a05d3c7fd4a5" target="_blank">掘金</a>
+          </span>
+        
+          <span class="site-footer-item">
+            <a href="https://segmentfault.com/" target="_blank">思否</a>
+          </span>
+        
+      </div>
     
-
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
     
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+      <div class="site-footer-info">
+        <i class="fa fa-at"></i> Email: yuanxin.me@gmail.com
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 <a href="https://github.com/dongyuanxin/theme-ad/" target="_blank">Theme-AD</a>.
+      Created by <a href="https://godbmw.com/" target="_blank">GodBMW</a>.
+      All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+        <input type="text">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+        
+          <div>
+            <img src="/images/wechat.png" alt="WeChat">
+            
+              <p>WeChat</p>
+            
+          </div>
+        
+          <div>
+            <img src="/images/alipay.png" alt="AliPay">
+            
+              <p>AliPay</p>
+            
+          </div>
+        
+      </div>
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
   </div>
+</div>
+    
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="/2018/10/20/node-下载文件/" data-enable="true">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="/2018/10/20/electron-打包/" data-enable="true">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    <a href="javascript:void(0);" id="site-reward">
+      <i class="fa fa-thumbs-up"></i>
+    </a>
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
+    <a id="share-btn-weibo" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-weibo"></i>
+    </a>
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
-
-
-
+    <a id="share-btn-qq" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-qq"></i>
+    </a>
   
   
-
+    <a id="share-btn-wechat" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-wechat"></i>
+    </a>
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
-
-
-
-  
-
-
-
-  
+</div>
+    
 
 
 
 
 
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</body>
+    
+  </body>
 </html>

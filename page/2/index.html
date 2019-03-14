@@ -1,2089 +1,635 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
+<html>
   
-
-
-<html class="theme-next muse use-motion" lang="">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
+  <meta charset="utf-8">
+  <meta name="author" content="Dong Yuanxin" />
+  
+  
+  <title> | 第2页 | 青檬眼豆豆</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  
+    <meta name="keywords" content="Hexo, Theme-AD" />
+  
 
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.4.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
+  
+  <meta name="description" content="青檬眼豆豆">
 
   
 
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
 
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
 
+  
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="青檬眼豆豆">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="青檬眼豆豆">
-<meta property="og:locale" content="default">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="青檬眼豆豆">
+  
 
-
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/page/2/"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz","appkey":"WaR7nrzhliHj9aVwdQzkdlGd","comment":false,"count":true},
+    welcome: {"enable":true,"interval":30},
+    start_time: "2018-02-10",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: false,
+    lock: false,
+    author: "Dong Yuanxin",
+    share: {"twitter":false,"facebook":false,"weibo":true,"qq":true,"wechat":true},
+    mathjax: true,
+    page_type: "",
+    root: "/"
   };
 </script>
 
-  <title>青檬眼豆豆</title>
+  <script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
   
 
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
 
-
-
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
-
+  
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
-
-  
-  
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
     
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+      <span class="site-header-brand-title">
+        <a href="/">GOODGIRL</a>
+      </span>
     
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">青檬眼豆豆</span>
-        <span class="logo-line-after"><i></i></span>
+    
+      <span class="site-header-brand-motto"> | 安静写些东西</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+        <a href="/friends/" target="_self">友链</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/dongyuanxin/" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
       </a>
     </div>
-    
   </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
   </div>
-</div>
-
-
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
+  <div class="table-content-main">
+    <ol class="toc">
       
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Startseite</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
-  </li>
-
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
       
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
       
-    </ul>
-  
-
-  
-    
-
-  
-
-  
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/friends/" target="_self">
+            友链
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
 </nav>
-
-
-
+<div id="site-process"></div>
+    <main>
+      <div class="home">
   
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/10/vue-resource-post请求-bug/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/10/vue-resource-post请求-bug/" itemprop="url">
-                  post 请求
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2019-01-11
+            </span>
             
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
               </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2019-01-10 09:43:12 / Updated at: 09:58:38" itemprop="dateCreated datePublished" datetime="2019-01-10T09:43:12+08:00">2019-01-10</time>
             
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="post-请求直接传数组的时候，需要JSON-stringify-因为数组不是json-需要转换成json再进行传递；而之前使用angular的时候，可以直接传数组，是因为其HttpClient给我们做内部转换操作了。"><a href="#post-请求直接传数组的时候，需要JSON-stringify-因为数组不是json-需要转换成json再进行传递；而之前使用angular的时候，可以直接传数组，是因为其HttpClient给我们做内部转换操作了。" class="headerlink" title="post 请求直接传数组的时候，需要JSON.stringify(),因为数组不是json,需要转换成json再进行传递；而之前使用angular的时候，可以直接传数组，是因为其HttpClient给我们做内部转换操作了。"></a>post 请求直接传数组的时候，需要JSON.stringify(),因为数组不是json,需要转换成json再进行传递；而之前使用angular的时候，可以直接传数组，是因为其HttpClient给我们做内部转换操作了。</h4><ol>
-<li><p>vue代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 分享给所有人</span><br><span class="line">   shareToAll(bucketName, fileList, token) &#123;</span><br><span class="line">     console.log(fileList);</span><br><span class="line">     const body = JSON.stringify(fileList);</span><br><span class="line">     console.log(body);</span><br><span class="line">     const myheaders = &#123;</span><br><span class="line">       &quot;digi-middleware-auth-user&quot;: token,</span><br><span class="line">       &quot;Content-Type&quot;: &quot;application/json&quot;</span><br><span class="line">     &#125;;</span><br><span class="line">     this.$http</span><br><span class="line">       .post(`/dmcApi/api/dmc/v1/buckets/$&#123;bucketName&#125;/ShareFiles`, body, &#123;</span><br><span class="line">         headers: myheaders</span><br><span class="line">       &#125;)</span><br><span class="line">       .then(res =&gt; &#123;</span><br><span class="line">         this.saveLogo(res[0]);</span><br><span class="line">       &#125;)</span><br><span class="line">       .catch(res =&gt; &#123;</span><br><span class="line">         const message = res.body;</span><br><span class="line">         alert(message);</span><br><span class="line">       &#125;);</span><br><span class="line">   &#125;,</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>angular代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 分享给所有人</span><br><span class="line">dmcShareToAll(bucketName:string, fileList: any = [], token: string): Observable&lt;any&gt; &#123;</span><br><span class="line">    let headers = new HttpHeaders(&#123;</span><br><span class="line">        &quot;digi-middleware-auth-user&quot;: token</span><br><span class="line">    &#125;);</span><br><span class="line">    const url = this.dmcUrl + `buckets/$&#123;bucketName&#125;/ShareFiles`;</span><br><span class="line">    return this.http.post(url, fileList, &#123;headers: headers&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/18/array-every/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/18/array-every/" itemprop="url">
-                  array.every()
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-12-18 15:15:53 / Updated at: 15:16:22" itemprop="dateCreated datePublished" datetime="2018-12-18T15:15:53+08:00">2018-12-18</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>The every() method tests whether all elements in the array pass the test implemented by the provided function.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/17/文件上传-下载封装/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/17/文件上传-下载封装/" itemprop="url">
-                  文件上传/下载封装
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-12-17 14:36:28 / Updated at: 15:41:48" itemprop="dateCreated datePublished" datetime="2018-12-17T14:36:28+08:00">2018-12-17</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="一-概述"><a href="#一-概述" class="headerlink" title="(一) 概述"></a>(一) 概述</h3><blockquote>
-<p>我一直在做文档中心的事，类如做文档中心的桌面应用程序、手机端的应用程序，都在做关于大小文件的上传、下载、增删改查、分享、复制、移动等，其他部门的用我们的文档中心，也有前端用，基于公司平台都是使用angular框架，所以可以封装一个服务出来加快他们的开发。</p>
-</blockquote>
-<h3 id="二-疑难杂症"><a href="#二-疑难杂症" class="headerlink" title="(二)疑难杂症"></a>(二)疑难杂症</h3><h4 id="1-如何及时反馈正确或者错误信息"><a href="#1-如何及时反馈正确或者错误信息" class="headerlink" title="1. 如何及时反馈正确或者错误信息"></a>1. 如何及时反馈正确或者错误信息</h4><blockquote>
-<p>因为用户只是调我们一个上传函数，但是上传函数内部也会去调好多服务，比如登录、分段上传、创建空文件等，比如分段上传，如何同步返回上传的进度，也就是说如果去主动推送消息??第一次脑中闪现的是Promise,但是Promise决定了向回调函数推送值的时间，并没有达到同步推送。<br>下面的文件让我真正知道了Observable/ Pormise是用来做什么的一个东西</p>
-</blockquote>
-<p><a href="https://blog.csdn.net/Tangshuai33333/article/details/79910809" target="_blank" rel="noopener">https://blog.csdn.net/Tangshuai33333/article/details/79910809</a><br><a href="https://ithelp.ithome.com.tw/articles/10186832" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10186832</a></p>
-<p>我的感悟:<br>熟悉两个名词，一个是observer和Iterator，分别对应两种模式: 观察者模式和迭代器模式。这两者的相同的地方是渐进式（progressive）地取数据,差别在于observer是生产者（producer）主动推送(push)数据给消费者（consumer); Iterator是消费者(consumer) 向生产者（producer）主动拉取(pull)数据;而 Observable 是两者地结合。<br>现在我可能了解比较浅显，会用。之后再有发现会更新。<br>对于Promise，也是主动推送的模型，但是其决定了推送的时间，不能实现同步推。</p>
-<h4 id="2-JS一切皆对象的思想"><a href="#2-JS一切皆对象的思想" class="headerlink" title="2. JS一切皆对象的思想"></a>2. JS一切皆对象的思想</h4><p>正常对我来说，传参传的比较多的就是对象、变量等，很少对一个函数进行传来传去的，用户调一个函数，之后订阅一次回调，我需要将所有的过程数据、以及正确错误信息全部返回到这个订阅函数里面，所以需要将返回对象observer进行传递。</p>
-<h3 id="三-文件上传"><a href="#三-文件上传" class="headerlink" title="(三) 文件上传"></a>(三) 文件上传</h3><ol>
-<li>校验用户名密码</li>
-<li>校验参数</li>
-<li>判断是普通上传还是分段上传</li>
-<li>此函数返回的是Observable对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 上传文件</span><br><span class="line"> * @param &#123;File&#125; file [ File对象 ]</span><br><span class="line"> * @param &#123;string&#125; bucket [ bucket ]</span><br><span class="line"> * @param &#123;string&#125; dirId [ 目录id]</span><br><span class="line"> * @param &#123;&#125;</span><br><span class="line"> * @returns</span><br><span class="line"> */</span><br><span class="line">public upload(file: File, bucket: string, dirId: string): Observable&lt;any&gt; &#123;</span><br><span class="line">    return Observable.create((observer) =&gt; &#123;</span><br><span class="line">        if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">        if (typeof file !== &apos;object&apos; || !bucket || !dirId) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;参数传递有误或者不能为空!&quot;); return; &#125;</span><br><span class="line">        if (file.size &lt;= SLICESECTION) &#123; // 读取并上传整个文件</span><br><span class="line">            this.pushFileMessage(observer, &apos;ongoing&apos;, 0);</span><br><span class="line">            this.entireUpload(file, bucket, dirId, observer);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            this.pushFileMessage(observer, &apos;ongoing&apos;, 0);</span><br><span class="line">            this.newEmptyFile(file, bucket, dirId).then(data =&gt; &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;ongoing&apos;, 5);</span><br><span class="line">                const reader = new FileReader();</span><br><span class="line">                this.sliceUpload(file, reader, bucket, dirId, data[&quot;id&quot;], 0, SLICESECTION, observer);</span><br><span class="line">            &#125;).catch(data =&gt; &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;error&apos;, data);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="四-全部代码"><a href="#四-全部代码" class="headerlink" title="(四) 全部代码"></a>(四) 全部代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br></pre></td><td class="code"><pre><span class="line">const SLICESECTION: number = 255 * 1024 * 10; // 2.55M</span><br><span class="line">import &#123; Injectable, Inject &#125; from &quot;@angular/core&quot;;</span><br><span class="line">import &#123; DmcRepository &#125; from &quot;@commonRepository/dmc-repository&quot;;</span><br><span class="line">import &#123; Observable &#125; from &apos;rxjs&apos;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 文档上传、下载服务</span><br><span class="line"> * 当文件超过255 * 1024 * 10 byte时，自动启用分段上传。</span><br><span class="line"> * 分段上传时，会报告进度;</span><br><span class="line"> * @export</span><br><span class="line"> * @class DwUploadFileService</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">@Injectable()</span><br><span class="line">export class DwFileService &#123;</span><br><span class="line"></span><br><span class="line">    public dmc_username = &quot;digiwincloud&quot;;</span><br><span class="line">    public dmc_password = &quot;digiwincloud&quot;;</span><br><span class="line"></span><br><span class="line">    constructor(private dmcRepository: DmcRepository) &#123; &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 上传文件</span><br><span class="line">     * @param &#123;File&#125; file [ File对象 ]</span><br><span class="line">     * @param &#123;string&#125; bucket [ bucket ]</span><br><span class="line">     * @param &#123;string&#125; dirId [ 目录id]</span><br><span class="line">     * @param &#123;&#125;</span><br><span class="line">     * @returns</span><br><span class="line">     */</span><br><span class="line">    public upload(file: File, bucket: string, dirId: string): Observable&lt;any&gt; &#123;</span><br><span class="line">        return Observable.create((observer) =&gt; &#123;</span><br><span class="line">            if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">            if (typeof file !== &apos;object&apos; || !bucket || !dirId) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;参数传递有误或者不能为空!&quot;); return; &#125;</span><br><span class="line">            if (file.size &lt;= SLICESECTION) &#123; // 读取并上传整个文件</span><br><span class="line">                this.pushFileMessage(observer, &apos;ongoing&apos;, 0);</span><br><span class="line">                this.entireUpload(file, bucket, dirId, observer);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;ongoing&apos;, 0);</span><br><span class="line">                this.newEmptyFile(file, bucket, dirId).then(data =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;ongoing&apos;, 5);</span><br><span class="line">                    const reader = new FileReader();</span><br><span class="line">                    this.sliceUpload(file, reader, bucket, dirId, data[&quot;id&quot;], 0, SLICESECTION, observer);</span><br><span class="line">                &#125;).catch(data =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;error&apos;, data);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 覆盖上传</span><br><span class="line">     * @param &#123;File&#125; file [ File ]</span><br><span class="line">     * @param &#123;string&#125; bucket [ bucket]</span><br><span class="line">     * @param &#123;string&#125; dirId  [ 目录id ]</span><br><span class="line">     * @param &#123;string&#125; fileId [ 文件id ]</span><br><span class="line">     */</span><br><span class="line">    public coverUpload(file: File, bucket: string, dirId: string, fileId: string): Observable&lt;any&gt; &#123;</span><br><span class="line">        return Observable.create((observer) =&gt; &#123;</span><br><span class="line">            if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">            if (typeof file !== &apos;object&apos; || !bucket || !dirId || !fileId) &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;error&apos;, &quot;参数传递有误或者不能为空!&quot;);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            this.pushFileMessage(observer, &apos;ongoing&apos;, 0);</span><br><span class="line">            if (file.size &lt;= SLICESECTION) &#123;</span><br><span class="line">                this.entireCoverUpload(file, bucket, fileId, observer);</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                const reader = new FileReader();</span><br><span class="line">                this.sliceUpload(file, reader, bucket, dirId, fileId, 0, SLICESECTION, observer, true);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 上传并分享</span><br><span class="line">     * @param &#123;File&#125; file</span><br><span class="line">     * @param &#123;string&#125; bucket</span><br><span class="line">     * @param &#123;string&#125; dirId</span><br><span class="line">     */</span><br><span class="line">    public uploadAndShare(file: File, bucket: string, dirId: string): Observable&lt;any&gt; &#123;</span><br><span class="line">        return Observable.create((observer) =&gt; &#123;</span><br><span class="line">            if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">            if (typeof file !== &apos;object&apos; || !bucket || !dirId) &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;error&apos;, &quot;参数传递有误或者不能为空!&quot;);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            this.upload(file, bucket, dirId).subscribe(</span><br><span class="line">                res =&gt; &#123;</span><br><span class="line">                    observer.next(res);</span><br><span class="line">                    if (res.status !== &apos;success&apos;) &#123; return; &#125;</span><br><span class="line">                    let info = res;</span><br><span class="line">                    this.dmcRepository.dmcLogin(this.dmc_username, this.dmc_password).subscribe(</span><br><span class="line">                        r1 =&gt; &#123;</span><br><span class="line">                            this.dmcRepository.dmcShareToAll(bucket, [res.fileId], r1.userToken).subscribe(</span><br><span class="line">                                r2 =&gt; &#123;</span><br><span class="line">                                    info.shareUrl = r2[0];</span><br><span class="line">                                    observer.next(info);</span><br><span class="line">                                &#125;,</span><br><span class="line">                                e2 =&gt; &#123;</span><br><span class="line">                                    observer.error(e2)</span><br><span class="line">                                &#125;);</span><br><span class="line">                        &#125;,</span><br><span class="line">                        e1 =&gt; &#123;</span><br><span class="line">                            observer.error(e1);</span><br><span class="line">                        &#125;);</span><br><span class="line">                &#125;,</span><br><span class="line">                error =&gt; &#123;</span><br><span class="line">                    observer.error(error);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 上传整个文件</span><br><span class="line">     * @private</span><br><span class="line">     * @param &#123;File&#125; file [ File ]</span><br><span class="line">     * @param &#123;string&#125; bucket [ buketName ]</span><br><span class="line">     * @param &#123;string&#125; dirId [ 目录Id]</span><br><span class="line">     * @param &#123;*&#125; resolve [ Function ]</span><br><span class="line">     * @param &#123;*&#125; reject [ Function ]</span><br><span class="line">     */</span><br><span class="line">    private entireUpload(file: File, bucket: string, dirId: string, observer: any) &#123;</span><br><span class="line">        const that = this;</span><br><span class="line">        const reader = new FileReader();    // 阅读器</span><br><span class="line">        reader.onload = (e) =&gt; &#123;</span><br><span class="line">            that.dmcRepository.dmcLogin(that.dmc_username, that.dmc_password).subscribe(</span><br><span class="line">                r1 =&gt; &#123;</span><br><span class="line">                    const fileInfo = &#123;      // 文件信息</span><br><span class="line">                        &quot;extension&quot;: this.getFileExtension(file.name),</span><br><span class="line">                        &quot;displayName&quot;: file.name,</span><br><span class="line">                        &quot;totalSize&quot;: file.size,</span><br><span class="line">                        &quot;segmentTotalSize&quot;: file.size,</span><br><span class="line">                        &quot;fileName&quot;: file.name,</span><br><span class="line">                        &quot;directoryId&quot;: dirId</span><br><span class="line">                    &#125;;</span><br><span class="line">                    that.dmcRepository.dmcUploadEntireFile(fileInfo, e.target[&quot;result&quot;], bucket, dirId, r1.userToken).subscribe(</span><br><span class="line">                        r2 =&gt; &#123;</span><br><span class="line">                            this.pushFileMessage(observer, &apos;success&apos;, 100, r2[&quot;id&quot;]);</span><br><span class="line">                        &#125;,</span><br><span class="line">                        e2 =&gt; &#123;</span><br><span class="line">                            this.pushFileMessage(observer, &apos;error&apos;, e2);</span><br><span class="line">                        &#125;);</span><br><span class="line">                &#125;,</span><br><span class="line">                e1 =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;error&apos;, e1);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        reader.readAsArrayBuffer(file); // 读文件</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 整个文件覆盖上传</span><br><span class="line">     * @private</span><br><span class="line">     * @param &#123;File&#125; file</span><br><span class="line">     * @param &#123;string&#125; bucket</span><br><span class="line">     * @param &#123;string&#125; fileId</span><br><span class="line">     * @param &#123;*&#125; observer</span><br><span class="line">     */</span><br><span class="line">    private entireCoverUpload(file: File, bucket: string, fileId: string, observer: any) &#123;</span><br><span class="line">        const that = this;</span><br><span class="line">        const reader = new FileReader();    // 阅读器</span><br><span class="line">        reader.onload = (e) =&gt; &#123;</span><br><span class="line">            that.dmcRepository.dmcLogin(that.dmc_username, that.dmc_password).subscribe(</span><br><span class="line">                r1 =&gt; &#123;</span><br><span class="line">                    that.dmcRepository.dmcCoverUploadEntireFile(fileId, e.target[&quot;result&quot;], bucket, r1.userToken).subscribe(</span><br><span class="line">                        r2 =&gt; &#123;</span><br><span class="line">                            this.pushFileMessage(observer, &apos;success&apos;, 100, r2[&quot;id&quot;]);</span><br><span class="line">                        &#125;,</span><br><span class="line">                        e2 =&gt; &#123;</span><br><span class="line">                            this.pushFileMessage(observer, &apos;error&apos;, e2);</span><br><span class="line">                        &#125;);</span><br><span class="line">                &#125;,</span><br><span class="line">                e1 =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;error&apos;, e1);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        reader.readAsArrayBuffer(file); // 读文件</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 创建分段上传的空文件</span><br><span class="line">     * @private</span><br><span class="line">     * @param &#123;File&#125; file [ File ]</span><br><span class="line">     * @param &#123;string&#125; bucket [ bucket ]</span><br><span class="line">     * @param &#123;string&#125; dirId [ 目录Id ]</span><br><span class="line">     * @returns Promise</span><br><span class="line">     */</span><br><span class="line">    private newEmptyFile(file: File, bucket: string, dirId: string) &#123;</span><br><span class="line">        return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">            let fileInfo = &#123;</span><br><span class="line">                &quot;extension&quot;: this.getFileExtension(file.name),</span><br><span class="line">                &quot;displayName&quot;: file.name,</span><br><span class="line">                &quot;fileName&quot;: file.name,</span><br><span class="line">                &quot;directoryId&quot;: dirId</span><br><span class="line">            &#125;;</span><br><span class="line">            this.dmcRepository.dmcLogin(this.dmc_username, this.dmc_password).subscribe(</span><br><span class="line">                res =&gt; &#123;</span><br><span class="line">                    this.dmcRepository.dmcCreateEmptyFile(fileInfo, bucket, dirId, res.userToken).subscribe(</span><br><span class="line">                        res2 =&gt; &#123;</span><br><span class="line">                            resolve(res2);</span><br><span class="line">                        &#125;,</span><br><span class="line">                        error =&gt; &#123;</span><br><span class="line">                            reject(error);</span><br><span class="line">                        &#125;)</span><br><span class="line">                &#125;,</span><br><span class="line">                error =&gt; &#123;</span><br><span class="line">                    reject(error);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 分段上传</span><br><span class="line">     * @private</span><br><span class="line">     * @param &#123;File&#125; file [ File ]</span><br><span class="line">     * @param &#123;FileReader&#125; reader [ 阅读器 ]</span><br><span class="line">     * @param &#123;*&#125; bucket [ bucket ]</span><br><span class="line">     * @param &#123;*&#125; dirId [ 目录Id ]</span><br><span class="line">     * @param &#123;*&#125; fileId  [ 文件id ]</span><br><span class="line">     * @param &#123;*&#125; reader_start [ 开始上传位置 ]</span><br><span class="line">     * @param &#123;*&#125; reader_end [ 结束上传位置 ]</span><br><span class="line">     * @param &#123;*&#125; resolve [ Function ]</span><br><span class="line">     * @param &#123;*&#125; reject [ Function ]</span><br><span class="line">     */</span><br><span class="line">    private sliceUpload(file: File, reader: FileReader, bucket, dirId, fileId, reader_start, reader_end, observer, cover?: boolean) &#123;</span><br><span class="line">        const that = this;</span><br><span class="line">        const blob = file.slice(reader_start, reader_end);  // 分割file</span><br><span class="line">        cover = cover || false;</span><br><span class="line">        reader.onload = (e) =&gt; &#123;</span><br><span class="line">            that.dmcRepository.dmcLogin(that.dmc_username, that.dmc_password).subscribe(</span><br><span class="line">                r1 =&gt; &#123;</span><br><span class="line">                    that.dmcRepository.dmcPieceUploadFile(fileId, reader_start, reader_end - 1, file.size,</span><br><span class="line">                        e.target[&quot;result&quot;], bucket, r1.userToken, cover)</span><br><span class="line">                        .subscribe(</span><br><span class="line">                            r2 =&gt; &#123;</span><br><span class="line">                                if (reader_end === file.size) &#123;</span><br><span class="line">                                    this.pushFileMessage(observer, &apos;success&apos;, 100, r2[&quot;id&quot;]);</span><br><span class="line">                                    return;</span><br><span class="line">                                &#125;</span><br><span class="line">                                that.pushFileMessage(observer, &apos;ongoing&apos;, 100 * reader_end / file.size);</span><br><span class="line">                                let new_reader_start = reader_start + SLICESECTION, new_reader_end;</span><br><span class="line">                                new_reader_end = (reader_end + SLICESECTION &gt; file.size) ? file.size : reader_end + SLICESECTION;</span><br><span class="line">                                that.sliceUpload(file, reader, bucket, dirId, fileId, new_reader_start, new_reader_end, observer, cover);</span><br><span class="line">                            &#125;,</span><br><span class="line">                            e2 =&gt; &#123;</span><br><span class="line">                                that.pushFileMessage(observer, &apos;error&apos;, e2);</span><br><span class="line">                            &#125;);</span><br><span class="line">                &#125;,</span><br><span class="line">                e1 =&gt; &#123;</span><br><span class="line">                    that.pushFileMessage(observer, &apos;error&apos;, e1);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        reader.readAsArrayBuffer(blob);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 下载文件 [ 整个下载，适合小文件 ]</span><br><span class="line">     * @param &#123;string&#125; bucket</span><br><span class="line">     * @param &#123;string&#125; fileId</span><br><span class="line">     * @param &#123;string&#125; fileName</span><br><span class="line">     * @returns Promise</span><br><span class="line">     */</span><br><span class="line">    public download(bucket: string, fileId: string, fileName: string): Observable&lt;any&gt; &#123;</span><br><span class="line">        return Observable.create((observer) =&gt; &#123;</span><br><span class="line">            if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">            if (!bucket || !fileId || !fileName) &#123; this.pushFileMessage(observer, &apos;error&apos;, &apos;函数参数不能为空&apos;); return; &#125;</span><br><span class="line">            this.dmcRepository.dmcLogin(this.dmc_username, this.dmc_password).subscribe(</span><br><span class="line">                r1 =&gt; &#123;</span><br><span class="line">                    this.dmcRepository.dmcDownload(bucket, fileId, r1.userToken).subscribe(</span><br><span class="line">                        blobFile =&gt; &#123;</span><br><span class="line">                            let aLink = window.document.createElement(&apos;a&apos;);</span><br><span class="line">                            let objUrl = window.URL.createObjectURL(blobFile);</span><br><span class="line">                            aLink.href = objUrl;</span><br><span class="line">                            aLink.download = fileName;</span><br><span class="line">                            document.body.appendChild(aLink);</span><br><span class="line"></span><br><span class="line">                            let evt = document.createEvent(&quot;MouseEvents&quot;);</span><br><span class="line">                            evt.initEvent(&quot;click&quot;, false, false);</span><br><span class="line">                            aLink.dispatchEvent(evt);</span><br><span class="line"></span><br><span class="line">                            window.URL.revokeObjectURL(objUrl);</span><br><span class="line">                            document.body.removeChild(aLink);</span><br><span class="line">                            this.pushFileMessage(observer, &apos;success&apos;, 100);</span><br><span class="line">                        &#125;,</span><br><span class="line">                        e2 =&gt; &#123;</span><br><span class="line">                            this.pushFileMessage(observer, &apos;error&apos;, e2);</span><br><span class="line">                        &#125;);</span><br><span class="line">                &#125;,</span><br><span class="line">                e1 =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;error&apos;, e1);</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 批量删除文件</span><br><span class="line">     * @param &#123;string&#125; bucket</span><br><span class="line">     * @param &#123;*&#125; [fileIdArr=[]]</span><br><span class="line">     * @memberof DwFileService</span><br><span class="line">     */</span><br><span class="line">    public deleteFile(bucket: string, fileIdArr: any = []) &#123;</span><br><span class="line">        return Observable.create((observer) =&gt; &#123;</span><br><span class="line">            if (this.validateUser()) &#123; this.pushFileMessage(observer, &apos;error&apos;, &quot;未配置dmc用户名密码或者不完整!&quot;); return; &#125;</span><br><span class="line">            if (!bucket || fileIdArr.length === 0) &#123; this.pushFileMessage(observer, &apos;error&apos;, &apos;bucket不能为空或者删除数组不能为空&apos;); return; &#125;</span><br><span class="line">            this.dmcRepository.dmcLogin(this.dmc_username, this.dmc_password).subscribe(r1 =&gt; &#123;</span><br><span class="line">                this.dmcRepository.dmcBatchDelete(bucket, fileIdArr, r1.userToken).subscribe(r2 =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;success&apos;, &quot;删除成功&quot;);</span><br><span class="line">                &#125;, e2 =&gt; &#123;</span><br><span class="line">                    this.pushFileMessage(observer, &apos;error&apos;, e2);</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;, e1 =&gt; &#123;</span><br><span class="line">                this.pushFileMessage(observer, &apos;error&apos;, e1);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 获取文件名的后缀</span><br><span class="line">     * @param fileName [ 文件名 ]</span><br><span class="line">     */</span><br><span class="line">    private getFileExtension(fileName: string) &#123;</span><br><span class="line">        const pos = fileName.lastIndexOf(&quot;.&quot;);</span><br><span class="line">        return fileName.substring(pos + 1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 推送文件上传、下载成功、进度等信息</span><br><span class="line">     * @private</span><br><span class="line">     * @param &#123;*&#125; callfun</span><br><span class="line">     * @param &#123;string&#125; status</span><br><span class="line">     * @param &#123;*&#125; data</span><br><span class="line">     */</span><br><span class="line">    private pushFileMessage(callfun: any, status: string, data: any, fileId?: string) &#123;</span><br><span class="line">        const message: Message = &#123;</span><br><span class="line">            status: status,</span><br><span class="line">            data: data,</span><br><span class="line">        &#125;;</span><br><span class="line">        if (fileId) &#123;</span><br><span class="line">            message.fileId = fileId;</span><br><span class="line">        &#125;</span><br><span class="line">        if (status === &apos;error&apos;) &#123;</span><br><span class="line">            callfun.error(message);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            callfun.next(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 校验用户名、密码是否设置</span><br><span class="line">     */</span><br><span class="line">    private validateUser() &#123;</span><br><span class="line">        return !this.dmc_username || !this.dmc_password;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export interface Message &#123;</span><br><span class="line">    status: string;  // &apos;success&apos;, &apos;error&apos;, &apos;ongoing&apos;</span><br><span class="line">    data: any;</span><br><span class="line">    fileId?: string;</span><br><span class="line">    shareUrl?: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/10/node-离线编辑/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/10/node-离线编辑/" itemprop="url">
-                  node 离线编辑
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-12-10 17:42:48" itemprop="dateCreated datePublished" datetime="2018-12-10T17:42:48+08:00">2018-12-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-12-11 09:19:58" itemprop="dateModified" datetime="2018-12-11T09:19:58+08:00">2018-12-11</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-参照教程"><a href="#1-参照教程" class="headerlink" title="1. 参照教程"></a>1. 参照教程</h3><p><a href="https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/" target="_blank" rel="noopener">https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/</a></p>
-<h3 id="2-离线编辑描述"><a href="#2-离线编辑描述" class="headerlink" title="2. 离线编辑描述"></a>2. 离线编辑描述</h3><blockquote>
-<p>做到类似于有道云协作离线编辑，有道云的逻辑是将文件下载到本地，立即用windows程序打开，当用户保存的时候提交到服务端。<br>有道云协作下载文件到本地的时候会记录文件的信息(包含文件的状态等)，和二进制。<br>我做的是有道云的简约版，因为是浏览器模式下，而不是客户端，只能如此简单。<br>我主要利用的是Node中的watch/watchFile/unWatchFile,对文件进行检测，当检测到文件有改动的时候立马覆盖上传。</p>
-</blockquote>
-<h3 id="3-利用默认程序打开文件"><a href="#3-利用默认程序打开文件" class="headerlink" title="3. 利用默认程序打开文件"></a>3. 利用默认程序打开文件</h3><blockquote>
-<p>此操作也是利用的是node子进程(child_process)，利用命令行打开文件<br><a href="http://blog.haoji.me/nodejs-open-explorer-select-file.html?from=xa" target="_blank" rel="noopener">http://blog.haoji.me/nodejs-open-explorer-select-file.html?from=xa</a></p>
-</blockquote>
-<h5 id="windows系统"><a href="#windows系统" class="headerlink" title="windows系统"></a>windows系统</h5><p>1) 打开文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const cp = require(&apos;child_process&apos;);</span><br><span class="line">cp.exec(&quot;explorer &quot; + pathstr); // 使用默认程序打开文件</span><br></pre></td></tr></table></figure></p>
-<p>2) 打开文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const cp = require(&apos;child_process&apos;);</span><br><span class="line">cp.exec(&quot;explorer /select,&quot; + pathstr); // 打开并选中</span><br></pre></td></tr></table></figure></p>
-<h5 id="mac系统"><a href="#mac系统" class="headerlink" title="mac系统"></a>mac系统</h5><p>1) 打开文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">openMacFile() &#123;</span><br><span class="line">    var cp = require(&quot;child_process&quot;);</span><br><span class="line">    pathstr = pathstr.replace(/\(/g, &apos;\\(&apos;);</span><br><span class="line">    pathstr = pathstr.replace(/\)/g, &apos;\\)&apos;);</span><br><span class="line">    cp.execFile(&quot;open &quot; + pathstr, &#123;shell: true&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>2) 打开文件夹<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">openDirectionary(pathstr) &#123;</span><br><span class="line">    var cp = require(&quot;child_process&quot;);</span><br><span class="line">    const index = this.pathstr.lastIndexOf(&apos;/&apos;);</span><br><span class="line">    this.pathstr= this.pathstr.slice(0,index);</span><br><span class="line">    cp.execFile(&quot;open &quot; + this.pathstr, &#123;shell: true&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="4-检测文件"><a href="#4-检测文件" class="headerlink" title="4. 检测文件"></a>4. 检测文件</h3><p><a href="https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/" target="_blank" rel="noopener">https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/</a></p>
-<h4 id="4-1-第一步尝试-通过event来判断"><a href="#4-1-第一步尝试-通过event来判断" class="headerlink" title="4.1 第一步尝试: 通过event来判断"></a>4.1 第一步尝试: 通过event来判断</h4><blockquote>
-<p>触发的事件event来判断，无效(依据不同的操作系统底层，保存文件可能会触发rename/ change)</p>
-</blockquote>
-<h4 id="4-2-第二步尝试-比较文件修改时间"><a href="#4-2-第二步尝试-比较文件修改时间" class="headerlink" title="4.2 第二步尝试: 比较文件修改时间"></a>4.2 第二步尝试: 比较文件修改时间</h4><blockquote>
-<p>比较文件的修改时间mtime, 文件保存的时候只触发一次change， 但是是无论文件内容有无变化都会触发。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const stats = that.electronService.fs.statSync(pathstr);</span><br><span class="line">if (stats.mtime.getTime() === previousTime.getTime()) &#123;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line">console.log(`modify time: $&#123;stats.mtime.getTime()&#125;`);</span><br><span class="line">previousTime = stats.mtime;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h4 id="4-3-使用md5判断文件内容是否被修改-先使用"><a href="#4-3-使用md5判断文件内容是否被修改-先使用" class="headerlink" title="4.3 使用md5判断文件内容是否被修改, 先使用"></a>4.3 使用md5判断文件内容是否被修改, 先使用</h4><figure class="highlight bash"><figcaption><span>npm install --save md5```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">const newfilemd5 =  md5(that.electronService.fs.readFileSync(pathstr));</span><br><span class="line"><span class="keyword">if</span> (newfilemd5 === previousFilemd5) &#123;</span><br><span class="line">    <span class="built_in">return</span>;</span><br><span class="line">&#125;</span><br><span class="line">console.log(`newfilemd5: <span class="variable">$&#123;newfilemd5&#125;</span>`);</span><br><span class="line">previousFilemd5 = newfilemd5;</span><br></pre></td></tr></table></figure>
-<h4 id="4-4-加入延迟"><a href="#4-4-加入延迟" class="headerlink" title="4.4 加入延迟"></a>4.4 加入延迟</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (fswait) &#123; return; &#125;</span><br><span class="line">fswait = setTimeout(() =&gt; &#123;</span><br><span class="line">    fswait = false;</span><br><span class="line">&#125;, 3000);</span><br></pre></td></tr></table></figure>
-<h3 id="5-移除监控"><a href="#5-移除监控" class="headerlink" title="5. 移除监控"></a>5. 移除监控</h3><blockquote>
-<p>本实例本来是使用watch的方式，但是为了更好的移除用了watchFile<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fs.unwatchFile(filePathstr)</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h3><p>所有代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">   * 监听文件的变化（离线编辑）</span><br><span class="line">   * 教程原文: https://thisdavej.com/how-to-watch-for-files-changes-in-node-js/</span><br><span class="line">   * @param pathstr [文件下载路径]</span><br><span class="line">   * @param bucketName [文件所在bucket]</span><br><span class="line">   * @param dirId  [文件所在目录]</span><br><span class="line">   * @param filedId [文件的fileId]</span><br><span class="line">   */</span><br><span class="line">  public watchFileChange(pathstr: string, bucketName: string, dirId: string, filedId: string) &#123;</span><br><span class="line">    const that = this;</span><br><span class="line">    if (this.electronService.isMac) &#123;</span><br><span class="line">      pathstr = pathstr.replace(/\(/g, &apos;\\(&apos;);</span><br><span class="line">      pathstr = pathstr.replace(/\)/g, &apos;\\)&apos;);</span><br><span class="line">      cp.execFile(&quot;open &quot; + pathstr, &#123;shell: true&#125;);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      cp.exec(&quot;explorer &quot; + pathstr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    let previousTime = this.electronService.fs.statSync(pathstr).mtime;</span><br><span class="line">    let previousFilemd5 = md5(this.electronService.fs.readFileSync(pathstr));</span><br><span class="line">    let fswait: any = false;</span><br><span class="line">    console.log(`init file time:  $&#123;previousTime.getTime()&#125;`);</span><br><span class="line">    console.log(`md5: $&#123;previousFilemd5&#125;`);</span><br><span class="line">    </span><br><span class="line">    // 延时3s监听，防止在文件打开时监听到change事件</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      that.electronService.fs.watchFile(pathstr, (curr, prev) =&gt; &#123;</span><br><span class="line">        // if (fileName) &#123;</span><br><span class="line">          const fileName = that.sharedService.getFileNameByPath(pathstr);</span><br><span class="line">          // 尝试第一步: 触发的事件event来判断，无效(依据不同的操作系统底层，保存文件可能会触发rename/ change)</span><br><span class="line"></span><br><span class="line">          // 尝试第二步: 比较文件的修改时间mtime, 文件保存的时候只触发一次change， 但是是无论文件内容有无变化都会触发。</span><br><span class="line">          const stats = that.electronService.fs.statSync(pathstr);</span><br><span class="line">          if (stats.mtime.getTime() === previousTime.getTime()) &#123;</span><br><span class="line">            return;</span><br><span class="line">          &#125;</span><br><span class="line">          console.log(`modify time: $&#123;stats.mtime.getTime()&#125;`);</span><br><span class="line">          previousTime = stats.mtime;</span><br><span class="line">  </span><br><span class="line">          // 尝试第三步: 使用md5判断文件内容是否被修改, 先使用npm install --save md5</span><br><span class="line">          const newfilemd5 =  md5(that.electronService.fs.readFileSync(pathstr));</span><br><span class="line">          if (newfilemd5 === previousFilemd5) &#123;</span><br><span class="line">            return;</span><br><span class="line">          &#125;</span><br><span class="line">          console.log(`newfilemd5: $&#123;newfilemd5&#125;`);</span><br><span class="line">          previousFilemd5 = newfilemd5;</span><br><span class="line">          </span><br><span class="line">          // 尝试第四步: 加入延迟：教程上本来是100ms，我设置成3s</span><br><span class="line">          if (fswait) &#123; return; &#125;</span><br><span class="line">          fswait = setTimeout(() =&gt; &#123;</span><br><span class="line">            fswait = false;</span><br><span class="line">          &#125;, 3000);</span><br><span class="line">          console.log(`$&#123;fileName&#125; file Changed`);</span><br><span class="line"></span><br><span class="line">          // 如果文件改变则覆盖上传</span><br><span class="line">          that.createUpload([pathstr], dirId, bucketName, filedId);</span><br><span class="line">        // &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;, 3000);</span><br><span class="line">    </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/树形结构/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/28/树形结构/" itemprop="url">
-                  树形结构
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-11-28 14:19:52" itemprop="dateCreated datePublished" datetime="2018-11-28T14:19:52+08:00">2018-11-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2018-12-10 17:41:43" itemprop="dateModified" datetime="2018-12-10T17:41:43+08:00">2018-12-10</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-形成树结构"><a href="#1-形成树结构" class="headerlink" title="1. 形成树结构"></a>1. 形成树结构</h4><blockquote>
-<p>形成树结构</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/14/11月整理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/14/11月整理/" itemprop="url">
-                  11月整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-11-14 10:21:15" itemprop="dateCreated datePublished" datetime="2018-11-14T10:21:15+08:00">2018-11-14</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2019-02-26 09:08:08" itemprop="dateModified" datetime="2019-02-26T09:08:08+08:00">2019-02-26</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="1-Array-from"><a href="#1-Array-from" class="headerlink" title="1. Array.from()"></a>1. Array.from()</h4><h4 id="2-map-构造函数"><a href="#2-map-构造函数" class="headerlink" title="2. map 构造函数"></a>2. map 构造函数</h4><h4 id="3-数组的高级用法"><a href="#3-数组的高级用法" class="headerlink" title="3. 数组的高级用法"></a>3. 数组的高级用法</h4><h5 id="1-map"><a href="#1-map" class="headerlink" title="1. map()"></a>1. map()</h5><h5 id="2-filter"><a href="#2-filter" class="headerlink" title="2. filter()"></a>2. filter()</h5><h5 id="3-forEach"><a href="#3-forEach" class="headerlink" title="3. forEach()"></a>3. forEach()</h5><h5 id="4-reduce"><a href="#4-reduce" class="headerlink" title="4. reduce()"></a>4. reduce()</h5><h5 id="5-findIndex"><a href="#5-findIndex" class="headerlink" title="5. findIndex()"></a>5. findIndex()</h5><h5 id="6-find"><a href="#6-find" class="headerlink" title="6. find()"></a>6. find()</h5><h5 id="7-every"><a href="#7-every" class="headerlink" title="7. every()"></a>7. every()</h5><h5 id="8-eaach"><a href="#8-eaach" class="headerlink" title="8. eaach()"></a>8. eaach()</h5><h4 id="4-assign"><a href="#4-assign" class="headerlink" title="4. assign()"></a>4. assign()</h4><h4 id="5-形成树形结构"><a href="#5-形成树形结构" class="headerlink" title="5. 形成树形结构"></a>5. 形成树形结构</h4><h4 id="6-树形结构中的checkbox的选择原理"><a href="#6-树形结构中的checkbox的选择原理" class="headerlink" title="6. 树形结构中的checkbox的选择原理"></a>6. 树形结构中的checkbox的选择原理</h4><h4 id="7-原型链"><a href="#7-原型链" class="headerlink" title="7. 原型链"></a>7. 原型链</h4><h4 id="8-对象的操作"><a href="#8-对象的操作" class="headerlink" title="8. 对象的操作"></a>8. 对象的操作</h4><ol>
-<li>判断有无属性</li>
-<li>判断是否为空对象</li>
-<li>对象的复制与拷贝</li>
-</ol>
-<h4 id="9-hasOwnProperty"><a href="#9-hasOwnProperty" class="headerlink" title="9. hasOwnProperty()"></a>9. hasOwnProperty()</h4><h4 id="10-typeof"><a href="#10-typeof" class="headerlink" title="10. typeof"></a>10. typeof</h4>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/Buffer-ArrayBuffer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/20/Buffer-ArrayBuffer/" itemprop="url">
-                  Buffer ArrayBuffer 相互转换
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-10-20 12:31:24 / Updated at: 12:38:38" itemprop="dateCreated datePublished" datetime="2018-10-20T12:31:24+08:00">2018-10-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer" target="_blank" rel="noopener">https://stackoverflow.com/questions/8609289/convert-a-binary-nodejs-buffer-to-javascript-arraybuffer</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 将arrayBUffer 转换成Buffer</span><br><span class="line">public toBuffer(ab) &#123;</span><br><span class="line">  const buffer = new Buffer(ab.byteLength);</span><br><span class="line">  const view = new Uint8Array(ab);</span><br><span class="line">  for (let i = 0; i &lt; buffer.length; ++i) &#123;</span><br><span class="line">      buffer[i] = view[i];</span><br><span class="line">  &#125;</span><br><span class="line">  return buffer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 将Buffer转换成ArrayBuffer</span><br><span class="line">public toArrayBuffer(buf) &#123;</span><br><span class="line">  const ab = new ArrayBuffer(buf.length);</span><br><span class="line">  const view = new Uint8Array(ab);</span><br><span class="line">  for (let i = 0; i &lt; buf.length; ++i) &#123;</span><br><span class="line">      view[i] = buf[i];</span><br><span class="line">  &#125;</span><br><span class="line">  return ab;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/node-下载文件/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/20/node-下载文件/" itemprop="url">
-                  node 下载文件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-10-20 12:28:56 / Updated at: 12:53:23" itemprop="dateCreated datePublished" datetime="2018-10-20T12:28:56+08:00">2018-10-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="download-service-ts"><a href="#download-service-ts" class="headerlink" title="download.service.ts"></a>download.service.ts</h4><p>注意点就是，我后台请求过来的读的是Array Buffer, 但是写入文件需要的是Buffer,这两个需要做下转换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; ApiService &#125; from &apos;./api.service&apos;;</span><br><span class="line">import &#123; SharedService &#125; from &apos;./shared.service&apos;;</span><br><span class="line">import &#123; ElectronService &#125; from &apos;./electron.service&apos;;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">  providedIn: &apos;root&apos;</span><br><span class="line">&#125;)</span><br><span class="line">export class DownloadService &#123;</span><br><span class="line"></span><br><span class="line">  constructor(public apiService: ApiService,</span><br><span class="line">              public electronService: ElectronService,</span><br><span class="line">              public sharedService: SharedService) &#123; </span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">    // 普通下载的接口</span><br><span class="line">    public downloadFile(fileId, fileName) &#123;</span><br><span class="line">      const that = this;</span><br><span class="line">      this.apiService.DownLoadFile(fileId).subscribe(res =&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">        const reader = new FileReader();</span><br><span class="line">        reader.onload = function(e) &#123;</span><br><span class="line">          const buffer = that.sharedService.toBuffer(e.target[&quot;result&quot;]);</span><br><span class="line">          console.log(buffer);</span><br><span class="line">          const options = &#123;</span><br><span class="line">            title: &quot;文件另存为&quot;,    </span><br><span class="line">            message: &quot;文件另存为&quot;,</span><br><span class="line">            nameFieldLabel: fileName,</span><br><span class="line">          &#125;;</span><br><span class="line">          that.electronService.remote.dialog.showSaveDialog(options, filePath =&gt; &#123;</span><br><span class="line">            console.log(filePath);</span><br><span class="line">            if (filePath) &#123;</span><br><span class="line">              that.electronService.fs.writeFileSync(filePath, buffer);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;;</span><br><span class="line">        reader.readAsArrayBuffer(res);</span><br><span class="line">     &#125;);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/node-文件上传以及分段上传/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/20/node-文件上传以及分段上传/" itemprop="url">
-                  node fs 文件上传以及分段上传
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-10-20 12:15:08 / Updated at: 12:38:40" itemprop="dateCreated datePublished" datetime="2018-10-20T12:15:08+08:00">2018-10-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>直接上代码了哦，直接上传的文件使用的是 fs.readFile, 分段上传的文件使用的是可读流的概念 fs.createReadStream。<br>更多node,请看官网<a href="http://nodejs.cn/api/fs.html" target="_blank" rel="noopener">http://nodejs.cn/api/fs.html</a></p>
-</blockquote>
-<h4 id="文件的数据类型-uploadOptions"><a href="#文件的数据类型-uploadOptions" class="headerlink" title="文件的数据类型 uploadOptions"></a>文件的数据类型 uploadOptions</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">export interface UploadOptions  &#123;</span><br><span class="line">    path: string;</span><br><span class="line">    buffer: ArrayBuffer;</span><br><span class="line">    isSegment: boolean;</span><br><span class="line">    completed: boolean;</span><br><span class="line">    extension: string;</span><br><span class="line">    fileName: string;</span><br><span class="line">    filedId?: string;</span><br><span class="line">    start?: number;</span><br><span class="line">    end?: number;</span><br><span class="line">    totalSize: number;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export interface FileOptions &#123;</span><br><span class="line">    path: string;</span><br><span class="line">    completed: boolean;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="read-file-service-ts"><a href="#read-file-service-ts" class="headerlink" title="read-file.service.ts"></a>read-file.service.ts</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; ElectronService &#125; from &apos;./electron.service&apos;;</span><br><span class="line">import &#123; UploadOptions &#125; from &apos;./uploadOptions&apos;;</span><br><span class="line">import &#123; SharedService &#125; from &apos;./shared.service&apos;;</span><br><span class="line">import &#123; UploadService &#125; from &apos;./upload.service&apos;;</span><br><span class="line">import &#123; ApiService &#125; from &apos;./api.service&apos;;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">  providedIn: &apos;root&apos;</span><br><span class="line">&#125;)</span><br><span class="line">export class ReadFileService &#123;</span><br><span class="line"></span><br><span class="line">  SLICESECTION: number = 255 * 1024 * 10;</span><br><span class="line">  public filePathWaitingQueue: any = [];</span><br><span class="line">  public currentfilePath: string;</span><br><span class="line">  public readable;</span><br><span class="line">  public dataBuffer;</span><br><span class="line">  public reader_start = 0;</span><br><span class="line">  public reader_end = 0;</span><br><span class="line">  public fileInfoCommon;</span><br><span class="line">  public fileId: string;</span><br><span class="line">  </span><br><span class="line">  constructor(public electronService: ElectronService,</span><br><span class="line">              public sharedService: SharedService,</span><br><span class="line">              public uploadService: UploadService,</span><br><span class="line">              public apiService: ApiService) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  // 准备读</span><br><span class="line">  public prepareRead(filePaths: any = []) &#123;</span><br><span class="line">    this.filePathWaitingQueue = this.filePathWaitingQueue.concat(filePaths);</span><br><span class="line">    if (this.filePathWaitingQueue.length === 1) &#123;</span><br><span class="line">      this.start();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 开始读</span><br><span class="line">  public start() &#123;</span><br><span class="line">    if (this.filePathWaitingQueue.length === 0) &#123;return;&#125;</span><br><span class="line">    this.currentfilePath = this.filePathWaitingQueue[0];</span><br><span class="line"></span><br><span class="line">    this.fileInfoCommon = &#123;</span><br><span class="line">      path: this.currentfilePath,</span><br><span class="line">      completed: false,</span><br><span class="line">      extension: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">      fileName: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">      totalSize: this.electronService.fs.statSync(this.currentfilePath).size</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    if (this.electronService.fs.statSync(this.currentfilePath).size &lt;= this.SLICESECTION) &#123;</span><br><span class="line">        this.read();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      this.createEmptyFile().then(() =&gt; &#123;</span><br><span class="line">        this.sliceRead();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 全部读取</span><br><span class="line">  public read() &#123;</span><br><span class="line">    this.electronService.fs.readFile(this.currentfilePath, (readerr, data) =&gt; &#123;</span><br><span class="line">      if (readerr) &#123; throw readerr;&#125;</span><br><span class="line">      const fileInfo: UploadOptions = &#123;</span><br><span class="line">        buffer: this.sharedService.toArrayBuffer(data),</span><br><span class="line">        isSegment: false,</span><br><span class="line">        path: this.currentfilePath,</span><br><span class="line">        completed: false,</span><br><span class="line">        extension: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">        fileName: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">        totalSize: this.electronService.fs.statSync(this.currentfilePath).size</span><br><span class="line">      &#125;;</span><br><span class="line">      console.log(fileInfo);</span><br><span class="line">      this.uploadService.createUpload(fileInfo);</span><br><span class="line">      this.filePathWaitingQueue.shift();</span><br><span class="line">      this.start();</span><br><span class="line">  &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 分段读</span><br><span class="line">  public sliceRead() &#123;</span><br><span class="line">    const that = this;</span><br><span class="line">    this.readable = this.electronService.fs.createReadStream(this.currentfilePath, &#123;</span><br><span class="line">      highWaterMark: 2611200</span><br><span class="line">    &#125;);</span><br><span class="line">    this.dataBuffer = new Buffer(0);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;readable&apos;, function() &#123;</span><br><span class="line">        console.log(&apos;received readable&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;data&apos;, function(chunk) &#123; // chunk 默认16kb</span><br><span class="line">        console.log(&apos;read %d bytes: %s&apos;, chunk.length, chunk);</span><br><span class="line">       </span><br><span class="line">        that.dealData(chunk);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;end&apos;, function() &#123;</span><br><span class="line">        console.log(&apos;read end&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;close&apos;, function() &#123;</span><br><span class="line">        console.log(&apos;file was closed.&apos;);</span><br><span class="line">        that.filePathWaitingQueue.shift();</span><br><span class="line">        that.start();</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    this.readable.on(&apos;error&apos;, function(err) &#123;</span><br><span class="line">        console.log(&apos;error occured: %s&apos;, err.message);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * </span><br><span class="line">   * @param data </span><br><span class="line">   */</span><br><span class="line">  public dealData(chunk) &#123;</span><br><span class="line">    this.readable.pause();         // 暂停读取</span><br><span class="line">    </span><br><span class="line">    this.reader_end += chunk.length;</span><br><span class="line">    this.reader_start = this.reader_end - chunk.length;</span><br><span class="line"></span><br><span class="line">    const start = this.reader_start;</span><br><span class="line">    const end = this.reader_end;</span><br><span class="line"></span><br><span class="line">    const fileInfo: UploadOptions = &#123;</span><br><span class="line">      buffer: this.sharedService.toArrayBuffer(chunk),</span><br><span class="line">      start: start,</span><br><span class="line">      end: end,</span><br><span class="line">      filedId: this.fileId,</span><br><span class="line">      isSegment: true,</span><br><span class="line">      path: this.currentfilePath,</span><br><span class="line">      completed: false,</span><br><span class="line">      extension: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">      fileName: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">      totalSize: this.electronService.fs.statSync(this.currentfilePath).size</span><br><span class="line">    &#125;;</span><br><span class="line">    console.log(fileInfo);</span><br><span class="line">    this.uploadService.createUpload(fileInfo);</span><br><span class="line">    this.readable.resume();      // 恢复读取文件</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 创建空文件</span><br><span class="line">   */</span><br><span class="line">  public createEmptyFile() &#123;</span><br><span class="line">    return new Promise(resolve =&gt; &#123;</span><br><span class="line">      const fileInfo = &#123; </span><br><span class="line">        &quot;extension&quot;: this.sharedService.getFileExtenionNyPath(this.currentfilePath),</span><br><span class="line">        &quot;displayName&quot;: this.sharedService.getFileNameByPath(this.currentfilePath),</span><br><span class="line">        &quot;fileName&quot;: this.sharedService.getFileNameByPath(this.currentfilePath)</span><br><span class="line">      &#125;;</span><br><span class="line">      this.apiService.CreateEmptyFile(fileInfo).subscribe(res =&gt; &#123;</span><br><span class="line">        this.fileId = res[&quot;id&quot;];</span><br><span class="line">        resolve();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;); </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="upload-service-ts"><a href="#upload-service-ts" class="headerlink" title="upload.service.ts"></a>upload.service.ts</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Injectable &#125; from &apos;@angular/core&apos;;</span><br><span class="line">import &#123; UploadOptions, FileOptions &#125; from &apos;./uploadOptions&apos;;</span><br><span class="line">import &#123; ApiService &#125; from &apos;./api.service&apos;;</span><br><span class="line">import &#123; FileService &#125; from &apos;./file.service&apos;;</span><br><span class="line">import &#123; SaveToJSONService &#125; from &apos;./save-to-json.service&apos;;</span><br><span class="line"></span><br><span class="line">@Injectable(&#123;</span><br><span class="line">  providedIn: &apos;root&apos;</span><br><span class="line">&#125;)</span><br><span class="line">export class UploadService &#123;</span><br><span class="line"></span><br><span class="line">  public uploadFileQueue: UploadOptions[] = [];           // 上传队列</span><br><span class="line">  public filesStateQueue: FileOptions[] = [];             // 上传成功或者失败的队列</span><br><span class="line">  public currentUploadInfo: UploadOptions;                // 当前正在上传的fileinfo</span><br><span class="line"></span><br><span class="line">  constructor(public apiService: ApiService,</span><br><span class="line">              public fileService: FileService,</span><br><span class="line">              public saveToJSONService: SaveToJSONService) &#123; &#125;</span><br><span class="line"></span><br><span class="line">  // 创建上传</span><br><span class="line">  public createUpload(fileInfo: UploadOptions) &#123;</span><br><span class="line">    console.log(&quot;加入上传队列&quot;);</span><br><span class="line">    this.uploadFileQueue = this.uploadFileQueue.concat(fileInfo);</span><br><span class="line">    console.log(this.uploadFileQueue);</span><br><span class="line">    if (this.uploadFileQueue.length === 1) &#123;</span><br><span class="line">      this.uploadDispatch();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 上传</span><br><span class="line">  public uploadDispatch() &#123;</span><br><span class="line">    console.log(this.uploadFileQueue);</span><br><span class="line">    if (this.uploadFileQueue.length === 0) &#123;</span><br><span class="line">      this.saveToJSONService.saveToJSONFile(JSON.stringify(this.filesStateQueue), &apos;fileUploadStatus.json&apos;);</span><br><span class="line">      return; </span><br><span class="line">    &#125;</span><br><span class="line">    this.currentUploadInfo = this.uploadFileQueue[0];</span><br><span class="line">    console.log(&quot;正在上传：&quot;+ this.currentUploadInfo.fileName);</span><br><span class="line">    if (!this.currentUploadInfo.isSegment) &#123;</span><br><span class="line">        this.upload();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      this.sliceUpload();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 普通上传</span><br><span class="line">  public upload() &#123;</span><br><span class="line">      const fileInfo = &#123;</span><br><span class="line">        extension: this.currentUploadInfo.extension,</span><br><span class="line">        displayName: this.currentUploadInfo.fileName,</span><br><span class="line">        size: this.currentUploadInfo.totalSize,</span><br><span class="line">        segmentTotalSize: this.currentUploadInfo.totalSize,</span><br><span class="line">        fileName: this.currentUploadInfo.fileName,</span><br><span class="line">        directoryId: this.fileService.currentDirID</span><br><span class="line">      &#125;;</span><br><span class="line">      this.uploadFileQueue.shift();</span><br><span class="line">      this.apiService.UploadFiles(fileInfo, this.currentUploadInfo.buffer).subscribe(res =&gt; &#123;</span><br><span class="line">         this.setFileStatus(true);</span><br><span class="line">         this.uploadDispatch();</span><br><span class="line">      &#125;,</span><br><span class="line">      error =&gt; &#123;</span><br><span class="line">         this.setFileStatus(false);</span><br><span class="line">      &#125;</span><br><span class="line">     );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 分片上传</span><br><span class="line">  public sliceUpload() &#123;</span><br><span class="line">    this.apiService.SliceUploadingFiles(this.currentUploadInfo.filedId, this.currentUploadInfo.start, this.currentUploadInfo.end-1,this.currentUploadInfo.totalSize, this.currentUploadInfo.buffer).subscribe(</span><br><span class="line">      res =&gt; &#123;</span><br><span class="line">        console.log(&quot;上传成功&quot;);</span><br><span class="line">        this.uploadFileQueue.shift();</span><br><span class="line">        if (this.currentUploadInfo.end === this.currentUploadInfo.totalSize) &#123;</span><br><span class="line">          this.setFileStatus(true);</span><br><span class="line">        &#125;</span><br><span class="line">        this.uploadDispatch();</span><br><span class="line">      &#125;,</span><br><span class="line">      error =&gt; &#123;</span><br><span class="line">        this.setFileStatus(false);</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 设置文件状态</span><br><span class="line">  public setFileStatus(status: boolean) &#123;</span><br><span class="line">    this.currentUploadInfo.completed = status;</span><br><span class="line">    this.filesStateQueue.push(&#123;path: this.currentUploadInfo.path, completed: this.currentUploadInfo.completed&#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/20/electron-打包/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="yolanda2">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="青檬眼豆豆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/20/electron-打包/" itemprop="url">
-                  electron-builder 打包
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-
-              
-                
-              
-
-              <time title="Post created: 2018-10-20 10:58:32" itemprop="dateCreated datePublished" datetime="2018-10-20T10:58:32+08:00">2018-10-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Updated at: 2019-01-30 17:44:02" itemprop="dateModified" datetime="2019-01-30T17:44:02+08:00">2019-01-30</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>electron 官网提及了4种打包方式，electron-packager, electron-forge, electron-builder,以及官网介绍的asar。<br>其实在使用electron-builder之后，其实都是一个原理，都是使用asar生成档案文件。</p>
-</blockquote>
-<p>官网：<a href="https://electronjs.org/docs/tutorial/application-packaging" target="_blank" rel="noopener">https://electronjs.org/docs/tutorial/application-packaging</a><br>electron-packager: <a href="https://github.com/electron-userland/electron-packager" target="_blank" rel="noopener">https://github.com/electron-userland/electron-packager</a><br>electron-forge: <a href="https://github.com/electron-userland/electron-forge" target="_blank" rel="noopener">https://github.com/electron-userland/electron-forge</a><br>electron-builder: <a href="https://github.com/electron-userland/electron-builder" target="_blank" rel="noopener">https://github.com/electron-userland/electron-builder</a></p>
-<p>本文主要介绍electron-builder:</p>
-<h4 id="安装electron-builder"><a href="#安装electron-builder" class="headerlink" title="安装electron-builder"></a>安装electron-builder</h4><p>官网推荐使用yarn,而不是npm；<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add electron-builder --dev</span><br></pre></td></tr></table></figure></p>
-<h4 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h4><p>官方配置文件字段说明: <a href="https://www.electron.build/configuration/configuration" target="_blank" rel="noopener">https://www.electron.build/configuration/configuration</a><br>有两种方式：</p>
-<ol>
-<li>在package.json 中添加 “build”字段，里面添加属性；</li>
-<li>使用配置文件的方式 ，electron-builder默认会读取electron-builder.json(与package.json同在一级目录)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;appId&quot;: &quot;com.electron.coa&quot;,</span><br><span class="line">  &quot;productName&quot;: &quot;COA&quot;,</span><br><span class="line">  &quot;directories&quot;: &#123;</span><br><span class="line">    &quot;output&quot;: &quot;release/&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;files&quot;: [</span><br><span class="line">        &quot;**/*&quot;,</span><br><span class="line">        &quot;!*.ts&quot;,</span><br><span class="line">        &quot;!*.code-workspace&quot;,</span><br><span class="line">        &quot;!LICENSE.md&quot;,</span><br><span class="line">        &quot;!package.json&quot;,</span><br><span class="line">        &quot;!package-lock.json&quot;,</span><br><span class="line">        &quot;!src/&quot;,</span><br><span class="line">        &quot;!e2e/&quot;,</span><br><span class="line">        &quot;!hooks/&quot;,</span><br><span class="line">        &quot;!.angular-cli.json&quot;,</span><br><span class="line">        &quot;!_config.yml&quot;,</span><br><span class="line">        &quot;!karma.conf.js&quot;,</span><br><span class="line">        &quot;!tsconfig.json&quot;,</span><br><span class="line">        &quot;!tslint.json&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;win&quot;: &#123;</span><br><span class="line">    &quot;icon&quot;: &quot;dist&quot;,</span><br><span class="line">    &quot;target&quot;: [</span><br><span class="line">      &quot;portable&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;mac&quot;: &#123;</span><br><span class="line">    &quot;icon&quot;: &quot;dist&quot;,</span><br><span class="line">    &quot;target&quot;: [</span><br><span class="line">      &quot;dmg&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;linux&quot;: &#123;</span><br><span class="line">    &quot;icon&quot;: &quot;dist&quot;,</span><br><span class="line">    &quot;target&quot;: [</span><br><span class="line">      &quot;AppImage&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>具体参数可参照:<br><a href="https://docs.npmjs.com/getting-started/using-a-package.json" target="_blank" rel="noopener">https://docs.npmjs.com/getting-started/using-a-package.json</a><br><a href="https://docs.npmjs.com/cli/build" target="_blank" rel="noopener">https://docs.npmjs.com/cli/build</a><br><a href="https://www.electron.build/configuration/configuration" target="_blank" rel="noopener">https://www.electron.build/configuration/configuration</a></p>
-<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;COA&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;electron angular and ng-zorro-antd&quot;,</span><br><span class="line">  &quot;author&quot;: &#123;</span><br><span class="line">    &quot;name&quot;: &quot;xuqy&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;keywords&quot;: [</span><br><span class="line">    &quot;angular&quot;,</span><br><span class="line">    &quot;angular 6&quot;,</span><br><span class="line">    &quot;electron&quot;,</span><br><span class="line">    &quot;typescript&quot;,</span><br><span class="line">    &quot;sass&quot;,</span><br><span class="line">    &quot;ng-zorro-antd&quot;,</span><br><span class="line">    &quot;node&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;main&quot;: &quot;main.js&quot;,</span><br><span class="line">  &quot;private&quot;: true,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;postinstall&quot;: &quot;npm run postinstall:electron &amp;&amp; npx electron-builder install-app-deps&quot;,</span><br><span class="line">    &quot;postinstall:web&quot;: &quot;node postinstall-web&quot;,</span><br><span class="line">    &quot;postinstall:electron&quot;: &quot;node postinstall&quot;,</span><br><span class="line">    &quot;ng&quot;: &quot;ng&quot;,</span><br><span class="line">    &quot;start&quot;: &quot;npm run postinstall:electron &amp;&amp; npm-run-all -p ng:serve electron:serve&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;npm run postinstall:electron &amp;&amp; npm run electron:serve-tsc &amp;&amp; ng build&quot;,</span><br><span class="line">    &quot;build:dev&quot;: &quot;npm run build -- -c dev&quot;,</span><br><span class="line">    &quot;build:prod&quot;: &quot;npm run build -- -c production&quot;,</span><br><span class="line">    &quot;ng:serve&quot;: &quot;ng serve&quot;,</span><br><span class="line">    &quot;ng:serve:web&quot;: &quot;npm run postinstall:web &amp;&amp; ng serve -o&quot;,</span><br><span class="line">    &quot;electron:serve-tsc&quot;: &quot;tsc -p tsconfig-serve.json&quot;,</span><br><span class="line">    &quot;electron:serve&quot;: &quot;wait-on http-get://localhost:4200/ &amp;&amp; npm run electron:serve-tsc &amp;&amp; electron . --serve&quot;,</span><br><span class="line">    &quot;electron:local&quot;: &quot;npm run build:prod &amp;&amp; electron .&quot;,</span><br><span class="line">    &quot;electron:linux&quot;: &quot;npm run build:prod &amp;&amp; npx electron-builder build --linux&quot;,</span><br><span class="line">    &quot;electron:windows&quot;: &quot;npm run build:prod &amp;&amp; npx electron-builder build --windows&quot;,</span><br><span class="line">    &quot;electron:mac&quot;: &quot;npm run build:prod &amp;&amp; npx electron-builder build --mac&quot;,</span><br><span class="line">    &quot;test&quot;: &quot;npm run postinstall:web &amp;&amp; ng test&quot;,</span><br><span class="line">    &quot;e2e&quot;: &quot;npm run postinstall:web &amp;&amp; ng e2e&quot;,</span><br><span class="line">    &quot;pack&quot;: &quot;electron-builder --dir&quot;,</span><br><span class="line">    &quot;dist&quot;: &quot;electron-builder&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;@angular/animations&quot;: &quot;^6.1.10&quot;,</span><br><span class="line">    &quot;ng-zorro-antd&quot;: &quot;^1.6.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;@angular-devkit/build-angular&quot;: &quot;0.6.3&quot;,</span><br><span class="line">    &quot;@angular/cli&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/common&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/compiler&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/compiler-cli&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/core&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/forms&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/http&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/language-service&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/platform-browser&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/platform-browser-dynamic&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@angular/router&quot;: &quot;6.1.2&quot;,</span><br><span class="line">    &quot;@ngx-translate/core&quot;: &quot;10.0.1&quot;,</span><br><span class="line">    &quot;@ngx-translate/http-loader&quot;: &quot;3.0.1&quot;,</span><br><span class="line">    &quot;@types/jasmine&quot;: &quot;2.8.7&quot;,</span><br><span class="line">    &quot;@types/jasminewd2&quot;: &quot;2.0.3&quot;,</span><br><span class="line">    &quot;@types/node&quot;: &quot;8.9.4&quot;,</span><br><span class="line">    &quot;codelyzer&quot;: &quot;4.2.1&quot;,</span><br><span class="line">    &quot;core-js&quot;: &quot;2.5.6&quot;,</span><br><span class="line">    &quot;electron&quot;: &quot;2.0.7&quot;,</span><br><span class="line">    &quot;electron-builder&quot;: &quot;^20.28.4&quot;,</span><br><span class="line">    &quot;electron-reload&quot;: &quot;1.2.2&quot;,</span><br><span class="line">    &quot;jasmine-core&quot;: &quot;3.1.0&quot;,</span><br><span class="line">    &quot;jasmine-spec-reporter&quot;: &quot;4.2.1&quot;,</span><br><span class="line">    &quot;karma&quot;: &quot;2.0.2&quot;,</span><br><span class="line">    &quot;karma-chrome-launcher&quot;: &quot;2.2.0&quot;,</span><br><span class="line">    &quot;karma-coverage-istanbul-reporter&quot;: &quot;2.0.0&quot;,</span><br><span class="line">    &quot;karma-jasmine&quot;: &quot;1.1.2&quot;,</span><br><span class="line">    &quot;karma-jasmine-html-reporter&quot;: &quot;1.1.0&quot;,</span><br><span class="line">    &quot;npm-run-all&quot;: &quot;4.1.3&quot;,</span><br><span class="line">    &quot;npx&quot;: &quot;10.2.0&quot;,</span><br><span class="line">    &quot;protractor&quot;: &quot;5.3.2&quot;,</span><br><span class="line">    &quot;rxjs&quot;: &quot;6.2.2&quot;,</span><br><span class="line">    &quot;ts-node&quot;: &quot;6.0.3&quot;,</span><br><span class="line">    &quot;tslint&quot;: &quot;5.10.0&quot;,</span><br><span class="line">    &quot;typescript&quot;: &quot;2.7.2&quot;,</span><br><span class="line">    &quot;wait-on&quot;: &quot;2.1.0&quot;,</span><br><span class="line">    &quot;webdriver-manager&quot;: &quot;12.0.6&quot;,</span><br><span class="line">    &quot;zone.js&quot;: &quot;0.8.26&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="打包-必须以管理员的身份运行命令哦"><a href="#打包-必须以管理员的身份运行命令哦" class="headerlink" title="打包(必须以管理员的身份运行命令哦!!)"></a>打包(必须以管理员的身份运行命令哦!!)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn dist</span><br></pre></td></tr></table></figure>
-<p>在此过程会报一个错，如下图，下图其实在尝试下载<a href="https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.3.1/winCodeSign-2.3.1.7z这个包的时候出错了，它访问了亚马逊的服务器，之前我已经在windows的C:\Windows\System32\drivers\etc\host文件中加入`52.216.16.16" target="_blank" rel="noopener">https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.3.1/winCodeSign-2.3.1.7z这个包的时候出错了，它访问了亚马逊的服务器，之前我已经在windows的C:\Windows\System32\drivers\etc\host文件中加入`52.216.16.16</a> github-production-release-asset-2e65be.s3.amazonaws.com`,我也能ping通，但是还想超时，只能自己从服务器下载，放入path=C:\Users\WSX\AppData\Local\electron-builder\Cache\winCodeSign\winCodeSign-2.3.1 这个路径下面，之后遇到的问题都是类似的，同样的解决</p>
-<p>最后发现你需要手动下载 </p>
-<ol>
-<li>winCodeSign-2.3.1</li>
-<li>nsis-resources-3.3.0</li>
-<li>nsis-3.0.3.2<br>最后发现以上的包都在: <a href="https://github.com/electron-userland/electron-builder-binaries/releases" target="_blank" rel="noopener">https://github.com/electron-userland/electron-builder-binaries/releases</a> 这个里面。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">• downloading  path=C:\Users\WSX\AppData\Local\electron-builder\Cache\winCodeSign\winCodeSign-2.3.1 url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.3.1/winCodeSign-2.3.1.7z</span><br><span class="line">  ⨯ Get https://github-production-release-asset-2e65be.s3.amazonaws.com/65527128/f7f78e6a-9fa6-11e8-8337-2e3e9d988d46?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20181019%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20181019T120008Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=80c096c1a4b7a900c73df64f020eee830faacbfe558b9af02b4563a556466e49&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;response-content-disposition=attachment%3B%20filename%3DwinCodeSign-2.3.1.7z&amp;response-content-type=application%2Foctet-stream: dial tcp 52.216.16.16:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.</span><br><span class="line">github.com/develar/app-builder/pkg/download.(*Downloader).follow.func1</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/pkg/download/downloader.go:167</span><br><span class="line">github.com/develar/app-builder/pkg/download.(*Downloader).follow</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/pkg/download/downloader.go:200</span><br><span class="line">github.com/develar/app-builder/pkg/download.(*Downloader).Download</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/pkg/download/downloader.go:75</span><br><span class="line">github.com/develar/app-builder/pkg/download.DownloadArtifact</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/pkg/download/artifactDownloader.go:139</span><br><span class="line">github.com/develar/app-builder/pkg/download.ConfigureArtifactCommand.func1</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/pkg/download/artifactDownloader.go:50</span><br><span class="line">github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin.(*actionMixin).applyActions</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin/actions.go:28</span><br><span class="line">github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin.(*Application).applyActions</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin/app.go:557</span><br><span class="line">github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin.(*Application).execute</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin/app.go:390</span><br><span class="line">github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin.(*Application).Parse</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/vendor/github.com/alecthomas/kingpin/app.go:222</span><br><span class="line">main.main</span><br><span class="line">        /Users/develar/go/src/github.com/develar/app-builder/main.go:74</span><br><span class="line">runtime.main</span><br><span class="line">        /usr/<span class="built_in">local</span>/Cellar/go/1.10.3/libexec/src/runtime/proc.go:198</span><br><span class="line">runtime.goexit</span><br><span class="line">        /usr/<span class="built_in">local</span>/Cellar/go/1.10.3/libexec/src/runtime/asm_amd64.s:2361</span><br><span class="line"></span><br><span class="line">Error: D:\MyWorkSpace\<span class="built_in">test</span>\COA\node_modules\app-builder-bin\win\x64\app-builder.exe exited with code 1</span><br><span class="line">    at ChildProcess.childProcess.once.code (D:\MyWorkSpace\<span class="built_in">test</span>\COA\node_modules\builder-util\src\util.ts:254:14)</span><br><span class="line">    at Object.onceWrapper (events.js:317:30)</span><br><span class="line">    at emitTwo (events.js:126:13)</span><br><span class="line">    at ChildProcess.emit (events.js:214:7)</span><br><span class="line">    at maybeClose (internal/child_process.js:925:16)</span><br><span class="line">    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="END"><a href="#END" class="headerlink" title="END"></a>END</h4><p>经过以上步骤正常情况下是可以打包成功，如果未能打包成功，可以尝试将node_modules全部移除，然后用 <code>yarn install</code>重新安装，再重新<code>yarn dist</code>.<br>最后，你用<code>yarn</code>命令之后依然可以使用npm。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
-
-
           </div>
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <h1 class="home-article-title">
+            <a href="/2019/01/11/H5-缓存/">H5 缓存</a>
+          </h1>
+          <div class="home-article-content passage-article">
             
-              <p class="site-author-name" itemprop="name">yolanda2</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              
+            
           </div>
-
+          <a class="home-article-read" href="/2019/01/11/H5-缓存/">
+            README MORE >>>
+          </a>
           
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">34</span>
-                    <span class="site-state-item-name">Artikel</span>
-                  </a>
-                </div>
-              
-
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">14</span>
-                    <span class="site-state-item-name">Tags</span>
-                  
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
         </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
         
       </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2019-01-10
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2019/01/10/vue-resource-post请求-bug/">post 请求</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2019/01/10/vue-resource-post请求-bug/">
+            README MORE >>>
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-12-18
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/12/18/array-every/">array.every()</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/12/18/array-every/">
+            README MORE >>>
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-12-17
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/12/17/文件上传-下载封装/">文件上传/下载封装</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/12/17/文件上传-下载封装/">
+            README MORE >>>
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-12-10
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/12/10/node-离线编辑/">node 离线编辑</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/12/10/node-离线编辑/">
+            README MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/node-离线编辑-watch-watchFile/"><i class="fa fa-tags"></i>node,离线编辑,watch,watchFile</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-11-28
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/11/28/树形结构/">树形结构</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/11/28/树形结构/">
+            README MORE >>>
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-11-14
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/11/14/11月整理/">11月整理</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/11/14/11月整理/">
+            README MORE >>>
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-10-20
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/10/20/Buffer-ArrayBuffer/">Buffer ArrayBuffer 相互转换</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/10/20/Buffer-ArrayBuffer/">
+            README MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/buffer-arrayBuffer/"><i class="fa fa-tags"></i>buffer arrayBuffer</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-10-20
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/10/20/node-下载文件/">node 下载文件</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/10/20/node-下载文件/">
+            README MORE >>>
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2018-10-20
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2018/10/20/node-文件上传以及分段上传/">node fs 文件上传以及分段上传</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2018/10/20/node-文件上传以及分段上传/">
+            README MORE >>>
+          </a>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+</div>
     </main>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+      <div class="site-footer-col">
+        <h5 class="site-footer-title">博客推荐</h5>
+        
+          <span class="site-footer-item">
+            <a href="https://godbmw.com/" target="_blank">GodBMW</a>
+          </span>
+        
+          <span class="site-footer-item">
+            <a href="http://ruanyifeng.com/" target="_blank">阮一峰的个人网站</a>
+          </span>
+        
+      </div>
+    
+      <div class="site-footer-col">
+        <h5 class="site-footer-title">系列教程</h5>
+        
+          <span class="site-footer-item">
+            <a href="https://godbmw.com/categories/webpack4%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B/" target="_blank">webpack4系列教程</a>
+          </span>
+        
+          <span class="site-footer-item">
+            <a href="https://godbmw.com/design-patterns/" target="_blank">设计模式手册</a>
+          </span>
+        
+      </div>
+    
+      <div class="site-footer-col">
+        <h5 class="site-footer-title">抓到我</h5>
+        
+          <span class="site-footer-item">
+            <a href="https://juejin.im/user/5b91fcf06fb9a05d3c7fd4a5" target="_blank">掘金</a>
+          </span>
+        
+          <span class="site-footer-item">
+            <a href="https://segmentfault.com/" target="_blank">思否</a>
+          </span>
+        
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+      <div class="site-footer-info">
+        <i class="fa fa-at"></i> Email: yuanxin.me@gmail.com
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 <a href="https://github.com/dongyuanxin/theme-ad/" target="_blank">Theme-AD</a>.
+      Created by <a href="https://godbmw.com/" target="_blank">GodBMW</a>.
+      All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+        <input type="text">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+        
+          <div>
+            <img src="/images/wechat.png" alt="WeChat">
+            
+              <p>WeChat</p>
+            
+          </div>
+        
+          <div>
+            <img src="/images/alipay.png" alt="AliPay">
+            
+              <p>AliPay</p>
+            
+          </div>
+        
+      </div>
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+    
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">yolanda2</span>
-
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="/" data-enable="true">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="/page/3/" data-enable="true">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="false" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    <a href="javascript:void(0);" id="site-reward">
+      <i class="fa fa-thumbs-up"></i>
+    </a>
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
   
-
+  
+  
+    <a id="share-btn-weibo" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-weibo"></i>
+    </a>
+  
+  
+    <a id="share-btn-qq" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-qq"></i>
+    </a>
+  
+  
+    <a id="share-btn-wechat" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-wechat"></i>
+    </a>
   
 </div>
-
-
-
-
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.4.1</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
+
+
+
+
     
-	
-    
-
-    
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</body>
+  </body>
 </html>
