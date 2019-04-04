@@ -6,12 +6,12 @@
   <meta name="author" content="Dong Yuanxin" />
   
   
-  <title>归档: 2018 | 青檬眼豆豆</title>
+  <title>正则表达式 | 青檬眼豆豆</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Hexo, Theme-AD" />
+    <meta name="keywords" content="正则表达式,正则表达式," />
   
 
   
@@ -38,7 +38,7 @@
     welcome: {"enable":true,"interval":30},
     start_time: "2018-02-10",
     passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
-    is_post: false,
+    is_post: true,
     lock: false,
     author: "Dong Yuanxin",
     share: {"twitter":false,"facebook":false,"weibo":true,"qq":true,"wechat":true},
@@ -140,150 +140,73 @@
 </nav>
 <div id="site-process"></div>
     <main>
-      <div class="timeline">
-  <h2 class="timeline-title">归档: 46篇</h2>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2019-04-04
+    </span>
+    
+      <span>
+        | <a href="/categories/正则表达式/"><i class="fa fa-bookmark"></i>正则表达式</a>
+      </span>
+    
+    
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
+    
+  </div>
+  <h1 class="passage-title">
+    正则表达式
+  </h1>
   
-    
-      <h3 class="timeline-subtitle">2018</h3>
-    
-    <div class="timeline-item">
-      <time>2018-12-18</time>
-      <a target="_self" href="/2018/12/18/array-every/">array.every()</a>
-    </div>
+  <article class="passage-article">
+    <h4 id="理解正则表示式中的中括号"><a href="#理解正则表示式中的中括号" class="headerlink" title="理解正则表示式中的中括号[]"></a>理解正则表示式中的中括号[]</h4><blockquote>
+<p>中括号表示**不按固定次序排列的数组， 在中括号里面的字符可以不按顺序的出现。</p>
+</blockquote>
+<p>比较一下 /^[https?:\/\/.+]$/ 和 /^https?:\/\/.+$/的区别?<br>先说一下前者的错误点: </p>
+<ul>
+<li>对于中括号来说,需要指定位数 /^[https?:\/\/.+]+$/</li>
+<li>里面的问号?不会被当成匹配1位或者0位，会被当成字符</li>
+<li>里面的.和+不会匹配为除换行符以外的字符,仅仅会被当成字符.和字符+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var reg = /^[https?:\/\/.+]+$/;</span><br><span class="line">reg.test(&apos;https://www.com&apos;); // false</span><br><span class="line">reg.test(&apos;ht?://&apos;); // true</span><br><span class="line">reg.test(&apos;http://.&apos;); // true</span><br><span class="line">reg.test(&apos;http://.+&apos;); // true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>后者是正确的。</p>
+
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#理解正则表示式中的中括号"><span class="toc-text">理解正则表示式中的中括号[]</span></a></li></ol>
+  </div>
+</aside>
   
-    
-    <div class="timeline-item">
-      <time>2018-12-17</time>
-      <a target="_self" href="/2018/12/17/文件上传-下载封装/">文件上传/下载封装</a>
-    </div>
+    <aside class="passage-copyright">
+      <div>本文作者: 胥庆玉</div>
+      
+        <div>
+          原文链接: 
+          <a href="" target="_blank">http://yoursite.com/2019/04/04/正则表达式/</a>
+        </div>
+      
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+      </div>
+    </aside>
   
-    
-    <div class="timeline-item">
-      <time>2018-12-10</time>
-      <a target="_self" href="/2018/12/10/node-离线编辑/">node 离线编辑</a>
-    </div>
   
+    <div class="passage-tags">
+     
+      <a href="/tags/正则表达式/"><i class="fa fa-tags"></i>正则表达式</a>
     
-    <div class="timeline-item">
-      <time>2018-11-28</time>
-      <a target="_self" href="/2018/11/28/树形结构/">树形结构</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-11-14</time>
-      <a target="_self" href="/2018/11/14/11月整理/">11月整理</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-10-20</time>
-      <a target="_self" href="/2018/10/20/Buffer-ArrayBuffer/">Buffer ArrayBuffer 相互转换</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-10-20</time>
-      <a target="_self" href="/2018/10/20/node-下载文件/">node 下载文件</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-10-20</time>
-      <a target="_self" href="/2018/10/20/node-文件上传以及分段上传/">node fs 文件上传以及分段上传</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-10-20</time>
-      <a target="_self" href="/2018/10/20/electron-打包/">electron-builder 打包</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-30</time>
-      <a target="_self" href="/2018/09/30/angular-electron开发桌面应用程序/">angular electron开发桌面应用程序</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-29</time>
-      <a target="_self" href="/2018/09/29/CSS3/">CSS3</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-28</time>
-      <a target="_self" href="/2018/09/28/数组与字符串转换/">数组与字符串转换</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-27</time>
-      <a target="_self" href="/2018/09/27/常用函数/">常用函数</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-27</time>
-      <a target="_self" href="/2018/09/27/springBoot-写静态页面/">springBoot 写静态页面</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-27</time>
-      <a target="_self" href="/2018/09/27/Ajax/">$.ajax() 前后端的交互</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-25</time>
-      <a target="_self" href="/2018/09/25/如何做优化内容丰富的table/">如何做优化内容丰富的table</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-25</time>
-      <a target="_self" href="/2018/09/25/Next-Learning/">Next Learning</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-21</time>
-      <a target="_self" href="/2018/09/21/reduce累加器/">reduce累加器</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-21</time>
-      <a target="_self" href="/2018/09/21/Object.assign() 操作对象/">Object.assign()</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-21</time>
-      <a target="_self" href="/2018/09/21/JS深浅复制/">JS 深浅复制</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-07</time>
-      <a target="_self" href="/2018/09/07/ionic 长按事件/">ionic 长按事件</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-07</time>
-      <a target="_self" href="/2018/09/07/h5-FileReader/">h5 FileReader</a>
-    </div>
-  
-    
-    <div class="timeline-item">
-      <time>2018-09-07</time>
-      <a target="_self" href="/2018/09/07/hexo搭建基本要点/">hexo搭建基本要点</a>
     </div>
   
 </div>
+
     </main>
     
     <div class="site-footer-wrapper">
@@ -362,12 +285,12 @@
     <a href="javascript:void(0);" data-enable="false">
       <i class="fa fa-arrow-left"></i>
     </a>
-    <a href="javascript:void(0);" data-enable="false">
+    <a href="/2019/04/04/蚂蚁金服控件NG-ZORRO-ANTD/" data-enable="true">
       <i class="fa fa-arrow-right"></i>
     </a>
   </div>
   <div class="bottom-bar-right">
-    <a href="javascript:void(0);" data-enable="false" id="site-toc-show-btn">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
       <i class="fa fa-bars"></i>
     </a>
     

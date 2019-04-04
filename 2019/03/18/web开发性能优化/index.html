@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Dong Yuanxin" />
+  
+  
+  <title>雅虎14条web优化原则 | 青檬眼豆豆</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="性能优化,http," />
+  
+
+  
+  <meta name="description" content="如何让we页面更加快速的加载，如何处理静态资源的缓存">
+
+  
+
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
+
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+
+  
+
+  
+
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz","appkey":"WaR7nrzhliHj9aVwdQzkdlGd","comment":false,"count":true},
+    welcome: {"enable":true,"interval":30},
+    start_time: "2018-02-10",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: true,
+    lock: false,
+    author: "Dong Yuanxin",
+    share: {"twitter":false,"facebook":false,"weibo":true,"qq":true,"wechat":true},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
+
+  <script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
+
+  
+</head>
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
+    
+      <span class="site-header-brand-title">
+        <a href="/">GOODGIRL</a>
+      </span>
+    
+    
+      <span class="site-header-brand-motto"> | 学着安静写些东西</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/YolandaXQY" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+    </div>
+  </div>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc">
+      
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</nav>
+<div id="site-process"></div>
+    <main>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2019-03-18
+    </span>
+    
+      <span>
+        | <a href="/categories/性能优化/"><i class="fa fa-bookmark"></i>性能优化</a>
+      </span>
+    
+    
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
+    
+  </div>
+  <h1 class="passage-title">
+    雅虎14条web优化原则
+  </h1>
+  
+  <article class="passage-article">
+    <p><a href="https://www.cnblogs.com/zhuwenlubin/p/5681142.html" target="_blank" rel="noopener"></a><br><a href="https://developer.yahoo.com/performance/rules.html" target="_blank" rel="noopener">雅虎14条优化原则</a><br>雅虎卓越的性能研究团队确定了许多使得web页面更快运行的的最佳实践。该列表包括35个最佳实践，分为7个类别。</p>
+<blockquote>
+<p>The Exceptional Performance team has identified a number of best practices for making web pages fast. The list includes 35 best practices divided into 7 categories</p>
+</blockquote>
+<h3 id="减少HTTP请求-Minimize-HTTP-Requests-content"><a href="#减少HTTP请求-Minimize-HTTP-Requests-content" class="headerlink" title="减少HTTP请求(Minimize HTTP Requests) - content"></a>减少HTTP请求(Minimize HTTP Requests) - content</h3><h3 id="使用CDN-内容分发网络-Content-Delivery-Network-server"><a href="#使用CDN-内容分发网络-Content-Delivery-Network-server" class="headerlink" title="使用CDN(内容分发网络: Content Delivery Network) - server"></a>使用CDN(内容分发网络: Content Delivery Network) - server</h3><h3 id="使用Expires-Cache-Control缓存-Add-an-Expires-or-a-Cache-Control-Header-server"><a href="#使用Expires-Cache-Control缓存-Add-an-Expires-or-a-Cache-Control-Header-server" class="headerlink" title="使用Expires,Cache-Control缓存(Add an Expires or a Cache-Control Header) - server"></a>使用Expires,Cache-Control缓存(Add an Expires or a Cache-Control Header) - server</h3><h3 id="压缩组件，stylesheet-script-Gzip-Components-server"><a href="#压缩组件，stylesheet-script-Gzip-Components-server" class="headerlink" title="压缩组件，stylesheet, script (Gzip Components) - server"></a>压缩组件，stylesheet, script (Gzip Components) - server</h3><h3 id="将CSS样式放在头部-Put-Stylesheets-at-the-Top-css"><a href="#将CSS样式放在头部-Put-Stylesheets-at-the-Top-css" class="headerlink" title="将CSS样式放在头部(Put Stylesheets at the Top) - css"></a>将CSS样式放在头部(Put Stylesheets at the Top) - css</h3><h3 id="将js放在底部-Put-Scripts-at-the-Bottom-javascript"><a href="#将js放在底部-Put-Scripts-at-the-Bottom-javascript" class="headerlink" title="将js放在底部(Put Scripts at the Bottom) - javascript"></a>将js放在底部(Put Scripts at the Bottom) - javascript</h3><h3 id="避免使用Expressions-Avoid-CSS-Expressions-css"><a href="#避免使用Expressions-Avoid-CSS-Expressions-css" class="headerlink" title="避免使用Expressions(Avoid CSS Expressions) - css"></a>避免使用Expressions(Avoid CSS Expressions) - css</h3><h3 id="CSS和JS都外部引用-Make-JavaScript-and-CSS-External-css-javascript"><a href="#CSS和JS都外部引用-Make-JavaScript-and-CSS-External-css-javascript" class="headerlink" title="CSS和JS都外部引用(Make JavaScript and CSS External) - css, javascript"></a>CSS和JS都外部引用(Make JavaScript and CSS External) - css, javascript</h3><h3 id="减少DNS查询-Reduce-DNS-Lookups-content"><a href="#减少DNS查询-Reduce-DNS-Lookups-content" class="headerlink" title="减少DNS查询(Reduce DNS Lookups) - content"></a>减少DNS查询(Reduce DNS Lookups) - content</h3><h3 id="减少Javascript和CSS-（Minify-JavaScript-and-CSS）-css-javascript"><a href="#减少Javascript和CSS-（Minify-JavaScript-and-CSS）-css-javascript" class="headerlink" title="减少Javascript和CSS （Minify JavaScript and CSS）- css, javascript"></a>减少Javascript和CSS （Minify JavaScript and CSS）- css, javascript</h3><h3 id="避免重定向-Avoid-Redirects-content"><a href="#避免重定向-Avoid-Redirects-content" class="headerlink" title="避免重定向(Avoid Redirects) - content"></a>避免重定向(Avoid Redirects) - content</h3><h3 id="删除重复的JavaScript（Remove-Duplicate-Scripts）-javascript"><a href="#删除重复的JavaScript（Remove-Duplicate-Scripts）-javascript" class="headerlink" title="删除重复的JavaScript（Remove Duplicate Scripts）- javascript"></a>删除重复的JavaScript（Remove Duplicate Scripts）- javascript</h3><h3 id="使用实体标签-Configure-ETags"><a href="#使用实体标签-Configure-ETags" class="headerlink" title="使用实体标签(Configure ETags)"></a>使用实体标签(Configure ETags)</h3>
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#减少HTTP请求-Minimize-HTTP-Requests-content"><span class="toc-text">减少HTTP请求(Minimize HTTP Requests) - content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用CDN-内容分发网络-Content-Delivery-Network-server"><span class="toc-text">使用CDN(内容分发网络: Content Delivery Network) - server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Expires-Cache-Control缓存-Add-an-Expires-or-a-Cache-Control-Header-server"><span class="toc-text">使用Expires,Cache-Control缓存(Add an Expires or a Cache-Control Header) - server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩组件，stylesheet-script-Gzip-Components-server"><span class="toc-text">压缩组件，stylesheet, script (Gzip Components) - server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将CSS样式放在头部-Put-Stylesheets-at-the-Top-css"><span class="toc-text">将CSS样式放在头部(Put Stylesheets at the Top) - css</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将js放在底部-Put-Scripts-at-the-Bottom-javascript"><span class="toc-text">将js放在底部(Put Scripts at the Bottom) - javascript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#避免使用Expressions-Avoid-CSS-Expressions-css"><span class="toc-text">避免使用Expressions(Avoid CSS Expressions) - css</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS和JS都外部引用-Make-JavaScript-and-CSS-External-css-javascript"><span class="toc-text">CSS和JS都外部引用(Make JavaScript and CSS External) - css, javascript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#减少DNS查询-Reduce-DNS-Lookups-content"><span class="toc-text">减少DNS查询(Reduce DNS Lookups) - content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#减少Javascript和CSS-（Minify-JavaScript-and-CSS）-css-javascript"><span class="toc-text">减少Javascript和CSS （Minify JavaScript and CSS）- css, javascript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#避免重定向-Avoid-Redirects-content"><span class="toc-text">避免重定向(Avoid Redirects) - content</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除重复的JavaScript（Remove-Duplicate-Scripts）-javascript"><span class="toc-text">删除重复的JavaScript（Remove Duplicate Scripts）- javascript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用实体标签-Configure-ETags"><span class="toc-text">使用实体标签(Configure ETags)</span></a></li></ol>
+  </div>
+</aside>
+  
+    <aside class="passage-copyright">
+      <div>本文作者: 胥庆玉</div>
+      
+        <div>
+          原文链接: 
+          <a href="" target="_blank">http://yoursite.com/2019/03/18/web开发性能优化/</a>
+        </div>
+      
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+      </div>
+    </aside>
+  
+  
+    <div class="passage-tags">
+     
+      <a href="/tags/http/"><i class="fa fa-tags"></i>http</a>
+    
+    </div>
+  
+</div>
+
+    </main>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+      <div class="site-footer-col">
+        <h5 class="site-footer-title">博客推荐</h5>
+        
+          <span class="site-footer-item">
+            <a href="https://godbmw.com/" target="_blank">GodBMW</a>
+          </span>
+        
+          <span class="site-footer-item">
+            <a href="http://ruanyifeng.com/" target="_blank">阮一峰的个人网站</a>
+          </span>
+        
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+      <div class="site-footer-info">
+        <i class="fa fa-at"></i> Email: 1742399914@qq.com
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 <a href="https://github.com/dongyuanxin/theme-ad/" target="_blank">Theme-AD</a>.
+      Created by <a href="https://godbmw.com/" target="_blank">GodBMW</a>.
+      All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+        <input type="text">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+        
+          <div>
+            <img src="/images/wechat.png" alt="WeChat">
+            
+              <p>WeChat</p>
+            
+          </div>
+        
+          <div>
+            <img src="/images/alipay.png" alt="AliPay">
+            
+              <p>AliPay</p>
+            
+          </div>
+        
+      </div>
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+    
+
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="/2019/03/18/静态资源缓存与更新/" data-enable="true">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="/2019/03/18/Http-304状态码/" data-enable="true">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    <a href="javascript:void(0);" id="site-reward">
+      <i class="fa fa-thumbs-up"></i>
+    </a>
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
+  
+  
+  
+    <a id="share-btn-weibo" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-weibo"></i>
+    </a>
+  
+  
+    <a id="share-btn-qq" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-qq"></i>
+    </a>
+  
+  
+    <a id="share-btn-wechat" href="javascript:void(0);" target="_blank">
+      <i class="fa fa-wechat"></i>
+    </a>
+  
+</div>
+    
+
+
+
+
+
+    
+  </body>
+</html>
