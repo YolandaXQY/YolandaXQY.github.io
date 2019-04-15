@@ -172,10 +172,22 @@
 <h4 id="3-Angular绑定机制"><a href="#3-Angular绑定机制" class="headerlink" title="3. Angular绑定机制"></a>3. Angular绑定机制</h4><p>   Angular最大的亮点就是他的绑定机制,一共有三种</p>
 <p>   属性 - 从数据源到视图(单向)<br>   事件 - 从视图到数据源(单向)<br>   表单值 - 从视图到数据源再到视图(双向)</p>
 <p>   视图,就是我们看到的样子,其实就是指HTML.<br>   数据源,是指typescript中的值,无论他是定义好的值还是来自服务器的值,都是数据源. </p>
-<h4 id="4-案例说明"><a href="#4-案例说明" class="headerlink" title="4. 案例说明"></a>4. 案例说明</h4><p><img src="/images/angular-data-flow.png" alt="logo"><br>模板引用变量： 引用<br>思考这样一个问题,案例1和案例4都是输入一个值,然后显示,二者有何区别?<br>效果虽然一样,但是思路是不一样的,案例1用的是模版引用变量,案例4用的是单双向绑定结合. </p>
-<p>判断单双向绑定:<br>出现 [ ],说明是从数据源到视图的单向绑定.<br>出现 ( ),说明是从视图到数据源的单向绑定.<br>出现 [( )],说明是双向绑定,再次强调,一旦使用 ngModel必须指明 name属性. </p>
+<p><strong>案例说明</strong></p>
+<p><img src="/images/angular-data-flow.png" alt="logo"></p>
+<ol>
+<li><p>模板引用变量： 引用<br>思考这样一个问题,案例1和案例4都是输入一个值,然后显示,二者有何区别?<br>效果虽然一样,但是思路是不一样的,案例1用的是模版引用变量,案例4用的是单双向绑定结合. </p>
+</li>
+<li><p>判断单双向绑定:<br>出现 [ ],说明是从数据源到视图的单向绑定.<br>出现 ( ),说明是从视图到数据源的单向绑定.<br>出现 [( )],说明是双向绑定,再次强调,一旦使用 ngModel必须指明 name属性. </p>
+</li>
+</ol>
 <h4 id="5-安全导航操作符"><a href="#5-安全导航操作符" class="headerlink" title="5. 安全导航操作符"></a>5. 安全导航操作符</h4><p>对于对象来说，我们访问后台返回的数据，有的属性值没有，angular会报错。可以通过加个 ? 来避免这个问题<br><figure class="highlight plain"><figcaption><span>name is &#123;&#123;user.name&#125;&#125; and I was born in &#123;&#123;user.bornYear&#125;&#125;,my lover is &#123;&#123;user?.lover&#125;&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 6. ngIf else</span><br><span class="line">``` </span><br><span class="line">&lt;div *ngIf=&quot;status, else otherContent&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;ng-template #otherContent&gt;otherContent&lt;/ng-template&gt;</span><br></pre></td></tr></table></figure></p>
-<p>#### </p>
+<h4 id="Angular6-Form表单"><a href="#Angular6-Form表单" class="headerlink" title="Angular6-Form表单"></a>Angular6-Form表单</h4><blockquote>
+<p>Formilder, FormControl, 以及校验</p>
+<ol>
+<li>响应式表单</li>
+<li>模板驱动的表单</li>
+</ol>
+</blockquote>
 
   </article>
   <aside class="table-content" id="site-toc">
@@ -184,7 +196,7 @@
     <span>目录</span>
   </div>
   <div class="table-content-main">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Angular-cli-Angular-command-line-interface"><span class="toc-text">Angular-cli (Angular command-line interface)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础学习"><span class="toc-text">基础学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-JQ是-事件驱动-Angular是-数据驱动"><span class="toc-text">1. JQ是 事件驱动,Angular是 数据驱动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-插值表达式"><span class="toc-text">2. 插值表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Angular绑定机制"><span class="toc-text">3. Angular绑定机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-案例说明"><span class="toc-text">4. 案例说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-安全导航操作符"><span class="toc-text">5. 安全导航操作符</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Angular-cli-Angular-command-line-interface"><span class="toc-text">Angular-cli (Angular command-line interface)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础学习"><span class="toc-text">基础学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-JQ是-事件驱动-Angular是-数据驱动"><span class="toc-text">1. JQ是 事件驱动,Angular是 数据驱动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-插值表达式"><span class="toc-text">2. 插值表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Angular绑定机制"><span class="toc-text">3. Angular绑定机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-安全导航操作符"><span class="toc-text">5. 安全导航操作符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Angular6-Form表单"><span class="toc-text">Angular6-Form表单</span></a></li></ol></li></ol>
   </div>
 </aside>
   
